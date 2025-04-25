@@ -4,7 +4,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-
 .underline-slide {
     position: relative;
     display: inline-block;
@@ -38,3 +37,96 @@
     transform: translateX(-50%) scaleX(1);
     opacity: 1;
 }
+
+
+/* === NOMINEES SECTION === */
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.375rem; /* rounded-md */
+    cursor: pointer;
+    display: block;
+  }
+  .image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 17rem; 
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .image-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.837), rgba(0,0,0,0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .image-wrapper:hover::after {
+    opacity: 1;
+  }
+  .hover-text {
+    position: absolute;
+    bottom: 1.2rem; /* increased padding */
+    left: 1.4rem;   /* increased padding */
+    color: white;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+    line-height: 1.1;
+    user-select: none;
+  }
+  .hover-text {
+    font-size: 0.625rem; /* 10px */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    font-weight: 300; /* thin */
+  }
+
+  .website-label{
+    font-size: 0.625rem; 
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    font-weight: 100; 
+  }
+
+  .hover-text .title {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+  }
+  .image-wrapper:hover .hover-text {
+    opacity: 1;
+  }
+  .title-large {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .by-text {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  @media (min-width: 640px) {
+    .custom-width {
+      width: calc((100vw - 96px) / 3); /* 3 items with 32px gap total, 48px padding each side */
+      max-width: 600px;
+    }
+  }
+  /* Overlap the wreath image slightly over the S in NOMINEES */
+  h1 span.absolute {
+    right: -48px; /* moved 8px more left to overlap S */
+    top: 18px;
+  }
+
+  #home2{
+    padding-left: 1.5rem; /* reduced left padding to bring content closer to left edge */
+    padding-right: 1.5rem; /* reduced right padding to bring content closer to right edge */
+  }
