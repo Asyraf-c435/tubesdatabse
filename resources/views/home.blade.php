@@ -47,11 +47,11 @@
 
 
         <!-- NOMINEES SECTION -->
-        <div class="max-w-[1690px] mx-auto px-4 py-12 text-center">
+        <div class="max-w-[1450px] mx-auto px-4 py-12 text-center">
             <p class="text-[9px] font-normal text-[#1a1a1a] mb-2">
                 Latest
             </p>
-            <h1 class="font-extrabold text-[112px] leading-[112px] tracking-[-0.02em] relative inline-block mb-2">
+            <h1 class="font-extrabold text-[64px] leading-[64px] sm:text-[72px] sm:leading-[72px] lg:text-[112px] lg:leading-[112px] tracking-[-0.02em] relative inline-block mb-2">
                 NOMINEES
                 <span class="absolute top-[18px] w-14 h-12 mt-9 mr-9">
                     <img alt="Golden award wreath icon" class=" w-14 h-12" height="32" src="images/awwards.png" width="92" />
@@ -145,7 +145,7 @@
                     </div>
                 </div>
             </section>
-            <p class="text-[9px] font-normal text-[#1a1a1a]">
+            <p class="text-[13.5px] font-normal text-[#1a1a1a] sm:mt-[40px] sm:mt-[80px] lg:mt-[120px]">
                 Check out all submitted websites
                 <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
                     <span>
@@ -159,73 +159,90 @@
         </div>
     </div>
 
-    <div class="bg-[#F9F9F9]" id="home2">
-        <section class="max-w-[1200px] mx-auto py-6 sm:py-10">
-            <p class="text-[12px] font-normal text-[#1A1A1A] mb-1">
+
+    <!-- WINNERS SECTION -->
+    <div class="bg-[#e9e9e9]" id="home2">
+        <section class="max-w-[1420px] mx-auto py-6 sm:py-10  mt-[90px] lg:mt-[90px]">
+            <p class="text-[12px] font-normal text-[#1A1A1A] mb-3">
                 Winners
             </p>
-            <h1 class="text-[28px] sm:text-[32px] font-extrabold text-[#111111] leading-[1.1] mb-8 max-w-xs sm:max-w-none">
+            <h1 class="text-[32px] sm:text-[36px] font-extrabold text-[#111111] leading-[1.1] mb-14 max-w-xs sm:max-w-none">
                 Recent Sites
                 <br />
                 of the Day.
             </h1>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <article class="space-y-2">
-                    <img alt="Beyond Speed race car pitstop scene with blurred background and white rectangular border around text" class="rounded-lg w-full object-cover" height="360" loading="lazy" src="https://storage.googleapis.com/a1aa/image/0d6049f4-6723-4f2e-bbd0-83b80b64fb4e.jpg" width="600" />
+                    <img alt="Beyond Speed race car pitstop scene with blurred background and white rectangular border around text" class="max-h-[350px] rounded-lg w-full object-cover" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/0d6049f4-6723-4f2e-bbd0-83b80b64fb4e.jpg" width="900" />
                     <p class="text-[14px] font-semibold text-[#111111] flex items-center">
                         Charles Leclerc
                         <span class="text-[12px] font-normal text-[#6B6B6B] ml-2 mr-2">
                             by
                         </span>
-                        <a class="inline-flex items-center space-x-2 text-[12px] font-semibold text-[#111111] hover:underline ml-1" href="#">
+                        <a class="inline-flex items-center space-x-2 text-[12px] font-semibold text-[#111111] no-underline ml-1" href="#">
                             <img alt="Profile picture of Apart" class="w-5 h-5 rounded-full object-cover" height="20" src="https://storage.googleapis.com/a1aa/image/f09ce540-ac5a-4d5f-8c91-eaa4d009f531.jpg" width="20" />
-                            <span>
+                            <span class="underline-slide no-underline">
                                 Apart
                             </span>
                         </a>
                     </p>
                 </article>
                 <article class="space-y-2">
-                    <img alt="Nite Riot woman in black outfit posing against beige background" class="rounded-lg w-full object-cover" height="360" loading="lazy" src="https://storage.googleapis.com/a1aa/image/54109abb-a1c7-4b73-4e3e-73a6344b353b.jpg" width="600" />
+                    <img alt="Nite Riot woman in black outfit posing against beige background" class="max-h-[350px] rounded-lg w-full object-cover" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/54109abb-a1c7-4b73-4e3e-73a6344b353b.jpg" width="600" />
                     <p class="text-[14px] font-semibold text-[#111111] flex items-center">
                         Nite Riot
                         <span class="text-[12px] font-normal text-[#6B6B6B] ml-2 mr-2">
                             by
                         </span>
-                        <a class="inline-flex items-center space-x-2 text-[12px] font-semibold text-[#111111] hover:underline ml-1" href="#">
+                        <a class="inline-flex items-center space-x-2 text-[12px] font-semibold text-[#111111] no-underline  ml-1" href="#">
                             <img alt="Profile picture of BL/S®" class="w-5 h-5 rounded-full object-cover" height="20" src="https://storage.googleapis.com/a1aa/image/611e395c-f3a9-4003-ffb8-228ef18808f1.jpg" width="20" />
-                            <span>
+                            <span class="underline-slide no-underline">
                                 BL/S®
                             </span>
                         </a>
                     </p>
                 </article>
                 <article class="space-y-2">
-                    <img alt="Vincent van Gogh black and white portrait with text overlay" class="rounded-lg w-full object-cover" height="360" loading="lazy" src="https://storage.googleapis.com/a1aa/image/20a2e5a9-dfcf-4557-c531-b2f8fc488677.jpg" width="600" />
+                    <img alt="Vincent van Gogh black and white portrait with text overlay" class="max-h-[350px] rounded-lg w-full object-cover" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/20a2e5a9-dfcf-4557-c531-b2f8fc488677.jpg" width="600" />
                     <p class="text-[14px] font-semibold text-[#111111] flex items-center">
                         Elimar
                         <span class="text-[12px] font-normal text-[#6B6B6B] ml-2 mr-2">
                             by
                         </span>
-                        <a class="inline-flex items-center space-x-2 text-[12px] font-semibold text-[#111111] hover:underline ml-1" href="#">
+                        <a class="inline-flex items-center space-x-2 text-[12px] font-semibold text-[#111111] ml-1 no-underline" href="#" >
                             <img alt="Profile picture of OddCommon" class="w-5 h-5 rounded-full object-cover" height="20" src="https://storage.googleapis.com/a1aa/image/7047b581-2504-40da-99aa-95e726b0b249.jpg" width="20" />
-                            <span>
+                            <span class="underline-slide" >
                                 OddCommon
                             </span>
                         </a>
                     </p>
                 </article>
             </div>
+            <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center sm:mt-[40px] sm:mt-[80px] lg:mt-[120px]">
+                Check out all submitted websites
+                <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
+                    <span>
+                        →
+                    </span>
+                    <a class="underline-slide" href="#">
+                        View Nominees
+                    </a>
+                </span>
+            </p>
         </section>
     </div>
 
-    <div class="bg-[#f7f7f7] p-6 sm:p-10">
-        <div class="max-w-[1280px] mx-auto">
+
+
+
+    <!-- ACADEMY SECTION  -->
+    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[100px] sm:mt-[200px] lg:mt-[300px]">
+        <div class="max-w-[1420px] mx-auto">
             <div class="mb-8">
-                <p class="text-[12px] text-[#1a1a1a] mb-1">
+                <p class="text-[12px] text-[#1a1a1a] mb-3">
                     Academy
                 </p>
-                <h1 class="text-[24px] sm:text-[28px] font-extrabold text-[#111111] leading-tight max-w-xs sm:max-w-md">
+                <h1 class="text-[32px] sm:text-[36px] font-extrabold text-[#111111] leading-tight mb-14 sm:max-w-md">
                     Learn from the
                     <br />
                     best instructors.
