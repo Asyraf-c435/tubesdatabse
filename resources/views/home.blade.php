@@ -57,7 +57,7 @@
                     <img alt="Golden award wreath icon" class=" w-14 h-12" height="32" src="images/awwards.png" width="92" />
                 </span>
             </h1>
-            <p class="text-[12px] font-normal text-[#1a1a1a] mb-12">
+            <p class="text-[12px] font-normal text-[#1a1a1a] mb-[6rem]">
                 Vote for the latest websites on
                 <br />
                 awwwards
@@ -145,7 +145,7 @@
                     </div>
                 </div>
             </section>
-            <p class="text-[13.5px] font-normal text-[#1a1a1a] sm:mt-[60px] sm:mt-[100px] lg:mt-[120px]">
+            <p class="text-[13.5px] font-normal text-[#1a1a1a] mt-[80px] sm:mt-[100px] lg:mt-[120px]">
                 Check out all submitted websites
                 <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
                     <span>
@@ -162,7 +162,7 @@
 
     <!-- WINNERS SECTION -->
     <div class="bg-[#e9e9e9]" id="home2">
-        <section class=" mx-auto max-w-[1420px] mx-auto py-6 sm:py-10  mt-[90px] lg:mt-[90px]">
+        <section class=" mx-auto max-w-[1420px] mx-auto py-6 sm:py-10  mt-[40px] lg:mt-[40px]">
             <p class="text-[12px] font-normal text-[#1A1A1A] mb-3">
                 Winners
             </p>
@@ -248,7 +248,7 @@
                     </p>
                 </article>
             </div>
-            <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center sm:mt-[40px] sm:mt-[80px] lg:mt-[120px]">
+            <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center mt-[80px] sm:mt-[80px] lg:mt-[120px]">
                 Check out all submitted websites
                 <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
                     <span>
@@ -266,7 +266,7 @@
 
 
     <!-- ACADEMY SECTION  -->
-    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[90px] sm:mt-[90px] lg:mt-[90px]">
+    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[90px] sm:mt-[40px] lg:mt-[40px]">
         <div class="max-w-[1420px] mx-auto">
             <div class="mb-8">
                 <p class="text-[12px] text-[#1a1a1a] mb-3">
@@ -424,7 +424,7 @@
                     </div>
                 </div>
             </div>
-            <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center sm:mt-[40px] sm:mt-[80px] lg:mt-[120px]">
+            <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center mt-[80px] sm:mt-[80px] lg:mt-[120px]">
                 Choose from over <b>hundreds</b> of courses
                 <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
                     <span>
@@ -438,16 +438,16 @@
         </div>
     </div>
 
+<!-- COLLECTION SECTION -->
 
-
-    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[90px] sm:mt-[90px] lg:mt-[90px]">
+    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[40px] sm:mt-[40px] lg:mt-[40px]">
         <div class="max-w-[1420px] mx-auto">
             <div class="mb-8">
                 <p class="text-[12px] text-[#1a1a1a] mb-3">
                     Collections
                 </p>
                 <h1 class="text-[32px] sm:text-[36px] font-extrabold text-[#111111] leading-tight mb-14 sm:max-w-md">
-                    Explore a wide 
+                    Explore a wide
                     <br />
                     variety of collections.
                 </h1>
@@ -522,8 +522,8 @@
                 </article>
             </section>
         </div>
-        <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center sm:mt-[40px] sm:mt-[80px] lg:mt-[120px]">
-        Find inspiration for your projects
+        <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center mt-[80px] sm:mt-[80px] lg:mt-[120px]">
+            Find inspiration for your projects
             <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
                 <span>
                     →
@@ -536,166 +536,579 @@
     </div>
 
 
+    <!-- DIRECTORY SECTION -->
 
-
-
-
-
-
-    <div class="bg-[#e9e9e9] text-gray-900 py-8 sm:py-12 lg:py-16 mt-[90px] sm:mt-[90px] lg:mt-[90px] mt-7">
-        <div class="text-center pt-2 pb-1 text-[10px]">
-            Directory
+    <div class="bg-[#e9e9e9] text-gray-900 py-8 sm:py-12 lg:py-16 mt-[40px] sm:mt-[40px] lg:mt-[40px] mt-7">
+        <div class="max-w-[1450px] mx-auto px-4 py-12 text-center">
+            <div class="text-center pt-2 pb-1 text-[10px]">
+                Directory
+            </div>
+            <div class="text-center mb-4 px-4">
+                <h1 class="font-extrabold text-[64px] leading-[64px] sm:text-[72px] sm:leading-[72px] lg:text-[112px] lg:leading-[112px] tracking-[-0.02em] relative inline-block mb-2">
+                    W.CREATORS
+                </h1>
+                <p class="text-[12px] mb-[6rem]">
+                    Active creators in your country.
+                </p>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
+                    <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
+                        /nk
+                    </div>
+                    <div class="mt-6 flex flex-col items-end">
+                        <img id="card1-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
+                            class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
+                            src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
+                        <div class="flex space-x-1 mt-4" id="card1-dots">
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="1" data-index="0"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="1" data-index="1"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="1" data-index="1"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="1" data-index="3"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="1" data-index="4"
+                                onclick="changeImage(this)"></button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
+                        <span>
+                            International
+                        </span>
+                        <span>
+                            60 awards
+                        </span>
+                    </div>
+                    <h2 class="text-white text-[24px] text-left font-bold mb-1">
+                        /nk.studio
+                    </h2>
+                    <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
+                        <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
+                            estudionk.com
+                        </a>
+                        <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
+                            68
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
+                    <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
+                        /nk
+                    </div>
+                    <div class="mt-6 flex flex-col items-end">
+                        <img id="card2-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
+                            class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
+                            src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
+                        <div class="flex space-x-1 mt-4" id="card2-dots">
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="2" data-index="0"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="2" data-index="2"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="2" data-index="2"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="2" data-index="3"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="2" data-index="4"
+                                onclick="changeImage(this)"></button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
+                        <span>
+                            International
+                        </span>
+                        <span>
+                            60 awards
+                        </span>
+                    </div>
+                    <h2 class="text-white text-[24px]  text-left font-bold mb-1">
+                        /nk.studio
+                    </h2>
+                    <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
+                        <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
+                            estudionk.com
+                        </a>
+                        <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
+                            68
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
+                    <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
+                        /nk
+                    </div>
+                    <div class="mt-6 flex flex-col items-end">
+                        <img id="card3-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
+                            class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
+                            src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
+                        <div class="flex space-x-1 mt-4" id="card3-dots">
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="3" data-index="0"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="3" data-index="3"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="3" data-index="2"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="3" data-index="3"
+                                onclick="changeImage(this)"></button>
+                            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                                data-card="3" data-index="4"
+                                onclick="changeImage(this)"></button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
+                        <span>
+                            International
+                        </span>
+                        <span>
+                            60 awards
+                        </span>
+                    </div>
+                    <h2 class="text-white text-[24px]  text-left font-bold mb-1">
+                        /nk.studio
+                    </h2>
+                    <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
+                        <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
+                            estudionk.com
+                        </a>
+                        <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
+                            68
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
-        <div class="text-center mb-4 px-4">
-            <h1 class="font-extrabold text-[64px] leading-[64px] sm:text-[72px] sm:leading-[72px] lg:text-[112px] lg:leading-[112px] tracking-[-0.02em] relative inline-block mb-2">
-                W.CREATORS
-            </h1>
-            <p class="text-[12px]">
-                Active creators in your country.
+        <!-- TABEL SECTION -->
+        <div class="max-w-[1250px] mx-auto px-4 py-8">
+            <div class="grid grid-cols-5 gap-x-32 text-xs text-gray-700 font-sans mb-8">
+                <div class="mb-2 whitespace-nowrap">
+                    <b>
+                        Name
+                    </b>
+                </div>
+                <div class="mb-2">
+                    <b>
+                        Profile
+                    </b>
+                </div>
+                <div class="mb-2">
+                    <b>
+                        Awards
+                    </b>
+                </div>
+                <div class="mb-2">
+                    <b>
+                        Categories
+                    </b>
+                </div>
+                <div>
+                </div>
+            </div>
+            <div class="grid grid-cols-5 gap-x-32 items-center text-xs text-gray-700 font-sans mb-6">
+                <div class="flex items-center space-x-3 whitespace-nowrap">
+                    <img alt="Black circular logo with white text 'CS' for Creavora Studio" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/a1e5b5e6-a81a-406b-725a-92fdcc55c5b8.jpg" width="24" />
+                    <span class="font-semibold underline">
+                        Creavora Studio
+                    </span>
+                    <span class="text-[8px] font-normal">
+                        PRO
+                    </span>
+                </div>
+                <div>
+                    Studio
+                </div>
+                <div>
+                    0
+                </div>
+                <div>
+                    Graphic Design
+                </div>
+                <div class="flex justify-end">
+                    <button
+                        class="text-xs text-gray-700 border border-gray-700 rounded px-3 py-1 
+                        hover:bg-black hover:text-white transition-colors duration-300 ease-in-out w-20"
+                        type="button">
+                        View
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-5 gap-x-32 items-center text-xs text-gray-700 font-sans mb-6">
+                <div class="flex items-center space-x-3 whitespace-nowrap">
+                    <img alt="Black circular logo with white text 'SA' for Surya Aditya" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/d3499e1c-3f10-46d2-4ed4-ef4161552dc5.jpg" width="24" />
+                    <span class="font-semibold underline">
+                        Surya Aditya
+                    </span>
+                    <span class="text-[8px] font-normal">
+                        PRO
+                    </span>
+                </div>
+                <div>
+                    Freelance
+                </div>
+                <div>
+                    3
+                </div>
+                <div>
+                    Web Development
+                </div>
+                <div class="flex justify-end">
+                    <button
+                        class="text-xs text-gray-700 border border-gray-700 rounded px-3 py-1 
+                        hover:bg-black hover:text-white transition-colors duration-300 ease-in-out w-20"
+                        type="button">
+                        View
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-5 gap-x-32 items-center text-xs text-gray-700 font-sans mb-6">
+                <div class="flex items-center space-x-3 whitespace-nowrap">
+                    <img alt="Gray circular profile photo with a person silhouette for Brian Stefans" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/677bac86-055c-4e24-fd6a-72b9b7cfb882.jpg" width="24" />
+                    <span class="font-semibold underline">
+                        Brian Stefans
+                    </span>
+                    <span class="text-[8px] font-normal">
+                        PRO
+                    </span>
+                </div>
+                <div>
+                    Freelance
+                </div>
+                <div>
+                    2
+                </div>
+                <div>
+                    Web Design
+                </div>
+                <div class="flex justify-end">
+                    <button
+                        class="text-xs text-gray-700 border border-gray-700 rounded px-3 py-1 
+                        hover:bg-black hover:text-white transition-colors duration-300 ease-in-out w-20"
+                        type="button">
+                        View
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-5 gap-x-32 items-center text-xs text-gray-700 font-sans">
+                <div class="flex items-center space-x-3 whitespace-nowrap">
+                    <img alt="Gray circular logo with white text 'HS' for Hatypo Studio" class="w-6 h-6 rounded-full" height="24" src="https://storage.googleapis.com/a1aa/image/6e876fdd-a2ce-40b9-4610-7ac95c568199.jpg" width="24" />
+                    <span class="font-semibold underline">
+                        Hatypo Studio
+                    </span>
+                    <span class="text-[8px] font-normal">
+                        PRO
+                    </span>
+                </div>
+                <div>
+                    Agency
+                </div>
+                <div>
+                    1
+                </div>
+                <div>
+                    Web Design , Web Development , UX...
+                </div>
+                <div class="flex justify-end">
+                    <button
+                        class="text-xs text-gray-700 border border-gray-700 rounded px-3 py-1 
+                        hover:bg-black hover:text-white transition-colors duration-300 ease-in-out w-20"
+                        type="button">
+                        View
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MARKET SECTION -->
+    <div class="bg-[#e9e9e9]">
+        <section class=" mx-auto max-w-[1420px] mx-auto py-6 sm:py-10  mt-[90px] lg:mt-[90px]">
+            <p class="text-[12px] font-normal text-[#1A1A1A] mb-3">
+                Market
             </p>
+            <h1 class="text-[32px] sm:text-[36px] font-extrabold text-[#111111] leading-[1.1] mb-14 max-w-xs sm:max-w-none">
+                A curated marketplace
+                <br />
+                for digital & physical products
+            </h1>
+            <div class="px-0">
+                <div class="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 marketbody ">
+                    <!-- Card 1 -->
+                    <article class="rounded-lg border border-gray-100 shadow-sm overflow-hidden flex flex-col cursor-pointer bg-white">
+                        <img alt="Open laptop showing a website on screen in a dark setting with red and white colors" class="w-full object-cover aspect-[5/3]" height="360" src="https://storage.googleapis.com/a1aa/image/455d5756-850d-4bc1-e2b3-a24b7e8dbd54.jpg" width="600" />
+                        <div class="p-4 flex flex-col flex-grow">
+                            <p class="text-[10px] text-gray-500 font-normal mb-1">
+                                Digital Product
+                            </p>
+                            <a class="title-link mb-4" href="#" tabindex="0">
+                                Foucault —
+                                <span class="font-semibold">
+                                    Framer agency template
+                                </span>
+                            </a>
+                            <div class="flex justify-between items-center border-t border-gray-100 pt-3 text-[11px] text-gray-600 font-normal mb-4">
+                                <p class="flex items-center gap-1">
+                                    By
+                                    <span class="font-semibold cursor-pointer hover:underline">
+                                        Satto.studio
+                                    </span>
+                                </p>
+                                <p class="flex items-center gap-1 font-bold text-gray-900">
+                                    from
+                                    <span class="text-[18px]">
+                                        59
+                                    </span>
+                                    USD
+                                </p>
+                            </div>
+                            <hr class="border-gray-100 mb-4" />
+                            <a aria-label="View Product Foucault" class="view-link" href="#" tabindex="0">
+                                View Product
+                                <i class="fas fa-arrow-right ml-2">
+                                </i>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- Card 2 -->
+                    <article class="rounded-lg border border-gray-100 shadow-sm overflow-hidden flex flex-col cursor-pointer bg-white">
+                        <img alt="Solar energy website screenshots with blue and white colors and a person wearing a helmet" class="w-full object-cover aspect-[5/3]" height="360" src="https://storage.googleapis.com/a1aa/image/91664c97-0a11-4c3f-4eaa-55889a69c145.jpg" width="600" />
+                        <div class="p-4 flex flex-col flex-grow">
+                            <p class="text-[10px] text-gray-500 font-normal mb-1">
+                                Digital Product
+                            </p>
+                            <a class="title-link mb-4" href="#" tabindex="0">
+                                Solarify - Solar &amp; Energy Free Framer Template
+                            </a>
+                            <div class="flex justify-between items-center border-t border-gray-100 pt-3 text-[11px] text-gray-600 font-normal mb-4">
+                                <p class="flex items-center gap-1">
+                                    By
+                                    <span class="font-semibold cursor-pointer hover:underline">
+                                        Pentaclay
+                                    </span>
+                                </p>
+                                <p class="flex items-center gap-1 font-bold text-gray-900">
+                                    from
+                                    <span class="text-[18px]">
+                                        59
+                                    </span>
+                                    USD
+                                </p>
+                            </div>
+                            <hr class="border-gray-100 mb-4" />
+                            <a aria-label="View Product Solarify" class="view-link" href="#" tabindex="0">
+                                View Product
+                                <i class="fas fa-arrow-right ml-2">
+                                </i>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- Card 3 -->
+                    <article class="rounded-lg border border-gray-100 shadow-sm overflow-hidden flex flex-col cursor-pointer bg-white">
+                        <img alt="Modern white house with blue sky background and glass windows" class="w-full object-cover aspect-[5/3]" height="360" src="https://storage.googleapis.com/a1aa/image/3f6dc297-fb99-4f5a-d52c-5e494b40a020.jpg" width="600" />
+                        <div class="p-4 flex flex-col flex-grow">
+                            <p class="text-[10px] text-gray-500 font-normal mb-1">
+                                Digital Product
+                            </p>
+                            <a class="title-link mb-4" href="#" tabindex="0">
+                                Haven - Real Estate Framer Template
+                            </a>
+                            <div class="flex justify-between items-center border-t border-gray-100 pt-3 text-[11px] text-gray-600 font-normal mb-4">
+                                <p class="flex items-center gap-1">
+                                    By
+                                    <span class="font-semibold cursor-pointer hover:underline">
+                                        Hamza Ehsan
+                                    </span>
+                                </p>
+                                <p class="flex items-center gap-1 font-bold text-gray-900">
+                                    from
+                                    <span class="text-[18px]">
+                                        99
+                                    </span>
+                                    USD
+                                </p>
+                            </div>
+                            <hr class="border-gray-100 mb-4" />
+                            <a aria-label="View Product Haven" class="view-link" href="#" tabindex="0">
+                                View Product
+                                <i class="fas fa-arrow-right ml-2">
+                                </i>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- Card 4 -->
+                    <article class="rounded-lg border border-gray-100 shadow-sm overflow-hidden flex flex-col cursor-pointer bg-white ">
+                        <img alt="Closeup of laptop screen showing woman with red hair and red background" class="w-full object-cover aspect-[5/3]" height="360" src="https://storage.googleapis.com/a1aa/image/8710b5f8-dc26-4200-2793-a69e09e2d189.jpg" width="600" />
+                        <div class="p-4 flex flex-col flex-grow">
+                            <p class="text-[10px] text-gray-500 font-normal mb-1">
+                                Digital Product
+                            </p>
+                            <a class="title-link mb-4" href="#" tabindex="0">
+                                Zanzibar - Framer Agency &amp; Portfolio Template
+                            </a>
+                            <div class="flex justify-between items-center border-t border-gray-100 pt-3 text-[11px] text-gray-600 font-normal mb-4">
+                                <p class="flex items-center gap-1">
+                                    By
+                                    <span class="font-semibold cursor-pointer hover:underline">
+                                        Izabysof
+                                    </span>
+                                </p>
+                                <p class="flex items-center gap-1 font-bold text-gray-900">
+                                    from
+                                    <span class="text-[18px]">
+                                        99
+                                    </span>
+                                    USD
+                                </p>
+                            </div>
+                            <hr class="border-gray-100 mb-4" />
+                            <a aria-label="View Product Zanzibar" class="view-link" href="#" tabindex="0">
+                                View Product
+                                <i class="fas fa-arrow-right ml-2">
+                                </i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+
+            <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center mt-[80px] sm:mt-[80px] lg:mt-[120px]">
+                Check out all submitted websites
+                <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
+                    <span>
+                        →
+                    </span>
+                    <a class="underline-slide" href="#">
+                        View Winners
+                    </a>
+                </span>
+            </p>
+        </section>
+    </div>
+
+    <!-- BE PRO AND SUBMIT WEBSITE SECTION -->
+    <div class="bg-[#e9e9e9] p-6">
+        <div class="max-w-[1420px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-[6rem]">
+            <section class="relative rounded-lg overflow-hidden min-h-[280px]" style="background-color: #111111;">
+                <img alt="Man in suit speaking on stage with microphone, dark overlay" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20" height="400" src="https://storage.googleapis.com/a1aa/image/fd117a6b-0b46-4c88-b70d-356f8c2d4db9.jpg" width="600" />
+                <div class="card-content p-8">
+                    <p class="text-white text-xs-custom font-normal">
+                        Share your work
+                    </p>
+                    <h2 class="text-white font-extrabold text-2xl leading-tight max-w-[14ch] mt-1" id="judul-bray">
+                        Submit your website for visibility and recognition
+                    </h2>
+                    <div class="btn-container">
+                        <button class="btn-fixed" type="button">
+                            Submit Website
+                        </button>
+                    </div>
+                </div>
+                <p class="bottom-right-text">
+                    Got questions? Read our
+                    <a class="underline" href="#">
+                        FAQs
+                    </a>
+                </p>
+            </section>
+            <section class="relative rounded-lg overflow-hidden min-h-[280px]" style="background-color: #111111;">
+                <img alt="Audience in dark conference hall with stage and screen, dark overlay" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20" height="400" src="https://storage.googleapis.com/a1aa/image/d19b1839-8519-4e58-2b24-667d84db182f.jpg" width="600" />
+                <div class="card-content p-8">
+                    <p class="text-white text-xs-custom font-normal">
+                        Be a member
+                    </p>
+                    <h2 class="text-white font-extrabold text-2xl leading-tight max-w-[14ch] mt-1" id="judul-bray">
+                        Get access to special pro features
+                    </h2>
+                    <div class="btn-container">
+                        <button class="btn-fixed" type="button">
+                            Be Pro
+                        </button>
+                    </div>
+                </div>
+                <p class="bottom-right-text">
+                    Got questions? Read our
+                    <a class="underline" href="#">
+                        FAQs
+                    </a>
+                </p>
+            </section>
         </div>
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Card 1 -->
-            <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
-                <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
-                    /nk
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <div class="bg-[#e9e9e9] text-black mt-[12rem]">
+        <footer class="max-w-[1420px] mx-auto px-6 py-8">
+            <h2 class="font-bold text-base mb-8">w.</h2>
+            <div class="flex flex-wrap justify-between items-start">
+                <div class="w-1/2 sm:w-auto mb-6 sm:mb-0">
+                    <ul class="space-y-2 text-[10px] font-semibold leading-4">
+                        <li><a href="">Websites</a></li>
+                        <li><a href="">Collections</a></li>
+                        <li><a href="">Elements</a></li>
+                    </ul>
                 </div>
-                <div class="mt-6 flex flex-col items-end">
-                    <img id="card1-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
-                        class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
-                        src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
-                    <div class="flex space-x-1 mt-4" id="card1-dots">
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="1" data-index="0"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="1" data-index="1"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="1" data-index="1"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="1" data-index="3"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="1" data-index="4"
-                            onclick="changeImage(this)"></button>
-                    </div>
+                <div class="w-1/6 sm:w-auto mb-6 sm:mb-0">
+                    <ul class="space-y-2 text-[10px] font-semibold leading-4">
+                        <li><a href="">Academy</a></li>
+                        <li><a href="">Jobs</a></li>
+                        <li><a href="">Market</a></li>
+                    </ul>
                 </div>
-                <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
-                    <span>
-                        International
-                    </span>
-                    <span>
-                        60 awards
-                    </span>
+                <div class="w-1/6 sm:w-auto mb-6 sm:mb-0">
+                    <ul class="space-y-2 text-[10px] font-semibold leading-4">
+                        <li><a href="">Directory</a></li>
+                        <li><a href="">Conferences</a></li>
+                    </ul>
                 </div>
-                <h2 class="text-white text-[24px] font-bold mb-1">
-                    /nk.studio
-                </h2>
-                <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
-                    <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
-                        estudionk.com
-                    </a>
-                    <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
-                        68
-                    </div>
+                <div class="w-1/6 sm:w-auto mb-6 sm:mb-0">
+                    <ul class="space-y-2 text-[10px] font-semibold leading-4">
+                        <li><a href="">FAQs</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
                 </div>
-            </article>
-            <!-- Card 2 -->
-            <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
-                <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
-                    /nk
+                <div class="w-full sm:w-auto bg-[#e6e6e6] rounded-md px-4 py-3 text-[10px] font-normal flex items-center gap-2">
+                    <span>Next Conferences</span>
+                    <i class="far fa-calendar-alt text-[12px]"></i>
+                    <span class="font-semibold">Berlin, Mumbai &amp; Tokyo</span>
                 </div>
-                <div class="mt-6 flex flex-col items-end">
-                    <img id="card2-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
-                        class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
-                        src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
-                    <div class="flex space-x-1 mt-4" id="card2-dots">
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="2" data-index="0"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="2" data-index="2"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="2" data-index="2"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="2" data-index="3"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="2" data-index="4"
-                            onclick="changeImage(this)"></button>
-                    </div>
+            </div>
+            <hr class="border-t border-dotted border-gray-400 my-6" />
+            <div class="flex flex-wrap justify-between text-[8px] font-normal">
+                <div class="flex space-x-4">
+                    <span>Cookies Policy</span>
+                    <span>Legal Terms</span>
+                    <span>Privacy Policy</span>
                 </div>
-                <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
-                    <span>
-                        International
-                    </span>
-                    <span>
-                        60 awards
-                    </span>
+                <div class="flex space-x-3 items-center">
+                    <span class="font-semibold">Connect:</span>
+                    <span>Instagram</span>
+                    <span>LinkedIn</span>
+                    <span>Twitter</span>
+                    <span>Facebook</span>
+                    <span>YouTube</span>
+                    <span>TikTok</span>
+                    <span>Pinterest</span>
                 </div>
-                <h2 class="text-white text-[24px] font-bold mb-1">
-                    /nk.studio
-                </h2>
-                <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
-                    <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
-                        estudionk.com
-                    </a>
-                    <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
-                        68
-                    </div>
-                </div>
-            </article>
-            <!-- Card 3 -->
-            <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
-                <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
-                    /nk
-                </div>
-                <div class="mt-6 flex flex-col items-end">
-                    <img id="card3-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
-                        class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
-                        src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
-                    <div class="flex space-x-1 mt-4" id="card3-dots">
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="3" data-index="0"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="3" data-index="3"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="3" data-index="2"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="3" data-index="3"
-                            onclick="changeImage(this)"></button>
-                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
-                            data-card="3" data-index="4"
-                            onclick="changeImage(this)"></button>
-                    </div>
-                </div>
-                <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
-                    <span>
-                        International
-                    </span>
-                    <span>
-                        60 awards
-                    </span>
-                </div>
-                <h2 class="text-white text-[24px] font-bold mb-1">
-                    /nk.studio
-                </h2>
-                <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
-                    <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
-                        estudionk.com
-                    </a>
-                    <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
-                        68
-                    </div>
-                </div>
-            </article>
-        </div>
+            </div>
+        </footer>
     </div>
 </x-layout>
