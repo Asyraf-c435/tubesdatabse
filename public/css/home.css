@@ -47,11 +47,12 @@
     cursor: pointer;
     display: block;
   }
+  
   .image-wrapper img {
     display: block;
     width: 100%;
-    height: auto;
-    max-height: 17rem; 
+    height: 20rem;
+    max-height: auto; 
     object-fit: cover;
     transition: transform 0.3s ease;
   }
@@ -130,3 +131,59 @@
     padding-left: 1.5rem; /* reduced left padding to bring content closer to left edge */
     padding-right: 1.5rem; /* reduced right padding to bring content closer to right edge */
   }
+
+  .custom-image-container {
+    position: relative;
+    border-radius: 0.375rem; /* rounded-md */
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .custom-image-container::after {
+    content: "";
+    position: absolute;
+    inset: 0; /* menutupi seluruh container */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.837), rgba(0,0,0,0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .custom-image-container:hover::after {
+    opacity: 1;
+  }
+  
+  .custom-hover-text {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: white;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+    user-select: none;
+  }
+  
+  .custom-image-container:hover .custom-hover-text {
+    opacity: 1;
+  }
+  
+  .custom-hover-text .website-label {
+    font-size: 0.625rem; /* 10px */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 0.4rem;
+  }
+  
+  .custom-hover-text .title {
+    font-size: 1rem; /* 16px */
+    font-weight: 500;
+  }
+  
+  #main-image {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}

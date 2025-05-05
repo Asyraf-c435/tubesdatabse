@@ -145,7 +145,7 @@
                     </div>
                 </div>
             </section>
-            <p class="text-[13.5px] font-normal text-[#1a1a1a] sm:mt-[40px] sm:mt-[80px] lg:mt-[120px]">
+            <p class="text-[13.5px] font-normal text-[#1a1a1a] sm:mt-[60px] sm:mt-[100px] lg:mt-[120px]">
                 Check out all submitted websites
                 <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
                     <span>
@@ -162,7 +162,7 @@
 
     <!-- WINNERS SECTION -->
     <div class="bg-[#e9e9e9]" id="home2">
-        <section class="max-w-[1420px] mx-auto py-6 sm:py-10  mt-[90px] lg:mt-[90px]">
+        <section class=" mx-auto max-w-[1420px] mx-auto py-6 sm:py-10  mt-[90px] lg:mt-[90px]">
             <p class="text-[12px] font-normal text-[#1A1A1A] mb-3">
                 Winners
             </p>
@@ -173,7 +173,17 @@
             </h1>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <article class="space-y-2">
-                    <img alt="Beyond Speed race car pitstop scene with blurred background and white rectangular border around text" class="max-h-[350px] rounded-lg w-full object-cover" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/0d6049f4-6723-4f2e-bbd0-83b80b64fb4e.jpg" width="900" />
+                    <a aria-label="Visit Zecchinon website" class="image-wrapper" href="#">
+                        <img alt="Screenshot of Zecchinon website showing a modern kitchen with wooden cabinets and a woman" src="https://storage.googleapis.com/a1aa/image/8e087b5e-e95f-4dff-a425-6656e6170b6d.jpg" />
+                        <div class="hover-text">
+                            <div class="website-label">
+                                WEBSITE
+                            </div>
+                            <div class="title">
+                                Zecchinon
+                            </div>
+                        </div>
+                    </a>
                     <p class="text-[14px] font-semibold text-[#111111] flex items-center">
                         Charles Leclerc
                         <span class="text-[12px] font-normal text-[#6B6B6B] ml-2 mr-2">
@@ -188,7 +198,17 @@
                     </p>
                 </article>
                 <article class="space-y-2">
-                    <img alt="Nite Riot woman in black outfit posing against beige background" class="max-h-[350px] rounded-lg w-full object-cover" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/54109abb-a1c7-4b73-4e3e-73a6344b353b.jpg" width="600" />
+                    <a aria-label="Visit Zecchinon website" class="image-wrapper" href="#">
+                        <img alt="Screenshot of Zecchinon website showing a modern kitchen with wooden cabinets and a woman" src="https://storage.googleapis.com/a1aa/image/8e087b5e-e95f-4dff-a425-6656e6170b6d.jpg" />
+                        <div class="hover-text">
+                            <div class="website-label">
+                                WEBSITE
+                            </div>
+                            <div class="title">
+                                Zecchinon
+                            </div>
+                        </div>
+                    </a>
                     <p class="text-[14px] font-semibold text-[#111111] flex items-center">
                         Nite Riot
                         <span class="text-[12px] font-normal text-[#6B6B6B] ml-2 mr-2">
@@ -203,15 +223,25 @@
                     </p>
                 </article>
                 <article class="space-y-2">
-                    <img alt="Vincent van Gogh black and white portrait with text overlay" class="max-h-[350px] rounded-lg w-full object-cover" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/20a2e5a9-dfcf-4557-c531-b2f8fc488677.jpg" width="600" />
+                    <a aria-label="Visit Zecchinon website" class="image-wrapper" href="#">
+                        <img alt="Screenshot of Zecchinon website showing a modern kitchen with wooden cabinets and a woman" src="https://storage.googleapis.com/a1aa/image/8e087b5e-e95f-4dff-a425-6656e6170b6d.jpg" />
+                        <div class="hover-text">
+                            <div class="website-label">
+                                WEBSITE
+                            </div>
+                            <div class="title">
+                                Zecchinon
+                            </div>
+                        </div>
+                    </a>
                     <p class="text-[14px] font-semibold text-[#111111] flex items-center">
                         Elimar
                         <span class="text-[12px] font-normal text-[#6B6B6B] ml-2 mr-2">
                             by
                         </span>
-                        <a class="inline-flex items-center space-x-2 text-[12px] font-semibold text-[#111111] ml-1 no-underline" href="#" >
+                        <a class="inline-flex items-center space-x-2 text-[12px] font-semibold text-[#111111] ml-1 no-underline" href="#">
                             <img alt="Profile picture of OddCommon" class="w-5 h-5 rounded-full object-cover" height="20" src="https://storage.googleapis.com/a1aa/image/7047b581-2504-40da-99aa-95e726b0b249.jpg" width="20" />
-                            <span class="underline-slide" >
+                            <span class="underline-slide">
                                 OddCommon
                             </span>
                         </a>
@@ -225,7 +255,7 @@
                         →
                     </span>
                     <a class="underline-slide" href="#">
-                        View Nominees
+                        View Winners
                     </a>
                 </span>
             </p>
@@ -236,7 +266,7 @@
 
 
     <!-- ACADEMY SECTION  -->
-    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[100px] sm:mt-[200px] lg:mt-[300px]">
+    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[90px] sm:mt-[90px] lg:mt-[90px]">
         <div class="max-w-[1420px] mx-auto">
             <div class="mb-8">
                 <p class="text-[12px] text-[#1a1a1a] mb-3">
@@ -394,6 +424,278 @@
                     </div>
                 </div>
             </div>
+            <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center sm:mt-[40px] sm:mt-[80px] lg:mt-[120px]">
+                Choose from over <b>hundreds</b> of courses
+                <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
+                    <span>
+                        →
+                    </span>
+                    <a class="underline-slide" href="#">
+                        View Academy
+                    </a>
+                </span>
+            </p>
+        </div>
+    </div>
+
+
+
+    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[90px] sm:mt-[90px] lg:mt-[90px]">
+        <div class="max-w-[1420px] mx-auto">
+            <div class="mb-8">
+                <p class="text-[12px] text-[#1a1a1a] mb-3">
+                    Collections
+                </p>
+                <h1 class="text-[32px] sm:text-[36px] font-extrabold text-[#111111] leading-tight mb-14 sm:max-w-md">
+                    Explore a wide 
+                    <br />
+                    variety of collections.
+                </h1>
+            </div>
+            <section class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <article>
+                    <div class="custom-image-container">
+                        <img
+                            alt="Orange background with blue half circle shape on top center and black text 31% with Spotify logo on bottom left"
+                            class="w-full h-auto object-cover"
+                            height="320"
+                            src="https://storage.googleapis.com/a1aa/image/2e75cf81-6abd-428e-e253-8e41d8a5e330.jpg"
+                            width="600" />
+                        <div class="custom-hover-text">
+                            <div class="website-label">WEBSITE</div>
+                            <div class="title">Zecchinon</div>
+                        </div>
+                    </div>
+                    <div class="mt-2 flex items-center gap-1 px-1 text-[14px]">
+                        <p class="text-[14px] font-semibold text-[#111111] flex items-center">
+                            <a href="#">
+                                Elimar
+                            </a>
+                            <span class="text-[12px] font-normal flex text-[#6B6B6B] ml-2 mr-2  self-end">
+                                followed by
+                            </span>
+
+                        <div class="flex -space-x-3">
+                            <img alt="Black circular icon with letter O" class="w-6 h-6 rounded-full border-2 border-white" height="24" src="https://storage.googleapis.com/a1aa/image/765da937-82d0-4d10-0457-dbd865591662.jpg" width="24" />
+                            <img alt="Black circular icon with letters PT" class="w-6 h-6 rounded-full border-2 border-white" height="24" src="https://storage.googleapis.com/a1aa/image/4d325529-311a-43ac-87d2-35691b8a180f.jpg" width="24" />
+                            <img alt="Black circular icon with letter O" class="w-6 h-6 rounded-full border-2 border-white" height="24" src="https://storage.googleapis.com/a1aa/image/765da937-82d0-4d10-0457-dbd865591662.jpg" width="24" />
+                        </div>
+                        <span class="text-black font-normal">
+                            +1465
+                        </span>
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <div class="custom-image-container">
+                        <img
+                            alt="Orange background with blue half circle shape on top center and black text 31% with Spotify logo on bottom left"
+                            class="w-full h-auto object-cover"
+                            height="320"
+                            src="https://storage.googleapis.com/a1aa/image/2e75cf81-6abd-428e-e253-8e41d8a5e330.jpg"
+                            width="600" />
+                        <div class="custom-hover-text">
+                            <div class="website-label">WEBSITE</div>
+                            <div class="title">Zecchinon</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-2 flex items-center gap-1 px-1 text-[14px]">
+                        <p class="text-[14px] font-semibold text-[#111111] flex items-center">
+                            <a href="#">
+                                Elimar
+                            </a>
+                            <span class="text-[12px] font-normal flex text-[#6B6B6B] ml-2 mr-2  self-end">
+                                followed by
+                            </span>
+
+                        <div class="flex -space-x-3">
+                            <img alt="Black circular icon with letter O" class="w-6 h-6 rounded-full border-2 border-white" height="24" src="https://storage.googleapis.com/a1aa/image/765da937-82d0-4d10-0457-dbd865591662.jpg" width="24" />
+                            <img alt="Black circular icon with letters PT" class="w-6 h-6 rounded-full border-2 border-white" height="24" src="https://storage.googleapis.com/a1aa/image/4d325529-311a-43ac-87d2-35691b8a180f.jpg" width="24" />
+                            <img alt="Black circular icon with letter O" class="w-6 h-6 rounded-full border-2 border-white" height="24" src="https://storage.googleapis.com/a1aa/image/765da937-82d0-4d10-0457-dbd865591662.jpg" width="24" />
+                        </div>
+                        <span class="text-black font-normal">
+                            +1465
+                        </span>
+                        </p>
+                    </div>
+                </article>
+            </section>
+        </div>
+        <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center sm:mt-[40px] sm:mt-[80px] lg:mt-[120px]">
+        Find inspiration for your projects
+            <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
+                <span>
+                    →
+                </span>
+                <a class="underline-slide" href="#">
+                    View Collections
+                </a>
+            </span>
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="bg-[#e9e9e9] text-gray-900 py-8 sm:py-12 lg:py-16 mt-[90px] sm:mt-[90px] lg:mt-[90px] mt-7">
+        <div class="text-center pt-2 pb-1 text-[10px]">
+            Directory
+        </div>
+        <div class="text-center mb-4 px-4">
+            <h1 class="font-extrabold text-[64px] leading-[64px] sm:text-[72px] sm:leading-[72px] lg:text-[112px] lg:leading-[112px] tracking-[-0.02em] relative inline-block mb-2">
+                W.CREATORS
+            </h1>
+            <p class="text-[12px]">
+                Active creators in your country.
+            </p>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
+                <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
+                    /nk
+                </div>
+                <div class="mt-6 flex flex-col items-end">
+                    <img id="card1-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
+                        class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
+                        src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
+                    <div class="flex space-x-1 mt-4" id="card1-dots">
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="1" data-index="0"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="1" data-index="1"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="1" data-index="1"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="1" data-index="3"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="1" data-index="4"
+                            onclick="changeImage(this)"></button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
+                    <span>
+                        International
+                    </span>
+                    <span>
+                        60 awards
+                    </span>
+                </div>
+                <h2 class="text-white text-[24px] font-bold mb-1">
+                    /nk.studio
+                </h2>
+                <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
+                    <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
+                        estudionk.com
+                    </a>
+                    <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
+                        68
+                    </div>
+                </div>
+            </article>
+            <!-- Card 2 -->
+            <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
+                <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
+                    /nk
+                </div>
+                <div class="mt-6 flex flex-col items-end">
+                    <img id="card2-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
+                        class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
+                        src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
+                    <div class="flex space-x-1 mt-4" id="card2-dots">
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="2" data-index="0"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="2" data-index="2"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="2" data-index="2"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="2" data-index="3"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="2" data-index="4"
+                            onclick="changeImage(this)"></button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
+                    <span>
+                        International
+                    </span>
+                    <span>
+                        60 awards
+                    </span>
+                </div>
+                <h2 class="text-white text-[24px] font-bold mb-1">
+                    /nk.studio
+                </h2>
+                <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
+                    <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
+                        estudionk.com
+                    </a>
+                    <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
+                        68
+                    </div>
+                </div>
+            </article>
+            <!-- Card 3 -->
+            <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
+                <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
+                    /nk
+                </div>
+                <div class="mt-6 flex flex-col items-end">
+                    <img id="card3-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
+                        class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
+                        src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
+                    <div class="flex space-x-1 mt-4" id="card3-dots">
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="3" data-index="0"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="3" data-index="3"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="3" data-index="2"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="3" data-index="3"
+                            onclick="changeImage(this)"></button>
+                        <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+                            data-card="3" data-index="4"
+                            onclick="changeImage(this)"></button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
+                    <span>
+                        International
+                    </span>
+                    <span>
+                        60 awards
+                    </span>
+                </div>
+                <h2 class="text-white text-[24px] font-bold mb-1">
+                    /nk.studio
+                </h2>
+                <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
+                    <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
+                        estudionk.com
+                    </a>
+                    <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
+                        68
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
 </x-layout>
