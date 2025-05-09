@@ -76,10 +76,9 @@
         </div>
         <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
             <a href="/sites">
-
                 <img alt="Large blurred background image with red and orange highlight behind a smaller image of Charles Leclerc in racing suit behind a fence" class="w-full rounded-md" height="400" src="https://storage.googleapis.com/a1aa/image/26f5abd5-0bda-455d-d8e4-87e6571b2741.jpg" width="1300" />
             </a>
-        </div><br><br>
+        </div>
 
 
         <!-- NOMINEES SECTION -->
@@ -192,7 +191,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Nominees
-                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
+                        
                     </a>
                 </span>
             </p>
@@ -299,7 +298,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Winners
-                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
+                       
                     </a>
                 </span>
             </p>
@@ -476,7 +475,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Academy
-                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
+                       
                     </a>
                 </span>
             </p>
@@ -575,7 +574,7 @@
                 </span>
                 <a class="underline-slide" href="#">
                     View Collections
-                    <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
+                    
                 </a>
             </span>
         </p>
@@ -889,7 +888,6 @@
                 </span>
                 <a class="underline-slide" href="#">
                     View Directory
-                    <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                 </a>
             </span>
         </p>
@@ -1056,7 +1054,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Winners
-                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
+                        
                     </a>
                 </span>
             </p>
