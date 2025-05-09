@@ -171,3 +171,30 @@ modalOverlay.addEventListener('click', closeModal);
         }, 300);
     }
 });
+
+const stickyBar = document.getElementById('stickyBar');
+const scrollButton = document.getElementById('scrollUpButton');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    [stickyBar, scrollButton].forEach(el => {
+      el.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      el.classList.add('opacity-100', 'translate-y-0');
+    });
+  } else {
+    [stickyBar, scrollButton].forEach(el => {
+      el.classList.remove('opacity-100', 'translate-y-0');
+      el.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+    });
+  }
+});
+
+const scrollUpButton = document.getElementById('scrollUpButton');
+
+scrollButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+

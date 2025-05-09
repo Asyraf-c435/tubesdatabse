@@ -72,6 +72,7 @@
   .image-wrapper:hover::after {
     opacity: 1;
   }
+  
   .hover-text {
     position: absolute;
     bottom: 1.2rem; /* increased padding */
@@ -289,4 +290,29 @@ DIATAS FOORTER */
   color: white;
   font-weight: 400;
   z-index: 10;
+}
+
+.visit-sotd {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.visit-sotd:hover {
+  background-color: #3e3e3e; /* Tailwind gray-600 */
+  color: #f9fafb; /* Tailwind gray-50 */
+  border-color: #f9fafb; /* Tailwind gray-50 */
+  transform: scale(1.05);
+}
+
+button:hover i {
+  animation: moveUp 0.3s ease forwards;
+}
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

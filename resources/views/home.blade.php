@@ -1,5 +1,35 @@
 <x-layout>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+
+    <div class="relative">
+        <!-- Sticky Bar yang muncul setelah scroll -->
+        <button
+            id="scrollUpButton"
+            class="fixed bottom-3.5 left-8 translate-y-4 opacity-0 w-14 h-14
+  z-50 pointer-events-none transition-all duration-500 ease-in-out
+  flex items-center justify-center border-2 border-gray-600 bg-[#222222] p-3 rounded-lg"
+            aria-label="Scroll up">
+            <i class="fas fa-arrow-up text-gray-300 text-xl"></i>
+        </button>
+
+        <div
+            id="stickyBar"
+            class="fixed bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0
+           z-50 pointer-events-none transition-all duration-500 ease-in-out
+           flex items-center text-center space-x-2 rounded-lg border-2 border-gray-600 bg-[#3e3e3e] p-1"
+            style="font-family: 'Inter', sans-serif;">
+
+            <div class="flex items-center justify-center w-15 h-10 rounded-md px-4 py-2 bg-[#222222] text-white font-semibold text-lg select-none m-1">
+                Tubes .
+            </div>
+            <a href="#nominees" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-white transition">Nominees</a>
+            <a href="#courses" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-white transition">Courses</a>
+            <a href="#collections" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-white transition">Collections</a>
+            <a href="#directory" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-white transition">Directory</a>
+            <a href="#market" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-white transition">Market</a>
+            <a href="#" class="visit-sotd text-gray-900 text-xs px-3 py-2 rounded-md border-2 border-gray-300 bg-[#e9e9e9] font-semibold">Visit Sotd.</a>
+        </div>
+    </div>
     <div class="bg-[#e9e9e9] text-[#1a1a1a]">
         <div class="max-w-[1690px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-center text-[10px] leading-[12px] pt-3 pb-1 font-normal">
@@ -21,6 +51,7 @@
                     <img alt="Apart logo, circular white background with letter A in black" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/18737bf1-978b-42e0-ec29-8b3dd11200ce.jpg" width="20" />
                     <a class="underline-slide" href="#">
                         Apart
+                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                     </a>
                     <span class="text-[10px] font-semibold">
                         PRO
@@ -31,23 +62,28 @@
                     </i>
                     <a class="underline-slide" href="#">
                         Uprising™
+                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                     </a>
                 </div>
                 <div class="flex items-center space-x-1">
                     <img alt="Yazo logo, circular black background with letter Y in white" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/98cfe885-d60f-4100-8f2d-2652fc8c2530.jpg" width="20" />
                     <a class="underline-slide" href="#">
                         Yazo
+                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                     </a>
                 </div>
             </div>
         </div>
         <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-            <img alt="Large blurred background image with red and orange highlight behind a smaller image of Charles Leclerc in racing suit behind a fence" class="w-full rounded-md" height="400" src="https://storage.googleapis.com/a1aa/image/26f5abd5-0bda-455d-d8e4-87e6571b2741.jpg" width="1300" />
+            <a href="/sites">
+
+                <img alt="Large blurred background image with red and orange highlight behind a smaller image of Charles Leclerc in racing suit behind a fence" class="w-full rounded-md" height="400" src="https://storage.googleapis.com/a1aa/image/26f5abd5-0bda-455d-d8e4-87e6571b2741.jpg" width="1300" />
+            </a>
         </div><br><br>
 
 
         <!-- NOMINEES SECTION -->
-        <div class="max-w-[1450px] mx-auto px-4 py-12 text-center">
+        <div class="max-w-[1450px] mx-auto px-4 py-12 text-center" id="nominees">
             <p class="text-[9px] font-normal text-[#1a1a1a] mb-2">
                 Latest
             </p>
@@ -86,6 +122,7 @@
                             <img alt="Atrio logo black circle" class="inline-block w-4 h-4 rounded-full" src="https://storage.googleapis.com/a1aa/image/ec646dd5-7055-4253-7506-ff6fd9b6150a.jpg" />
                             <a class="underline-slide" href="#">
                                 Apart
+                                <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                             </a>
                         </span>
                     </div>
@@ -113,6 +150,7 @@
                             <img alt="Todordimov logo black circle" class="inline-block w-4 h-4 rounded-full" src="https://storage.googleapis.com/a1aa/image/9ae4d102-55af-4cb4-935a-8e67c5c6b03d.jpg" />
                             <a class="underline-slide" href="#">
                                 todordimov
+                                <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                             </a>
                         </span>
                     </div>
@@ -140,6 +178,7 @@
                             <img alt="Taikisato logo black circle" class="inline-block w-4 h-4 rounded-full" src="https://storage.googleapis.com/a1aa/image/ca3cad85-0ced-481a-93f6-c68ccc859496.jpg" />
                             <a class="underline-slide" href="#">
                                 taikisato
+                                <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                             </a>
                         </span>
                     </div>
@@ -153,6 +192,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Nominees
+                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                     </a>
                 </span>
             </p>
@@ -193,6 +233,7 @@
                             <img alt="Profile picture of Apart" class="w-5 h-5 rounded-full object-cover" height="20" src="https://storage.googleapis.com/a1aa/image/f09ce540-ac5a-4d5f-8c91-eaa4d009f531.jpg" width="20" />
                             <span class="underline-slide no-underline">
                                 Apart
+                                <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                             </span>
                         </a>
                     </p>
@@ -218,6 +259,7 @@
                             <img alt="Profile picture of BL/S®" class="w-5 h-5 rounded-full object-cover" height="20" src="https://storage.googleapis.com/a1aa/image/611e395c-f3a9-4003-ffb8-228ef18808f1.jpg" width="20" />
                             <span class="underline-slide no-underline">
                                 BL/S®
+                                <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                             </span>
                         </a>
                     </p>
@@ -243,6 +285,7 @@
                             <img alt="Profile picture of OddCommon" class="w-5 h-5 rounded-full object-cover" height="20" src="https://storage.googleapis.com/a1aa/image/7047b581-2504-40da-99aa-95e726b0b249.jpg" width="20" />
                             <span class="underline-slide">
                                 OddCommon
+                                <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                             </span>
                         </a>
                     </p>
@@ -256,6 +299,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Winners
+                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                     </a>
                 </span>
             </p>
@@ -266,7 +310,7 @@
 
 
     <!-- ACADEMY SECTION  -->
-    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[90px] sm:mt-[40px] lg:mt-[40px]">
+    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[90px] sm:mt-[40px] lg:mt-[40px]" id="courses">
         <div class="max-w-[1420px] mx-auto">
             <div class="mb-8">
                 <p class="text-[12px] text-[#1a1a1a] mb-3">
@@ -432,15 +476,16 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Academy
+                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                     </a>
                 </span>
             </p>
         </div>
     </div>
 
-<!-- COLLECTION SECTION -->
+    <!-- COLLECTION SECTION -->
 
-    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[40px] sm:mt-[40px] lg:mt-[40px]">
+    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[40px] sm:mt-[40px] lg:mt-[40px]" id="collections">
         <div class="max-w-[1420px] mx-auto">
             <div class="mb-8">
                 <p class="text-[12px] text-[#1a1a1a] mb-3">
@@ -530,6 +575,7 @@
                 </span>
                 <a class="underline-slide" href="#">
                     View Collections
+                    <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                 </a>
             </span>
         </p>
@@ -538,7 +584,7 @@
 
     <!-- DIRECTORY SECTION -->
 
-    <div class="bg-[#e9e9e9] text-gray-900 py-8 sm:py-12 lg:py-16 mt-[40px] sm:mt-[40px] lg:mt-[40px] mt-7">
+    <div class="bg-[#e9e9e9] text-gray-900 py-8 sm:py-12 lg:py-16 mt-[40px] sm:mt-[40px] lg:mt-[40px] mt-7" id="directory">
         <div class="max-w-[1450px] mx-auto px-4 py-12 text-center">
             <div class="text-center pt-2 pb-1 text-[10px]">
                 Directory
@@ -834,11 +880,24 @@
                 </div>
             </div>
         </div>
+
+        <p class="text-[13.5px] font-normal text-[#1a1a1a] text-center mt-[80px] sm:mt-[80px] lg:mt-[120px]">
+            Connect with over 5,599 Agencies and Professionals
+            <span class="inline-flex items-center gap-1 font-semibold cursor-pointer select-none">
+                <span>
+                    →
+                </span>
+                <a class="underline-slide" href="#">
+                    View Directory
+                    <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
+                </a>
+            </span>
+        </p>
     </div>
 
 
     <!-- MARKET SECTION -->
-    <div class="bg-[#e9e9e9]">
+    <div class="bg-[#e9e9e9]" id="market">
         <section class=" mx-auto max-w-[1420px] mx-auto py-6 sm:py-10  mt-[90px] lg:mt-[90px]">
             <p class="text-[12px] font-normal text-[#1A1A1A] mb-3">
                 Market
@@ -997,6 +1056,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Winners
+                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                     </a>
                 </span>
             </p>
@@ -1052,63 +1112,6 @@
             </section>
         </div>
     </div>
-
-    <!-- FOOTER SECTION -->
-    <div class="bg-[#e9e9e9] text-black mt-[12rem]">
-        <footer class="max-w-[1420px] mx-auto px-6 py-8">
-            <h2 class="font-bold text-base mb-8">w.</h2>
-            <div class="flex flex-wrap justify-between items-start">
-                <div class="w-1/2 sm:w-auto mb-6 sm:mb-0">
-                    <ul class="space-y-2 text-[10px] font-semibold leading-4">
-                        <li><a href="">Websites</a></li>
-                        <li><a href="">Collections</a></li>
-                        <li><a href="">Elements</a></li>
-                    </ul>
-                </div>
-                <div class="w-1/6 sm:w-auto mb-6 sm:mb-0">
-                    <ul class="space-y-2 text-[10px] font-semibold leading-4">
-                        <li><a href="">Academy</a></li>
-                        <li><a href="">Jobs</a></li>
-                        <li><a href="">Market</a></li>
-                    </ul>
-                </div>
-                <div class="w-1/6 sm:w-auto mb-6 sm:mb-0">
-                    <ul class="space-y-2 text-[10px] font-semibold leading-4">
-                        <li><a href="">Directory</a></li>
-                        <li><a href="">Conferences</a></li>
-                    </ul>
-                </div>
-                <div class="w-1/6 sm:w-auto mb-6 sm:mb-0">
-                    <ul class="space-y-2 text-[10px] font-semibold leading-4">
-                        <li><a href="">FAQs</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="w-full sm:w-auto bg-[#e6e6e6] rounded-md px-4 py-3 text-[10px] font-normal flex items-center gap-2">
-                    <span>Next Conferences</span>
-                    <i class="far fa-calendar-alt text-[12px]"></i>
-                    <span class="font-semibold">Berlin, Mumbai &amp; Tokyo</span>
-                </div>
-            </div>
-            <hr class="border-t border-dotted border-gray-400 my-6" />
-            <div class="flex flex-wrap justify-between text-[8px] font-normal">
-                <div class="flex space-x-4">
-                    <span>Cookies Policy</span>
-                    <span>Legal Terms</span>
-                    <span>Privacy Policy</span>
-                </div>
-                <div class="flex space-x-3 items-center">
-                    <span class="font-semibold">Connect:</span>
-                    <span>Instagram</span>
-                    <span>LinkedIn</span>
-                    <span>Twitter</span>
-                    <span>Facebook</span>
-                    <span>YouTube</span>
-                    <span>TikTok</span>
-                    <span>Pinterest</span>
-                </div>
-            </div>
-        </footer>
-    </div>
+    <x-footer>
+    </x-footer>
 </x-layout>
