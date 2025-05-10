@@ -60,3 +60,19 @@ body {
 .navbar-blur {
     filter: brightness(0.5);
 }
+
+@keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .scrolling-wrapper {
+    animation: scroll-left 20s linear infinite;
+    white-space: nowrap;
+    display: inline-flex;
+  }
+

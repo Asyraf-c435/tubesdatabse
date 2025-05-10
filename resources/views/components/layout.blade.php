@@ -12,9 +12,25 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="css/layout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-[#e9e9e9]">
+<body class="bg-gray-50">
+
+    <!-- runninng-text -->
+    <div class="overflow-hidden bg-neutral-100">
+    <div class="scrolling-wrapper items-center text-[#1a1a1a] text-sm font-[Inter] font-medium select-none">
+        @for ($i = 0; $i < 12; $i++)
+            <div class="flex items-center space-x-2 px-4 py-3">
+                <span class="font-semibold">The Creative Pass</span>
+                <i class="far fa-smile"></i>
+                <span>Watch all courses for just $12/month</span>
+            </div>
+        @endfor
+    </div>
+    </div>
+
+
     <!-- NAVBAR SECTION -->
     <nav id="main-nav" class="flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-16 py-3 mb-1.5">
         <!-- LEFT SIDE NAVBAR -->
@@ -26,12 +42,12 @@
                     <span>Explore</span>
                     <i class="fas fa-chevron-down text-[10px] ml-1"></i>
                 </a>
-                <a href="#" class="cursor-pointer hover:opacity-50 transition-opacity duration-500">Directory</a>
-                <a href="#" class="cursor-pointer group flex items-center space-x-1 group transition-opacity duration-500">
+                <a href="{{ route('directory') }}" class="cursor-pointer hover:opacity-50 transition-opacity duration-500">Directory</a>
+                <a href="{{ route('academy') }}" class="cursor-pointer group flex items-center space-x-1 group transition-opacity duration-500">
                     <span class="group-hover:opacity-50 duration-500">Academy</span>
                     <span class="bg-black text-white text-[8px] font-semibold px-1 rounded select-none opacity-100 ">New</span>
                 </a>
-                <a href="#" class="cursor-pointer hover:opacity-50 transition-opacity duration-500">Jobs</a>
+                <a href="{{ route('job') }}" class="cursor-pointer hover:opacity-50 transition-opacity duration-500">Jobs</a>
                 <a href="#" class="cursor-pointer hover:opacity-50 transition-opacity duration-500">Market</a>
             </div>
             <!-- NAVBAR CAN CLICK END -->
@@ -181,6 +197,8 @@
             </div>
         </div>
     </div>
+
+       
 
     <script src="js/layout.js"></script>
 </body>
