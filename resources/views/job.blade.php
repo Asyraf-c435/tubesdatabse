@@ -50,22 +50,24 @@
 
     <!-- Judul -->
    
-    <div class="bg-gray-50 flex flex-col items-center justify-center h-screen py-2 gap-2">
-        <h1 class="text-[8rem] font-extrabold leading-[1] text-[#1a1a1a] relative max-w-[90vw] text-center">
-            THE JOBS
-            <br />
-            BOARD
-            <span class="absolute -right-14 top-1/2 transform -translate-y-1/2 bg-[#3aa9ff] rounded-full px-3 py-1 text-white text-[0.875rem] font-semibold tracking-wide select-none flex items-center gap-1 shadow-lg">
+    <div class="bg-gray-50 flex flex-col items-center justify-center min-h-[70vh] py-0 gap-4 relative">
+    <h1 class="text-[8rem] font-extrabold leading-[1] text-[#1a1a1a] relative max-w-[90vw] text-center">
+        THE JOBS
+        <br />
+        BOARD
+        <span class="absolute -right-14 top-1/2 transform -translate-y-1/2 bg-[#3aa9ff] rounded-full px-3 py-1 text-white text-[0.875rem] font-semibold tracking-wide select-none flex items-center gap-1 shadow-lg">
             HIRING
-            <img alt="Megaphone icon in orange color" class="w-4 h-4" height="16" src="https://storage.googleapis.com/a1aa/image/073e9dce-f754-40cc-499e-fe34123a1dde.jpg" width="16" />
-            </span>
-        </h1>
-        <p class="text-center text-[#1a1a1a] text-lg mt-2 max-w-[90vw]">
-            Latest Vacancies in Web Design and
-            <br />
-            UX/UI Design
-        </p>
+            <img alt="Megaphone icon" class="w-4 h-4" src="https://storage.googleapis.com/a1aa/image/073e9dce-f754-40cc-499e-fe34123a1dde.jpg" />
+        </span>
+    </h1>
+    <p class="text-center text-[#1a1a1a] text-lg mt-2 max-w-[90vw]">
+        Latest Vacancies in Web Design and
+        <br />
+        UX/UI Design
+    </p>
+
     </div>
+
 
 
    <!-- Card  -->
