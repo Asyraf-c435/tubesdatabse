@@ -1,7 +1,10 @@
 body {
     font-family: "Inter", sans-serif;
   }
-
+  html {
+    scroll-behavior: smooth;
+  }
+  
   .active-item {
     background-color: white;
     padding-left: 0.75rem; 

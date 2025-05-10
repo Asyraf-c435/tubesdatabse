@@ -78,3 +78,123 @@ function closeModal() {
 
 closeExploreBtn.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', closeModal);
+
+  // Data gambar untuk setiap card
+  document.addEventListener('DOMContentLoaded', function() {
+    // Data gambar untuk setiap card
+    const cardImages = {
+        1: {
+            images: [
+                "https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg",
+                "https://via.placeholder.com/176x112/0000FF/FFFFFF?text=NK+1",
+                "https://via.placeholder.com/176x112/00FF00/FFFFFF?text=NK+2",
+                "https://via.placeholder.com/176x112/FF0000/FFFFFF?text=NK+3",
+                "https://via.placeholder.com/176x112/FFFF00/000000?text=NK+4"
+            ],
+            currentIndex: 0
+        },
+        2: {
+            images: [
+                "https://storage.googleapis.com/a1aa/image/36f9a05d-f697-4b9b-25c8-c16d88311ae6.jpg",
+                "https://via.placeholder.com/176x112/0000FF/FFFFFF?text=AREA+1",
+                "https://via.placeholder.com/176x112/00FF00/FFFFFF?text=AREA+2",
+                "https://via.placeholder.com/176x112/FF0000/FFFFFF?text=AREA+3",
+                "https://via.placeholder.com/176x112/FFFF00/000000?text=AREA+4"
+            ],
+            currentIndex: 0
+        },
+        3: {
+            images: [
+                "https://storage.googleapis.com/a1aa/image/55e5acc8-1f50-4bf7-2908-a6b12b79fa4b.jpg",
+                "https://via.placeholder.com/176x112/0000FF/FFFFFF?text=Bachoo+1",
+                "https://via.placeholder.com/176x112/00FF00/FFFFFF?text=Bachoo+2",
+                "https://via.placeholder.com/176x112/FF0000/FFFFFF?text=Bachoo+3",
+                "https://via.placeholder.com/176x112/FFFF00/000000?text=Bachoo+4"
+            ],
+            currentIndex: 0
+        }
+    };
+
+    // Inisialisasi semua card
+    for (const cardId in cardImages) {
+        initCard(cardId);
+    }
+
+    function initCard(cardId) {
+        const dotsContainer = document.getElementById(`card${cardId}-dots`);
+        const imageElement = document.getElementById(`card${cardId}-image`);
+        const images = cardImages[cardId].images;
+        
+        // Kosongkan container dots
+        dotsContainer.innerHTML = '';
+        
+        // Buat dots berdasarkan jumlah gambar
+        images.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = `dot-btn w-1.5 h-1.5 rounded-full bg-white focus:outline-none ${
+                index === cardImages[cardId].currentIndex ? 'opacity-100' : 'opacity-30'
+            }`;
+            dot.dataset.index = index;
+            dotsContainer.appendChild(dot);
+            
+            dot.addEventListener('click', function() {
+                changeImage(cardId, index);
+            });
+        });
+        
+        // Set gambar awal
+        imageElement.src = images[cardImages[cardId].currentIndex];
+    }
+
+    function changeImage(cardId, index) {
+        // Update current index
+        cardImages[cardId].currentIndex = index;
+        
+        // Update dots
+        const dots = document.querySelectorAll(`#card${cardId}-dots .dot-btn`);
+        dots.forEach((dot, dotIndex) => {
+            if (dotIndex === index) {
+                dot.classList.remove('opacity-30');
+                dot.classList.add('opacity-100');
+            } else {
+                dot.classList.remove('opacity-100');
+                dot.classList.add('opacity-30');
+            }
+        });
+        
+        // Update gambar dengan efek fade
+        const imageElement = document.getElementById(`card${cardId}-image`);
+        imageElement.style.opacity = '0';
+        setTimeout(() => {
+            imageElement.src = cardImages[cardId].images[index];
+            imageElement.style.opacity = '1';
+        }, 300);
+    }
+});
+
+const stickyBar = document.getElementById('stickyBar');
+const scrollButton = document.getElementById('scrollUpButton');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    [stickyBar, scrollButton].forEach(el => {
+      el.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      el.classList.add('opacity-100', 'translate-y-0');
+    });
+  } else {
+    [stickyBar, scrollButton].forEach(el => {
+      el.classList.remove('opacity-100', 'translate-y-0');
+      el.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+    });
+  }
+});
+
+const scrollUpButton = document.getElementById('scrollUpButton');
+
+scrollButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+

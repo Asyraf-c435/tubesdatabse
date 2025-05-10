@@ -6,6 +6,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Route::get('/directory', function () {
     return view('directory');
 })->name('directory');
@@ -18,3 +19,7 @@ Route::get('/job', function () {
     return view('job');
 })->name('job');   
 
+
+Route::get('/sites', function () {
+    return view('sitesbynamenms');
+});
