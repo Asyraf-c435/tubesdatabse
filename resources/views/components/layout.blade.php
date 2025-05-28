@@ -15,24 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gray-50">
-
-    <!-- runninng-text -->
-    <div class="overflow-hidden bg-neutral-100">
-    <div class="scrolling-wrapper items-center text-[#1a1a1a] text-sm font-[Inter] font-medium select-none">
-        @for ($i = 0; $i < 12; $i++)
-            <div class="flex items-center space-x-2 px-4 py-3">
-                <span class="font-semibold">The Creative Pass</span>
-                <i class="far fa-smile"></i>
-                <span>Watch all courses for just $12/month</span>
-            </div>
-        @endfor
-    </div>
-    </div>
-
-
+<body class="bg-gray-50 ">
     <!-- NAVBAR SECTION -->
-    <nav id="main-nav" class="flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-16 py-3 mb-1.5">
+    <nav id="main-nav" class="flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-16 py-3 mb-5">
         <!-- LEFT SIDE NAVBAR -->
         <div class="flex items-center space-x-12 mr-2">
             <div class="text-2xl font-bold select-none cursor-default font-sans">Tubes .</div>
@@ -197,10 +182,6 @@
             </div>
         </div>
     </div>
-
-       
-
-   
     <script src="js/layout.js"></script>
     <script src="js/sitesbyname.js"></script>
 </body>

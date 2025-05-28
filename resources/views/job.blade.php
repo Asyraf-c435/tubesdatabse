@@ -1,25 +1,7 @@
+<x-runningtext>
+</x-runningtext>
 <x-layout>
-    <!DOCTYPE html>
-    <html lang="id">
-    <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Awwwards Jobs Clone</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
-
-    </head>
-
-
-    <body class="bg-gray-50 text-gray-800">
-
-
+  <div class="bg-gray-50 text-gray-800">
     <!-- Filter Bar -->
     <div class="flex items-center justify-between bg-neutral-200 p-1.5 max-w-7xl mx-auto rounded-xl shadow-sm mb-8">
       <div class="flex gap-2 flex-wrap">
@@ -170,10 +152,8 @@
             </div>
         </section>
         </article>
-    </main>
-    </div>
     
-   
-    </body>
-    </html>
+    </div>
+    </div>
+    <x-footer></x-footer>
 </x-layout>

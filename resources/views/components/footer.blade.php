@@ -7,7 +7,7 @@
 </head>
 <body>
      <!-- FOOTER SECTION -->
-     <footer class="bg-[#e9e9e9] text-black mt-[12rem]">
+     <footer class="bg-gray-50  text-black mt-[12rem]">
         <div class="max-w-[1420px] mx-auto px-6 py-8">
             <h2 class="font-bold text-base mb-8">Tubes .</h2>
             <div class="flex flex-wrap justify-between items-start">

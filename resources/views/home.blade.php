@@ -2,12 +2,12 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
     <div class="relative">
-        <!-- Sticky Bar yang muncul setelah scroll -->
+  
         <button
             id="scrollUpButton"
             class="fixed bottom-3.5 left-8 translate-y-4 opacity-0 w-14 h-14
-  z-50 pointer-events-none transition-all duration-500 ease-in-out
-  flex items-center justify-center border-2 border-gray-600 bg-[#222222] p-3 rounded-lg"
+            z-50 pointer-events-none transition-all duration-500 ease-in-out
+            flex items-center justify-center border-2 border-gray-600 bg-[#222222] p-3 rounded-lg"
             aria-label="Scroll up">
             <i class="fas fa-arrow-up text-gray-300 text-xl"></i>
         </button>
@@ -27,10 +27,10 @@
             <a href="#collections" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-white transition">Collections</a>
             <a href="#directory" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-white transition">Directory</a>
             <a href="#market" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-white transition">Market</a>
-            <a href="#" class="visit-sotd text-gray-900 text-xs px-3 py-2 rounded-md border-2 border-gray-300 bg-[#e9e9e9] font-semibold">Visit Sotd.</a>
+            <a href="#" class="visit-sotd text-gray-900 text-xs px-3 py-2 rounded-md border-2 border-gray-300 bg-gray-50  font-semibold">Visit Sotd.</a>
         </div>
     </div>
-    <div class="bg-[#e9e9e9] text-[#1a1a1a]">
+    <div class="bg-gray-50  text-[#1a1a1a]">
         <div class="max-w-[1690px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-center text-[10px] leading-[12px] pt-3 pb-1 font-normal">
                 <span class="mr-1">
@@ -43,7 +43,7 @@
                     Score 7.56 of 10
                 </span>
             </div>
-            <h1 class="text-[112px] leading-[112px] font-medium text-center tracking-tight mt-10 mb-6 select-none" style="font-feature-settings: 'ss01' on, 'ss02' on, 'ss03' on;">
+            <h1 class="text-[112px] leading-[112px] font-medium text-center tracking-tight mt-7 mb-6 select-none" style="font-feature-settings: 'ss01' on, 'ss02' on, 'ss03' on;">
                 CHARLES LECLERC
             </h1>
             <div aria-label="Sponsors" class="flex justify-center items-center space-x-4 text-[14px] font-normal mb-6 select-none">
@@ -99,7 +99,7 @@
             </p>
             <section class="flex flex-col sm:flex-row justify-center gap-8 max-w-full mx-auto mb-10">
                 <div class="w-full sm:custom-width text-left">
-                    <a aria-label="Visit Zecchinon website" class="image-wrapper" href="#">
+                    <a aria-label="Visit Zecchinon website" class="image-wrapper" href="sitesnms">
                         <img alt="Screenshot of Zecchinon website showing a modern kitchen with wooden cabinets and a woman" src="https://storage.googleapis.com/a1aa/image/8e087b5e-e95f-4dff-a425-6656e6170b6d.jpg" />
                         <div class="hover-text">
                             <div class="website-label">
@@ -200,7 +200,7 @@
 
 
     <!-- WINNERS SECTION -->
-    <div class="bg-[#e9e9e9]" id="home2">
+    <div class="bg-gray-50 " id="home2">
         <section class=" mx-auto max-w-[1420px] mx-auto py-6 sm:py-10  mt-[40px] lg:mt-[40px]">
             <p class="text-[12px] font-normal text-[#1A1A1A] mb-3">
                 Winners
@@ -232,7 +232,6 @@
                             <img alt="Profile picture of Apart" class="w-5 h-5 rounded-full object-cover" height="20" src="https://storage.googleapis.com/a1aa/image/f09ce540-ac5a-4d5f-8c91-eaa4d009f531.jpg" width="20" />
                             <span class="underline-slide no-underline">
                                 Apart
-                                <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                             </span>
                         </a>
                     </p>
@@ -258,7 +257,6 @@
                             <img alt="Profile picture of BL/S®" class="w-5 h-5 rounded-full object-cover" height="20" src="https://storage.googleapis.com/a1aa/image/611e395c-f3a9-4003-ffb8-228ef18808f1.jpg" width="20" />
                             <span class="underline-slide no-underline">
                                 BL/S®
-                                <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
                             </span>
                         </a>
                     </p>
@@ -282,10 +280,9 @@
                         </span>
                         <a class="inline-flex items-center space-x-2 text-[12px] font-semibold text-[#111111] ml-1 no-underline" href="#">
                             <img alt="Profile picture of OddCommon" class="w-5 h-5 rounded-full object-cover" height="20" src="https://storage.googleapis.com/a1aa/image/7047b581-2504-40da-99aa-95e726b0b249.jpg" width="20" />
-                            <span class="underline-slide">
+                            <a class="underline-slide">
                                 OddCommon
-                                <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
-                            </span>
+                            </a>
                         </a>
                     </p>
                 </article>
@@ -309,7 +306,7 @@
 
 
     <!-- ACADEMY SECTION  -->
-    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[90px] sm:mt-[40px] lg:mt-[40px]" id="courses">
+    <div class="bg-gray-50  p-6 sm:p-10 mt-[90px] sm:mt-[40px] lg:mt-[40px]" id="courses">
         <div class="max-w-[1420px] mx-auto">
             <div class="mb-8">
                 <p class="text-[12px] text-[#1a1a1a] mb-3">
@@ -484,7 +481,7 @@
 
     <!-- COLLECTION SECTION -->
 
-    <div class="bg-[#e9e9e9] p-6 sm:p-10 mt-[40px] sm:mt-[40px] lg:mt-[40px]" id="collections">
+    <div class="bg-gray-50  p-6 sm:p-10 mt-[40px] sm:mt-[40px] lg:mt-[40px]" id="collections">
         <div class="max-w-[1420px] mx-auto">
             <div class="mb-8">
                 <p class="text-[12px] text-[#1a1a1a] mb-3">
@@ -583,7 +580,7 @@
 
     <!-- DIRECTORY SECTION -->
 
-    <div class="bg-[#e9e9e9] text-gray-900 py-8 sm:py-12 lg:py-16 mt-[40px] sm:mt-[40px] lg:mt-[40px] mt-7" id="directory">
+    <div class="bg-gray-50  text-gray-900 py-8 sm:py-12 lg:py-16 mt-[40px] sm:mt-[40px] lg:mt-[40px] mt-7" id="directory">
         <div class="max-w-[1450px] mx-auto px-4 py-12 text-center">
             <div class="text-center pt-2 pb-1 text-[10px]">
                 Directory
@@ -895,7 +892,7 @@
 
 
     <!-- MARKET SECTION -->
-    <div class="bg-[#e9e9e9]" id="market">
+    <div class="bg-gray-50 " id="market">
         <section class=" mx-auto max-w-[1420px] mx-auto py-6 sm:py-10  mt-[90px] lg:mt-[90px]">
             <p class="text-[12px] font-normal text-[#1A1A1A] mb-3">
                 Market
@@ -1062,7 +1059,7 @@
     </div>
 
     <!-- BE PRO AND SUBMIT WEBSITE SECTION -->
-    <div class="bg-[#e9e9e9] p-6">
+    <div class="bg-gray-50  p-6">
         <div class="max-w-[1420px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-[6rem]">
             <section class="relative rounded-lg overflow-hidden min-h-[280px]" style="background-color: #111111;">
                 <img alt="Man in suit speaking on stage with microphone, dark overlay" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20" height="400" src="https://storage.googleapis.com/a1aa/image/fd117a6b-0b46-4c88-b70d-356f8c2d4db9.jpg" width="600" />

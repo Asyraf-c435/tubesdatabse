@@ -95,3 +95,13 @@
   .vote-button:hover {
     background-color: rgb(27, 26, 26);
   }
+
+  .active-tab {
+    color: #fff083 !important;
+    border-color:  #fff083 !important ;
+    font-weight: 600;
+}
+
+.active-own{
+color: #1f2937;
+}

@@ -20,6 +20,11 @@ Route::get('/job', function () {
 })->name('job');   
 
 
-Route::get('/sites', function () {
+Route::get('/sitesnms', function () {
     return view('sitesbynamenms');
+});
+
+
+Route::get('/sites', function () {
+    return view('sites');
 });
