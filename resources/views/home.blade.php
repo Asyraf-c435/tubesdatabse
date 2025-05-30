@@ -1,8 +1,177 @@
+<!-- REGISTRASI -->
+<div class="min-h-screen bg-black bg-opacity-50 flex items-center justify-center p-4 absolute w-full" id="registerSection">
+    <div class="bg-white rounded-lg shadow-lg max-w-4xl w-full flex flex-col md:flex-row overflow-hidden max-h-[480px] md:max-h-[440px] hover:shadow-2xl transition-shadow duration-300">
+        <!-- Left side -->
+        <div class="md:w-1/2 flex flex-col justify-between bg-gray-100 p-5 md:p-8 overflow-hidden">
+            <div class="pt-2 text-sm text-black">
+                Welcome!
+            </div>
+            <div class="flex items-center space-x-3 mt-6 md:mt-0">
+                <h1 class="text-4xl font-extrabold text-black leading-none">
+                    Tubes.
+                </h1>
+                <img alt="Blue and purple smiley face icon, circular shape with a smiling face inside" class="w-16 h-16" height="64" src="https://storage.googleapis.com/a1aa/image/345ce4c0-b830-41f0-1362-b76e9e21b5d2.jpg" width="64" />
+            </div>
+            <div class="text-xs text-gray-600 pt-3">
+                Are you a member?
+                <a class="font-bold underline" href="#" id="loginButton">
+                    Log in now
+                </a>
+            </div>
+        </div>
+        <!-- Right side -->
+        <div class="md:w-1/2 p-5 md:p-8 overflow-auto">
+            <form class="max-w-md mx-auto">
+                <h2 class="font-semibold text-black mb-4 text-base md:text-lg">
+                    Register with your e-mail
+                </h2>
+                <label class="block text-xs text-gray-400 uppercase mb-1" for="username">
+                    USERNAME (*)
+                </label>
+                <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 mb-2 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="username" placeholder="Username" type="text" />
+                <label class="block text-xs text-gray-400 uppercase mb-1" for="email">
+                    EMAIL (*)
+                </label>
+                <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 mb-2 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="email" placeholder="E-mail" type="email" />
+                <div class="grid grid-cols-2 gap-2 mb-2">
+                    <div>
+                        <label class="block text-xs text-gray-400 uppercase mb-1" for="password">
+                            PASSWORD (*)
+                        </label>
+                        <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="password" placeholder="Password" type="password" />
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-400 uppercase mb-1" for="repeat-password">
+                            REPEAT PASSWORD (*)
+                        </label>
+                        <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="repeat-password" placeholder="Repeat Password" type="password" />
+                    </div>
+                </div>
+                <p class="text-[9px] text-gray-600 mb-1 leading-tight">
+                    Awwwards may keep me informed with personalized emails about products and services. See our
+                    <span class="font-semibold">
+                        Privacy Policy
+                    </span>
+                    for more details.
+                </p>
+                <div class="mb-1 text-[9px] text-gray-600 flex items-center space-x-2">
+                    <input class="w-3 h-3 cursor-pointer" id="contact-email" type="checkbox" />
+                    <label class="select-none cursor-pointer" for="contact-email">
+                        Please contact me via e-mail
+                    </label>
+                </div>
+                <div class="mb-3 text-[9px] text-gray-600 flex items-center space-x-2">
+                    <input class="w-3 h-3 cursor-pointer" id="terms" type="checkbox" />
+                    <label class="select-none cursor-pointer" for="terms">
+                        I have read and accept the Terms and Conditions
+                    </label>
+                </div>
+                <button class="w-full bg-black text-white text-sm font-semibold py-2.5 rounded-md mb-4 hover:bg-gray-800 transition-colors duration-200" type="submit">
+                    Create Account
+                </button>
+                <p class="text-xs text-gray-600 mb-2">
+                    Or register with
+                </p>
+                <div class="flex space-x-2 max-w-md">
+                    <button class="flex items-center justify-center border border-gray-300 rounded-md py-1.5 px-3 text-xs text-gray-700 w-full hover:bg-gray-100 transition-colors duration-200" type="button">
+                        <i class="fab fa-google mr-1.5">
+                        </i>
+                        Google
+                    </button>
+                    <button class="flex items-center justify-center border border-gray-300 rounded-md py-1.5 px-3 text-xs text-gray-700 w-full hover:bg-gray-100 transition-colors duration-200" type="button">
+                        <i class="fab fa-twitter mr-1.5">
+                        </i>
+                        Twitter
+                    </button>
+                    <button class="flex items-center justify-center border border-gray-300 rounded-md py-1.5 px-3 text-xs text-gray-700 w-full hover:bg-gray-100 transition-colors duration-200" type="button">
+                        <i class="fab fa-facebook-f mr-1.5">
+                        </i>
+                        Facebook
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- 
+LOG IN -->
+<div class="login z-50 w-full min-h-screen flex items-center justify-center w-full" id="loginSection">
+    <div class="bg-white max-w-4xl w-full rounded-md shadow-lg flex flex-col md:flex-row overflow-hidden">
+        <div class="bg-gray-100 w-full md:w-1/2 p-10 flex flex-col justify-between">
+            <div>
+                <p class="text-sm text-gray-800">
+                    Welcome!
+                </p>
+            </div>
+            <div class="flex items-center space-x-6">
+                <span class="font-extrabold text-5xl">
+                    Tubes.
+                </span>
+                <img alt="Smiling face emoji in a circle with green background and purple border" class="w-20 h-20" height="80" src="https://storage.googleapis.com/a1aa/image/857baafd-57c7-4f60-6206-1685512c44dd.jpg" width="80" />
+            </div>
+            <div class="text-xs text-gray-600">
+                Not a member yet?
+                <a class="font-semibold underline" href="#" id="registerButton">
+                    Register now
+                </a>
+            </div>
+        </div>
+        <div class="flex flex-col justify-center w-full md:w-1/2 p-10 bg-white">
+            <form class="max-w-md w-full">
+                <h2 class="font-semibold text-base mb-6">
+                    Log in
+                </h2>
+                <label class="text-xs uppercase text-gray-400 tracking-wide mb-2 block" for="email">
+                    Email or username
+                </label>
+                <input class="w-full border-b border-gray-400 focus:outline-none focus:border-black text-xs py-2 mb-6 placeholder-gray-300" id="email" placeholder="Email or username" type="text" />
+                <label class="text-xs uppercase text-gray-400 tracking-wide mb-2 block" for="password">
+                    Password
+                </label>
+                <input class="w-full border-b border-gray-400 focus:outline-none focus:border-black text-xs py-2 mb-3 placeholder-gray-300" id="password" placeholder="Password" type="password" />
+                <div class="flex items-center mb-6">
+                    <input class="w-3 h-3 border border-gray-400 text-black focus:ring-0" id="keep-logged" type="checkbox" />
+                    <label class="text-xs ml-2 select-none" for="keep-logged">
+                        Keep me logged in
+                    </label>
+                </div>
+                <button class="w-full bg-black text-white text-xs py-3 rounded-md mb-4 hover:bg-gray-800 transition-colors duration-200" type="submit">
+                    Log in now
+                </button>
+                <div class="text-xs text-right mb-8">
+                    <a class="underline hover:text-gray-700 transition-colors duration-200" href="#">
+                        Forgot your password?
+                    </a>
+                </div>
+                <p class="text-xs mb-3">
+                    Or sign in with
+                </p>
+                <div class="flex space-x-3 max-w-md">
+                    <button class="btn-google flex items-center justify-center border border-gray-300 rounded-md py-2 px-4 text-xs w-full hover:bg-gray-800 hover:text-white transition-colors duration-200" type="button">
+                        <i class="fab fa-google mr-2">
+                        </i>
+                        Google
+                    </button>
+                    <button class="flex items-center justify-center border border-gray-300 rounded-md py-2 px-4 text-xs w-full hover:bg-gray-800 hover:text-white transition-colors duration-200" type="button">
+                        <i class="fab fa-facebook-f mr-2">
+                        </i>
+                        Facebook
+                    </button>
+                    <button class="flex items-center justify-center border border-gray-300 rounded-md py-2 px-4 text-xs w-full hover:bg-gray-800 hover:text-white transition-colors duration-200" type="button">
+                        <i class="fab fa-twitter mr-2">
+                        </i>
+                        Twitter
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <x-layout>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
     <div class="relative">
-  
+
         <button
             id="scrollUpButton"
             class="fixed bottom-3.5 left-8 translate-y-4 opacity-0 w-14 h-14
@@ -30,6 +199,9 @@
             <a href="#" class="visit-sotd text-gray-900 text-xs px-3 py-2 rounded-md border-2 border-gray-300 bg-gray-50  font-semibold">Visit Sotd.</a>
         </div>
     </div>
+
+
+
     <div class="bg-gray-50  text-[#1a1a1a]">
         <div class="max-w-[1690px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-center text-[10px] leading-[12px] pt-3 pb-1 font-normal">
@@ -191,7 +363,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Nominees
-                        
+
                     </a>
                 </span>
             </p>
@@ -295,7 +467,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Winners
-                       
+
                     </a>
                 </span>
             </p>
@@ -472,7 +644,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Academy
-                       
+
                     </a>
                 </span>
             </p>
@@ -571,7 +743,7 @@
                 </span>
                 <a class="underline-slide" href="#">
                     View Collections
-                    
+
                 </a>
             </span>
         </p>
@@ -1051,7 +1223,7 @@
                     </span>
                     <a class="underline-slide" href="#">
                         View Winners
-                        
+
                     </a>
                 </span>
             </p>

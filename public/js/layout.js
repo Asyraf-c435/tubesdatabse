@@ -198,3 +198,31 @@ scrollButton.addEventListener('click', () => {
   });
 });
 
+
+
+ document.addEventListener('DOMContentLoaded', function () {
+        const loginButton = document.getElementById('loginButton');
+        const registerButton = document.getElementById('registerButton');
+        const loginSection = document.getElementById('loginSection');
+        const registerSection = document.getElementById('registerSection');
+
+        // Event untuk tombol Log In
+        loginButton.addEventListener('click', function () {
+            loginSection.classList.remove('hidden');
+            registerSection.classList.add('hidden');
+        });
+
+        // Event untuk tombol Registrasi
+        registerButton.addEventListener('click', function () {
+            registerSection.classList.remove('hidden');
+            loginSection.classList.add('hidden');
+        });
+
+        // Event untuk klik di luar card
+        document.addEventListener('click', function (event) {
+            if (!loginSection.contains(event.target) && !registerSection.contains(event.target) && !loginButton.contains(event.target) && !registerButton.contains(event.target)) {
+                loginSection.classList.add('hidden');
+                registerSection.classList.add('hidden');
+            }
+        });
+    });

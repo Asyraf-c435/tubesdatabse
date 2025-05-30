@@ -389,3 +389,37 @@ button:hover i {
   .image-wrapper2:hover .hover-text2 {
     opacity: 1;
   }
+
+  .login {
+      font-family: 'Inter', sans-serif;
+      background: rgba(0,0,0,0.5);
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      position: absolute;
+    }
+    /* Google icon black normally, white on hover */
+    .btn-google i {
+      color: black;
+      transition: color 0.2s;
+    }
+    .btn-google:hover i {
+      color: white !important;
+    }
+
+    .auth-section {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+    .auth-section.active {
+        display: flex;
+    }
