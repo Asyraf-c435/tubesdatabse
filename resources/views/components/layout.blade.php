@@ -61,18 +61,13 @@
         <!-- SEARCH BAR END -->
 
         <!-- RIGHT SIDE NAVBAR -->
-        <div class="flex items-center space-x-4 text-xs text-black mt-1.5 ">
-            <a class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500" href="#">Log in</a>
-            <a class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500" href="#">Sign Up</a>
-            <a
-                class="bg-black text-white rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-white hover:text-black transition-colors duration-500" href="#">
-                Be Pro
-            </a>
-            <a
-                class="border border-black rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-black hover:text-white transition-colors duration-500" href="#">
-                Submit Website
-            </a>
-        </div>
+ <!-- RIGHT SIDE NAVBAR -->
+<div class="flex items-center space-x-4 text-xs text-black mt-1.5 ">
+    <a class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500 cursor-pointer" id="nav-login-btn">Log in</a>
+    <a class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500 cursor-pointer" id="nav-register-btn">Sign Up</a>
+    <a class="bg-black text-white rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-white hover:text-black transition-colors duration-500" href="#">Be Pro</a>
+    <a class="border border-black rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-black hover:text-white transition-colors duration-500" href="#">Submit Website</a>
+</div>
         <!-- RIGHT SIDE NAVBAR END -->
     </nav>
     <!-- NAVBAR SECTION END -->
@@ -185,5 +180,6 @@
     <script src="js/layout.js"></script>
     <script src="js/sitesbyname.js"></script>
 </body>
+
 
 </html>

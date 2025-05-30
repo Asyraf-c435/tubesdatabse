@@ -1,5 +1,5 @@
 <!-- REGISTRASI -->
-<div class="min-h-screen bg-black bg-opacity-50 flex items-center justify-center p-4 absolute w-full" id="registerSection">
+<div class="min-h-screen bg-black bg-opacity-50 flex items-center justify-center p-4 fixed w-full hidden z-50" id="registerSection" style="top: 0; left: 0;">
     <div class="bg-white rounded-lg shadow-lg max-w-4xl w-full flex flex-col md:flex-row overflow-hidden max-h-[480px] md:max-h-[440px] hover:shadow-2xl transition-shadow duration-300">
         <!-- Left side -->
         <div class="md:w-1/2 flex flex-col justify-between bg-gray-100 p-5 md:p-8 overflow-hidden">
@@ -14,7 +14,7 @@
             </div>
             <div class="text-xs text-gray-600 pt-3">
                 Are you a member?
-                <a class="font-bold underline" href="#" id="loginButton">
+                <a class="font-bold underline cursor-pointer" href="#" id="loginButton">
                     Log in now
                 </a>
             </div>
@@ -25,20 +25,20 @@
                 <h2 class="font-semibold text-black mb-4 text-base md:text-lg">
                     Register with your e-mail
                 </h2>
-                <label class="block text-xs text-gray-400 uppercase mb-1" for="username">
+                <label class="block text-xs text-gray-400 uppercase mb-1" for="reg-username">
                     USERNAME (*)
                 </label>
-                <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 mb-2 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="username" placeholder="Username" type="text" />
-                <label class="block text-xs text-gray-400 uppercase mb-1" for="email">
+                <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 mb-2 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="reg-username" placeholder="Username" type="text" />
+                <label class="block text-xs text-gray-400 uppercase mb-1" for="reg-email">
                     EMAIL (*)
                 </label>
-                <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 mb-2 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="email" placeholder="E-mail" type="email" />
+                <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 mb-2 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="reg-email" placeholder="E-mail" type="email" />
                 <div class="grid grid-cols-2 gap-2 mb-2">
                     <div>
-                        <label class="block text-xs text-gray-400 uppercase mb-1" for="password">
+                        <label class="block text-xs text-gray-400 uppercase mb-1" for="reg-password">
                             PASSWORD (*)
                         </label>
-                        <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="password" placeholder="Password" type="password" />
+                        <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="reg-password" placeholder="Password" type="password" />
                     </div>
                     <div>
                         <label class="block text-xs text-gray-400 uppercase mb-1" for="repeat-password">
@@ -93,9 +93,9 @@
         </div>
     </div>
 </div>
-<!-- 
-LOG IN -->
-<div class="login z-50 w-full min-h-screen flex items-center justify-center w-full" id="loginSection">
+
+<!-- LOG IN -->
+<div class="min-h-screen bg-black bg-opacity-50 flex items-center justify-center p-4 fixed w-full hidden z-50" id="loginSection" style="top: 0; left: 0;">
     <div class="bg-white max-w-4xl w-full rounded-md shadow-lg flex flex-col md:flex-row overflow-hidden">
         <div class="bg-gray-100 w-full md:w-1/2 p-10 flex flex-col justify-between">
             <div>
@@ -111,7 +111,7 @@ LOG IN -->
             </div>
             <div class="text-xs text-gray-600">
                 Not a member yet?
-                <a class="font-semibold underline" href="#" id="registerButton">
+                <a class="font-semibold underline cursor-pointer" href="#" id="registerButton">
                     Register now
                 </a>
             </div>
@@ -121,14 +121,14 @@ LOG IN -->
                 <h2 class="font-semibold text-base mb-6">
                     Log in
                 </h2>
-                <label class="text-xs uppercase text-gray-400 tracking-wide mb-2 block" for="email">
+                <label class="text-xs uppercase text-gray-400 tracking-wide mb-2 block" for="login-email">
                     Email or username
                 </label>
-                <input class="w-full border-b border-gray-400 focus:outline-none focus:border-black text-xs py-2 mb-6 placeholder-gray-300" id="email" placeholder="Email or username" type="text" />
-                <label class="text-xs uppercase text-gray-400 tracking-wide mb-2 block" for="password">
+                <input class="w-full border-b border-gray-400 focus:outline-none focus:border-black text-xs py-2 mb-6 placeholder-gray-300" id="login-email" placeholder="Email or username" type="text" />
+                <label class="text-xs uppercase text-gray-400 tracking-wide mb-2 block" for="login-password">
                     Password
                 </label>
-                <input class="w-full border-b border-gray-400 focus:outline-none focus:border-black text-xs py-2 mb-3 placeholder-gray-300" id="password" placeholder="Password" type="password" />
+                <input class="w-full border-b border-gray-400 focus:outline-none focus:border-black text-xs py-2 mb-3 placeholder-gray-300" id="login-password" placeholder="Password" type="password" />
                 <div class="flex items-center mb-6">
                     <input class="w-3 h-3 border border-gray-400 text-black focus:ring-0" id="keep-logged" type="checkbox" />
                     <label class="text-xs ml-2 select-none" for="keep-logged">
@@ -167,6 +167,11 @@ LOG IN -->
         </div>
     </div>
 </div>
+
+
+
+
+
 <x-layout>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
