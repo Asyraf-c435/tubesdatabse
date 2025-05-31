@@ -3,6 +3,7 @@ body {
   }
   html {
     scroll-behavior: smooth;
+     scrollbar-width: none;
   }
   
   .active-item {

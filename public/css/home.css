@@ -549,3 +549,13 @@ body.modal-open {
     transform: translateY(-1px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+.opacity-100 {
+    opacity: 1;
+}
+.translate-y-0 {
+    transform: translate(-50%, 0);
+}
+.pointer-events-auto {
+    pointer-events: auto;
+}

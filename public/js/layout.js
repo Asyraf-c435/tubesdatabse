@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 1500);
                 
                 // Tambahkan logic login sebenarnya di sini
-                // Contoh: redirect ke dashboard atau update UI
+                // Contoh: redirect ke dashboard atau update U
             }, 2000);
         });
     }
@@ -342,16 +342,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
                 
-                // Tampilkan pesan sukses
+     
                 showSuccessMessage('Account created successfully! Please check your email for verification.');
                 
-                // Tutup modal setelah delay singkat
+    
                 setTimeout(() => {
                     hideAllSections();
                 }, 1500);
                 
-                // Tambahkan logic registrasi sebenarnya di sini
-                // Contoh: kirim data ke server, redirect ke halaman verifikasi
+               
             }, 2000);
         });
     }
@@ -398,20 +397,40 @@ if (searchInputModal && clearBtnModal) {
 }
 
 // SISTEM SIDEBAR ACTIVE LINK
+// SISTEM SIDEBAR ACTIVE LINK DAN TOGGLE SECTION
 const sidebar = document.getElementById('sidebar');
 if (sidebar) {
     const links = sidebar.querySelectorAll('a');
     const activeLink = document.getElementById('active-link');
+    const sections = document.querySelectorAll('main > section'); // Ambil semua section
 
-    // On page load, set the first link as active
+    // Sembunyikan semua section kecuali yang pertama (Awards)
+    function hideAllSections() {
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+    }
+
+    // Tampilkan section berdasarkan data-item
+    function showSection(itemName) {
+        hideAllSections();
+        const sectionToShow = document.querySelector(`section[data-section="${itemName}"]`);
+        if (sectionToShow) {
+            sectionToShow.style.display = 'flex';
+        }
+    }
+
+    // On page load, set the first link as active dan tampilkan section Awards
     window.addEventListener('DOMContentLoaded', () => {
         links.forEach(l => {
             l.classList.remove('active-item', 'font-semibold', 'text-black');
             l.classList.add('text-gray-700');
         });
+        
         if (activeLink) {
             activeLink.classList.add('active-item', 'font-semibold');
             activeLink.classList.remove('text-gray-700');
+            showSection(activeLink.dataset.item);
         }
     });
 
@@ -426,6 +445,9 @@ if (sidebar) {
             // Add active styles to clicked
             link.classList.add('active-item', 'font-semibold');
             link.classList.remove('text-gray-700');
+            
+            
+            showSection(link.dataset.item);
         });
     });
 }
@@ -464,3 +486,27 @@ if (exploreBtn && exploreModal) {
     if (closeExploreBtn) closeExploreBtn.addEventListener('click', closeModal);
     if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const stickyBar = document.getElementById('stickyBar');
+    let lastScrollPosition = 0;
+    const scrollThreshold = 100; // Jarak scroll untuk memunculkan sticky bar (dalam px)
+
+    window.addEventListener('scroll', function() {
+        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Jika scroll ke bawah melebihi threshold dan sticky bar masih hidden
+        if (currentScrollPosition > scrollThreshold && lastScrollPosition < currentScrollPosition) {
+            stickyBar.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+            stickyBar.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        } 
+        // Jika scroll ke atas atau kembali ke atas halaman
+        else if (currentScrollPosition < scrollThreshold || currentScrollPosition < lastScrollPosition) {
+            stickyBar.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+            stickyBar.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        }
+        
+        lastScrollPosition = currentScrollPosition;
+    });
+});
+

@@ -28,3 +28,7 @@ Route::get('/sitesnms', function () {
 Route::get('/sites', function () {
     return view('sites');
 });
+
+Route::get('/websites', function () {
+    return view('isianexplore');
+});
