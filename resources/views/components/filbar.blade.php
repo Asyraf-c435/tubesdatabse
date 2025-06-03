@@ -80,7 +80,7 @@
                         <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" href="#" role="menuitem" tabindex="-1">
                             Tag 3
                         </a>
-                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" href="#" role="menuitem" tabindex="-1">
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" href="#" role="menuitem" tabindex="-1">c
                             Tag 4
                         </a>
                         <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" href="#" role="menuitem" tabindex="-1">
@@ -95,7 +95,7 @@
                     Technology
                     <i class="fas fa-chevron-down text-[10px] ml-1 mt-[2px]">
                     </i>
-                </button>
+                </button>c
                 <div aria-labelledby="menu-button-tech" class="origin-top-left absolute left-0 mt-1 w-44 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10 hidden" id="dropdown-tech" role="menu" tabindex="-1">
                     <div class="p-2 border-b border-gray-200">
                         <input aria-label="Search Technology" class="w-full rounded border border-gray-300 px-2 py-1 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500" id="search-tech" placeholder="Search..." type="text" />

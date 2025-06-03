@@ -50,10 +50,8 @@
       <span class="font-semibold">1850</span> professionals waiting.
     </div>
 
-
     <!-- CARD -->
-
-    <main class="max-w-[1280px] mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="max-w-[1280px] mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Card 1 -->
       <section class="flex flex-col bg-white rounded-md shadow-sm">
         <div class="w-full rounded-t-md overflow-hidden">
@@ -130,6 +128,7 @@
           </dl>
         </div>
       </section>
+
       <!-- Card 2 -->
       <section class="flex flex-col bg-white rounded-md shadow-sm">
         <div class="w-full rounded-t-md overflow-hidden">
@@ -206,6 +205,7 @@
           </dl>
         </div>
       </section>
+      
       <!-- Card 3 -->
       <section class="flex flex-col bg-white rounded-md shadow-sm">
         <div class="w-full rounded-t-md overflow-hidden">
@@ -282,7 +282,7 @@
           </dl>
         </div>
       </section>
-    </main>
+    </div>
     </div>
     </div>
     </section>
