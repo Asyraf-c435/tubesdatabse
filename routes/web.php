@@ -32,3 +32,11 @@ Route::get('/sites', function () {
 Route::get('/websites', function () {
     return view('isianexplore');
 });
+
+Route::get('/profile-user', function () {
+    return view('profileuser');
+});
+
+Route::get('/submit-web', function () {
+    return view('submit');
+});

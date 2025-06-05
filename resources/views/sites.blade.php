@@ -113,7 +113,7 @@
 
         <div class="flex justify-center items-center space-x-2 mt-[-10px] mb-14">
             <img alt="Yazo logo" class="w-5 h-5" src="https://storage.googleapis.com/a1aa/image/98cfe885-d60f-4100-8f2d-2652fc8c2530.jpg" />
-            <a class="underline-slide" href="#">
+            <a class="underline-slide" href="profile-user">
                 The First The Last
                 <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
             </a>

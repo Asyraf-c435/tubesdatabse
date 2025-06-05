@@ -50,6 +50,148 @@
       <span class="font-semibold">1850</span> professionals waiting.
     </div>
 
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col max-7xl">
+        <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
+          /nk
+        </div>
+        <div class="mt-6 flex flex-col items-end">
+          <img id="card1-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
+            class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
+            src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
+          <div class="flex space-x-1 mt-4" id="card1-dots">
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="1" data-index="0"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="1" data-index="1"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="1" data-index="1"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="1" data-index="3"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="1" data-index="4"
+              onclick="changeImage(this)"></button>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
+          <span>
+            International
+          </span>
+          <span>
+            60 awards
+          </span>
+        </div>
+        <h2 class="text-white text-[24px] text-left font-bold mb-1">
+          /nk.studio
+        </h2>
+        <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
+          <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
+            estudionk.com
+          </a>
+          <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
+            68
+          </div>
+        </div>
+      </article>
+      <!-- Card 2 -->
+      <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
+        <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
+          /nk
+        </div>
+        <div class="mt-6 flex flex-col items-end">
+          <img id="card2-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
+            class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
+            src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
+          <div class="flex space-x-1 mt-4" id="card2-dots">
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="2" data-index="0"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="2" data-index="2"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="2" data-index="2"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="2" data-index="3"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="2" data-index="4"
+              onclick="changeImage(this)"></button>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
+          <span>
+            International
+          </span>
+          <span>
+            60 awards
+          </span>
+        </div>
+        <h2 class="text-white text-[24px]  text-left font-bold mb-1">
+          /nk.studio
+        </h2>
+        <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
+          <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
+            estudionk.com
+          </a>
+          <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
+            68
+          </div>
+        </div>
+      </article>
+      <!-- Card 3 -->
+      <article class="bg-gray-900 text-white rounded-md p-5 relative flex flex-col">
+        <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-black flex items-center justify-center text-[10px] font-semibold text-white select-none">
+          /nk
+        </div>
+        <div class="mt-6 flex flex-col items-end">
+          <img id="card3-image" alt="3D transparent cubes with images of people inside, blue and white lighting"
+            class="rounded-md object-cover w-44 h-28 transition-opacity duration-300"
+            src="https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg" />
+          <div class="flex space-x-1 mt-4" id="card3-dots">
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="3" data-index="0"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="3" data-index="3"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="3" data-index="2"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="3" data-index="3"
+              onclick="changeImage(this)"></button>
+            <button class="dot-btn w-1.5 h-1.5 rounded-full bg-white opacity-30 focus:outline-none"
+              data-card="3" data-index="4"
+              onclick="changeImage(this)"></button>
+          </div>
+          <div class="flex justify-between items-center mb-1 text-[10px] text-gray-300 font-normal mt-3">
+            <span>
+              International
+            </span>
+            <span>
+              60 awards
+            </span>
+          </div>
+          <h2 class="text-white text-[24px]  text-left font-bold mb-1">
+            /nk.studio
+          </h2>
+          <div class="flex justify-between items-center text-[10px] text-gray-400 font-normal">
+            <a class="hover:no-underline" href="http://estudionk.com" rel="noopener noreferrer" target="_blank">
+              estudionk.com
+            </a>
+            <div class="border border-gray-600 rounded-sm w-6 h-6 flex items-center justify-center text-[10px] font-semibold select-none">
+              68
+            </div>
+          </div>
+      </article>
+    </div>
+
     <!-- CARD -->
     <div class="max-w-[1280px] mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Card 1 -->
@@ -205,7 +347,7 @@
           </dl>
         </div>
       </section>
-      
+
       <!-- Card 3 -->
       <section class="flex flex-col bg-white rounded-md shadow-sm">
         <div class="w-full rounded-t-md overflow-hidden">
@@ -283,31 +425,31 @@
         </div>
       </section>
     </div>
-    </div>
-    </div>
-    </section>
+  </div>
+  </div>
+  </section>
 
-    <!-- JavaScript Filter -->
-    <script>
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const cards = document.querySelectorAll('.card');
+  <!-- JavaScript Filter -->
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
 
-      filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const filter = btn.dataset.filter;
-          cards.forEach(card => {
-            if (filter === 'all' || card.dataset.category === filter) {
-              card.classList.remove('hidden');
-            } else {
-              card.classList.add('hidden');
-            }
-          });
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
         });
       });
-    </script>
+    });
+  </script>
 
   </div>
 
-  
+
 </x-layout>
 <x-footer></x-footer>

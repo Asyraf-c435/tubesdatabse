@@ -173,6 +173,7 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <div class="relative">
         <a href="/websites">TEST</a>
+        <a href="/submit-web">TEST</a>
         <button
             id="scrollUpButton"
             class="fixed bottom-3.5 left-8 translate-y-4 opacity-0 w-14 h-14
@@ -300,7 +301,7 @@
                     </div>
                 </div>
                 <div class="w-full sm:custom-width text-left">
-                    <a aria-label="Visit Human Voice Over website" class="image-wrapper" href="#">
+                    <a aria-label="Visit Human Voice Over website" class="image-wrapper" href="sitesnms">
                         <img alt="Screenshot of Human Voice Over website with text 'Your Voice Multiplied' on a light background" src="https://storage.googleapis.com/a1aa/image/86343319-9e54-4e4e-d1de-9a3c1f6aad81.jpg" />
                         <div class="hover-text">
                             <div class="website-label">
@@ -328,7 +329,7 @@
                     </div>
                 </div>
                 <div class="w-full sm:custom-width text-left">
-                    <a aria-label="Visit TAIKI SATO Portfolio website" class="image-wrapper" href="#">
+                    <a aria-label="Visit TAIKI SATO Portfolio website" class="image-wrapper" href="sitesnms">
                         <img alt="Screenshot of TAIKI SATO Portfolio website with a large moon circle and text on dark textured background" src="https://storage.googleapis.com/a1aa/image/0ae82335-6c5f-4ea1-012b-654eec08eaa7.jpg" />
                         <div class="hover-text">
                             <div class="website-label">

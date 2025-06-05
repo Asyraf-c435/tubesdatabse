@@ -510,3 +510,85 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+// Data gambar untuk semua card
+const cardImages = {
+    1: [
+        "https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg",
+        "https://via.placeholder.com/176x112/0000FF/FFFFFF?text=Card1-1",
+        "https://via.placeholder.com/176x112/00FF00/FFFFFF?text=Card1-2",
+        "https://via.placeholder.com/176x112/FF0000/FFFFFF?text=Card1-3",
+        "https://via.placeholder.com/176x112/FFFF00/000000?text=Card1-4"
+    ],
+    2: [
+        "https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg",
+        "https://via.placeholder.com/176x112/0000FF/FFFFFF?text=Card2-1",
+        "https://via.placeholder.com/176x112/00FF00/FFFFFF?text=Card2-2",
+        "https://via.placeholder.com/176x112/FF0000/FFFFFF?text=Card2-3",
+        "https://via.placeholder.com/176x112/FFFF00/000000?text=Card2-4"
+    ],
+    3: [
+        "https://storage.googleapis.com/a1aa/image/0a3289ca-9781-4784-c354-f9a097182398.jpg",
+        "https://via.placeholder.com/176x112/0000FF/FFFFFF?text=Card3-1",
+        "https://via.placeholder.com/176x112/00FF00/FFFFFF?text=Card3-2",
+        "https://via.placeholder.com/176x112/FF0000/FFFFFF?text=Card3-3",
+        "https://via.placeholder.com/176x112/FFFF00/000000?text=Card3-4"
+    ]
+};
+
+function changeImage(clickedDot) {
+    const cardId = clickedDot.getAttribute('data-card');
+    const imageIndex = parseInt(clickedDot.getAttribute('data-index'));
+    const imageElement = document.getElementById(`card${cardId}-image`);
+    
+    // Validasi data index
+    if (isNaN(imageIndex) || imageIndex < 0 || imageIndex >= cardImages[cardId].length) {
+        console.error('Invalid image index:', imageIndex);
+        return;
+    }
+    
+    // Efek transisi
+    imageElement.style.opacity = '0';
+    setTimeout(() => {
+        imageElement.src = cardImages[cardId][imageIndex];
+        imageElement.style.opacity = '1';
+    }, 300);
+    
+    // Update semua dot di card tersebut
+    const dotsContainer = document.getElementById(`card${cardId}-dots`);
+    const allDots = dotsContainer.querySelectorAll('.dot-btn');
+    
+    allDots.forEach((dot, idx) => {
+        const dotIndex = parseInt(dot.getAttribute('data-index'));
+        if (dotIndex === imageIndex) {
+            dot.classList.remove('opacity-30');
+            dot.classList.add('opacity-100');
+        } else {
+            dot.classList.remove('opacity-100');
+            dot.classList.add('opacity-30');
+        }
+    });
+}
+
+// Inisialisasi saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    // Perbaikan untuk semua card
+    for (let cardId = 1; cardId <= 3; cardId++) {
+        const dotsContainer = document.getElementById(`card${cardId}-dots`);
+        if (!dotsContainer) continue;
+        
+        const firstDot = dotsContainer.querySelector('.dot-btn');
+        if (firstDot) {
+            firstDot.classList.remove('opacity-30');
+            firstDot.classList.add('opacity-100');
+        }
+        
+        // Perbaikan: Pastikan semua dot memiliki index unik
+        const allDots = dotsContainer.querySelectorAll('.dot-btn');
+        allDots.forEach((dot, index) => {
+            dot.setAttribute('data-index', index);
+        });
+    }
+});
+
+
