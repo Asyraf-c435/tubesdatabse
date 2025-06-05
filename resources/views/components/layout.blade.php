@@ -66,7 +66,7 @@
     <a class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500 cursor-pointer" id="nav-login-btn">Log in</a>
     <a class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500 cursor-pointer" id="nav-register-btn">Sign Up</a>
     <a class="bg-black text-white rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-white hover:text-black transition-colors duration-500" href="#">Be Pro</a>
-    <a class="border border-black rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-black hover:text-white transition-colors duration-500" href="#">Submit Website</a>
+    <a class="border border-black rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-black hover:text-white transition-colors duration-500" href="submit-web">Submit Website</a>
 </div>
         <!-- RIGHT SIDE NAVBAR END -->
     </nav>

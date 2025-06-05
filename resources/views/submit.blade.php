@@ -1,24 +1,24 @@
 <x-layout>
+    <link rel="stylesheet" href="{{ asset('css/submit.css') }}">
     <div class="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-6">
-        <h1 class="font-sans font-extrabold text-black text-3xl mb-6">
+        <h1 class="font-sans font-extrabold text-black text-3xl mb-16">
             Upload your best work
         </h1>
         <div class="w-full max-w-6xl bg-gray-50">
-            <div class="relative">
-                <div class="tabs-wrapper">
-                    <button
-                        class="tab-label active"
-                        type="button"
-                        aria-current="page">
-                        Main Fill
-                    </button>
-                    <button class="tab-label inactive" type="button">
-                        Upload Elements
-                    </button>
+            <div class="w-full flex justify-center items-center mb-20 ">
+                <div class="max-w-xs w-full px-4 select-none">
+                    <div class="line-container mb-1">
+                        <div class="dotted-line"></div>
+                        <div id="boldLine" class="bold-line left-0 w-1/2"></div>
+                    </div>
+                    <div class="flex text-xs font-semibold text-black font-sans cursor-pointer">
+                        <div id="mainFill" class="w-1/2 text-center">Main Fill</div>
+                        <div id="uploadElements" class="w-1/2 text-center">Upload Elements</div>
+                    </div>
                 </div>
-                <div class="tabs-dotted-line"></div>
             </div>
 
+<!-- MAIN FILL -->
             <div class="flex flex-col md:flex-row gap-12">
                 <form class="flex flex-col gap-8 w-full md:w-1/3">
                     <div class="flex flex-col gap-1">
@@ -28,17 +28,21 @@
                         <input
                             id="website-name"
                             type="text"
-                            class="bg-white border border-gray-200 rounded-sm h-8 px-2 text-xs focus:outline-none focus:ring-0 focus:border-gray-300" />
+                            class="bg-white border border-gray-200 rounded-sm h-8 px-2 text-xs focus:outline-none focus:ring-0 focus:border-gray-300"
+                            placeholder="Input your name of website" />
+
                     </div>
 
                     <div class="flex flex-col gap-1">
                         <label
                             for="description"
-                            class="text-[9px] font-sans font-semibold text-gray-400 tracking-widest uppercase">Description(*)</label>
+                            class="text-[9px] font-sans font-semibold text-gray-400 tracking-widest"
+                            >Description(*)
+                        </label>
                         <textarea
                             id="description"
                             rows="4"
-                            class="bg-white border border-gray-200 rounded-sm px-2 pt-1 text-xs resize-none focus:outline-none focus:ring-0 focus:border-gray-300"></textarea>
+                            class="bg-white border border-gray-200 rounded-sm px-2 pt-1 text-xs resize-none focus:outline-none focus:ring-0 focus:border-gray-300" placeholder="Input description"></textarea>
                     </div>
 
                     <div class="flex flex-col gap-1 max-w-[160px]">
@@ -73,6 +77,37 @@
                     <span class="text-xs font-sans text-gray-400 tracking-widest uppercase">
                         Preview
                     </span>
+                </div>
+            </div>
+            <div class="max-w-6xl mx-auto px-4 py-10">
+                <div class="flex flex-col md:flex-row md:justify-center md:items-start mt-10 space-y-10 md:space-y-0 md:space-x-20 max-w-4xl mx-auto relative">
+                    <form class="bg-gray-200 p-8 w-full max-w-md relative">
+                        <label for="website" class="block text-[8px] font-bold mb-1 text-gray-500">NAME OF WEBSITE</label>
+                        <input
+                            id="website"
+                            type="text"
+                            class="w-full h-7 mb-6 px-2 text-xs bg-white border border-gray-200 rounded-sm  focus:outline-none focus:ring-0 focus:border-gray-300"
+                            style="font-family: Inter, sans-serif;"
+                            placeholder="Input your name of website" />
+                        <label for="image-upload" class="block text-[8px] font-bold mb-1 text-gray-500">IMAGE</label>
+                        <div class="w-28 h-28 bg-white flex flex-col items-center justify-center text-center text-[8px] text-gray-700 mb-6 px-1 leading-tight" style="font-family: Inter, sans-serif;">
+                            <i class="fas fa-cloud-upload-alt text-base mb-1"></i>
+                            <span>Drag and drop your image or <span class="underline cursor-pointer">browse</span> to choose your file.</span>
+                            <b class="block mt-1">Recommended size:</b>
+                            <b>400×400px. 400KB max.</b>
+                        </div>
+                        <label for="tags" class="block text-[8px] font-bold mb-1 text-gray-500">TAGS</label>
+                        <div class="bg-white rounded-md h-12 flex items-center px-3 space-x-2 max-w-xs relative">
+                            <span class="text-[8px] border border-gray-300 rounded-full py-1 px-2">#CssAnimation</span>
+                            <button type="button" class="text-xs font-bold text-black rounded-full border border-black w-5 h-5 flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-200">+</button>
+                        </div>
+                    </form>
+                    <button aria-label="Add new upload element" class="bg-black text-white rounded-full w-10 h-10 flex items-center justify-center absolute hover:bg-gray-800 transition-colors duration-200" style="top: 50%; right: 5.5rem;">
+                        <span class="text-2xl font-bold bottom-5">+</span>
+                    </button>
+                </div>
+                <div class="flex justify-end max-w-4xl mx-auto mt-20">
+                    <button class="bg-black text-white font-bold text-xs py-3 px-10 rounded-full tracking-widest hover:bg-gray-800 transition-colors duration-200">SUBMIT</button>
                 </div>
             </div>
         </div>

@@ -1,0 +1,22 @@
+.line-container {
+      position: relative;
+      height: 2px;
+    }
+    .dotted-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      border-bottom: 1px dotted #6b7280; /* Tailwind gray-500 */
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+    .bold-line {
+      position: absolute;
+      top: 50%;
+      height: 2px;
+      border-bottom: 2px solid black;
+      transform: translateY(-50%);
+      transition: left 0.3s ease, width 0.3s ease;
+      z-index: 1;
+    }
