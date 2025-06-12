@@ -90,3 +90,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
   updateCarousel(); // Inisialisasi
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const showCardButtons = document.querySelectorAll('.show-card-btn'); // semua tombol
+  const cardOverlay = document.getElementById('cardOverlay');
+  const cardWrapper = document.getElementById('cardWrapper');
+  const closeBtn = document.getElementById('closeBtn');
+
+  // Semua tombol bisa munculin card
+  showCardButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      cardOverlay.classList.remove('pointer-events-none');
+      cardOverlay.classList.add('opacity-100');
+      cardWrapper.classList.remove('opacity-0', 'scale-95');
+      cardWrapper.classList.add('opacity-100', 'scale-100');
+      document.body.classList.add('no-scroll');
+    });
+  });
+
+  // Tutup modal via klik luar card
+  cardOverlay.addEventListener('click', (e) => {
+    if (e.target === cardOverlay) {
+      closeCard();
+    }
+  });
+
+  // Tutup modal via tombol X
+  closeBtn.addEventListener('click', closeCard);
+
+  function closeCard() {
+    cardWrapper.classList.remove('opacity-100', 'scale-100');
+    cardWrapper.classList.add('opacity-0', 'scale-95');
+    cardOverlay.classList.remove('opacity-100');
+
+    setTimeout(() => {
+      cardOverlay.classList.add('pointer-events-none');
+      document.body.classList.remove('no-scroll');
+    }, 300);
+  }
+});

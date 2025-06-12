@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         hideAllSections();
         
         if (loginSection) {
-            // Langsung set display dan remove hidden
             loginSection.classList.remove('hidden');
             loginSection.style.display = 'flex';
             loginSection.style.position = 'fixed';

@@ -6,7 +6,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-
 Route::get('/directory', function () {
     return view('directory');
 })->name('directory');
@@ -40,3 +39,42 @@ Route::get('/profile-user', function () {
 Route::get('/submit-web', function () {
     return view('submit');
 });
+
+Route::get('/login-page', function () {
+    return view('login');
+});
+
+Route::get('/register-page', function () {
+    return view('register');
+});
+
+Route::get('/elements', function () {
+    return view('elements');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+
+Route::get('/collections', function () {
+    return view('collections');
+});
+
+
+Route::get('/notification', function () {
+    return view('notification');
+});
+
+
+Route::get('/per-notification', function () {
+   return view('insidenotification');
+
+});
+
+
+Route::get('/dashboard', function () {
+   return view('dashboard');
+
+});
+

@@ -1,217 +1,281 @@
+/* Container for cards */
+.cards-container {
+  position: relative;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  height: 340px;
+}
+
+/* White card */
+.card-white {
+  position: relative;
+  width: 240px;
+  height: 340px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  color: #1A1A1A;
+  z-index: 20;
+}
+
+/* Black card */
+.card-black {
+  position: absolute;
+  top: 0;
+  left: 65px;
+  width: 240px;
+  height: 340px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #0A0A0A;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, left 0.3s ease, z-index 0s;
+  cursor: pointer;
+  z-index: 30;
+}
+
+/* Hide HEX text on white card initially */
+.card-white .hex-text {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s ease;
+  font-weight: 600;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Show HEX text on hover */
+.card-white:hover .hex-text {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+/* On hover of white card, move white card left and black card right fully so white card is fully visible */
+.card-white:hover {
+  transform: translateX(-125px);
+  z-index: 20;
+}
+
+.card-white:hover+.card-black {
+  transform: translateX(175px);
+  left: 0;
+  z-index: 30;
+}
+
+/* Align Aa text to right */
+.aa-text {
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 1;
+  user-select: none;
+  text-align: right;
+}
+
+/* HEX label styling */
+.hex-label {
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Search icon size */
+.search-icon {
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .auto-grid> :last-child:nth-child(odd) {
+    grid-column: span 2 / span 2;
+  }
+}
+
+.bar-container {
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+}
+
+.bar-divider {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  transform: scaleX(0.2);
+  /* Menyempitkan skala horizontal */
+  transform-origin: right;
+  position: absolute;
+  top: -56px;
+  bottom: -12px;
+  right: 0;
+  z-index: 10;
+}
 
 
- /* Container for cards */
- .cards-container {
-     position: relative;
-     max-width: 500px;
-     margin-left: auto;
-     margin-right: auto;
-     padding-left: 1.5rem;
-     padding-right: 1.5rem;
-     margin-top: 5rem;
-     display: flex;
-     justify-content: center;
-     gap: 1.5rem;
-     height: 340px;
- }
-
- /* White card */
- .card-white {
-     position: relative;
-     width: 240px;
-     height: 340px;
-     border-radius: 0.5rem;
-     overflow: hidden;
-     background-color: white;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-     cursor: pointer;
-     transition: transform 0.3s ease;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     padding: 1rem;
-     color: #1A1A1A;
-     z-index: 20;
- }
-
- /* Black card */
- .card-black {
-     position: absolute;
-     top: 0;
-     left: 65px;
-     width: 240px;
-     height: 340px;
-     border-radius: 0.5rem;
-     overflow: hidden;
-     background-color: #0A0A0A;
-     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-     border: 1px solid black;
-     color: white;
-     padding: 1rem;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     transition: transform 0.3s ease, left 0.3s ease, z-index 0s;
-     cursor: pointer;
-     z-index: 30;
- }
-
- /* Hide HEX text on white card initially */
- .card-white .hex-text {
-     visibility: hidden;
-     opacity: 0;
-     transition: visibility 0s linear 0.3s, opacity 0.3s ease;
-     font-weight: 600;
-     font-size: 0.75rem;
-     display: flex;
-     align-items: center;
-     gap: 0.25rem;
- }
-
- /* Show HEX text on hover */
- .card-white:hover .hex-text {
-     visibility: visible;
-     opacity: 1;
-     transition-delay: 0s;
- }
-
- /* On hover of white card, move white card left and black card right fully so white card is fully visible */
- .card-white:hover {
-     transform: translateX(-125px);
-     z-index: 20;
- }
-
- .card-white:hover+.card-black {
-     transform: translateX(175px);
-     left: 0;
-     z-index: 30;
- }
-
- /* Align Aa text to right */
- .aa-text {
-     font-size: 72px;
-     font-weight: 300;
-     line-height: 1;
-     user-select: none;
-     text-align: right;
- }
-
- /* HEX label styling */
- .hex-label {
-     font-weight: 700;
-     font-size: 0.75rem;
-     display: flex;
-     align-items: center;
-     gap: 0.25rem;
- }
-
- /* Search icon size */
- .search-icon {
-     font-size: 0.75rem;
- }
-
- @media (min-width: 768px) {
-     .auto-grid> :last-child:nth-child(odd) {
-         grid-column: span 2 / span 2;
-     }
- }
-
- .bar-container {
-     border: 0.5px solid rgba(0, 0, 0, 0.2);
-     border-radius: 0;
- }
-
- .bar-divider {
-     border-left: 1px solid rgba(0, 0, 0, 0.2);
-     transform: scaleX(0.2);
-     /* Menyempitkan skala horizontal */
-     transform-origin: right;
-     position: absolute;
-     top: -56px;
-     bottom: -12px;
-     right: 0;
-     z-index: 10;
- }
-
- 
 .image-wrapper-site {
-    position: relative;
-    overflow: hidden;
-    border-radius: 0.375rem; /* rounded-md */
-    cursor: pointer;
-    display: block;
-    background-color: #202020;
-    padding: 50px;
-    height: 365px;
-  }
-  
-  .image-wrapper-site img {
-    display: block;
-    width: 100%;
-    max-height: 255px; 
-    object-fit: cover;
-    transition: transform 0.3s ease;
- 
-  }
-  .image-wrapper-site::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.837), rgba(0,0,0,0));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 10;
-  }
-  .image-wrapper-site:hover::after {
-    opacity: 1;
-  }
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  /* rounded-md */
+  cursor: pointer;
+  display: block;
+  background-color: #202020;
+  padding: 50px;
+  height: 365px;
+}
 
-  
-  .hover-text-site {
-    position: absolute;
-    bottom: 4.8rem; /* increased padding */
-    left: 4.3rem;   /* increased padding */
-    color: white;
-    text-align: left;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 20;
-    line-height: 1.1;
-    user-select: none;
-  }
-  .hover-text-site {
-    font-size: 6px; /* 10px */
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
-    font-weight: 300; /* thin */
-  }
+.image-wrapper-site img {
+  display: block;
+  width: 100%;
+  max-height: 255px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 
-  .website-label-site{
-    font-size: 6px; 
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
-    font-weight: 100; 
-  }
+}
 
-  .hover-text-site .title-site {
-    font-size: 0.875rem; /* 14px */
-    font-weight: 700;
-  }
-  .image-wrapper-site:hover .hover-text-site {
-    opacity: 1;
-  }
+.image-wrapper-site::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.837), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
 
-  .card-item {
+.image-wrapper-site:hover::after {
+  opacity: 1;
+}
+
+
+.hover-text-site {
+  position: absolute;
+  bottom: 4.8rem;
+  /* increased padding */
+  left: 4.3rem;
+  /* increased padding */
+  color: white;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 20;
+  line-height: 1.1;
+  user-select: none;
+}
+
+.hover-text-site {
+  font-size: 6px;
+  /* 10px */
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-weight: 300;
+  /* thin */
+}
+
+.website-label-site {
+  font-size: 6px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-weight: 100;
+}
+
+.hover-text-site .title-site {
+  font-size: 0.875rem;
+  /* 14px */
+  font-weight: 700;
+}
+
+.image-wrapper-site:hover .hover-text-site {
+  opacity: 1;
+}
+
+.card-item {
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .card-item .hidden {
   opacity: 0;
   transform: translateX(100%);
+}
+ .overlay {
+    position: fixed; /* ganti dari absolute ke fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+   .card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-30px);
+    opacity: 0;
+}
+.card.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+    .card-content {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        width: 100%;
+        display: flex;
+    }
+
+    .card-content.show {
+        opacity: 1;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #666;
+        z-index: 20;
+    }
+
+    /* Kalau pakai CSS biasa */
+body.no-scroll {
+  overflow: hidden;
 }

@@ -1,27 +1,28 @@
 body {
     font-family: "Inter", sans-serif;
-  }
-  html {
+}
+
+html {
     scroll-behavior: smooth;
-     scrollbar-width: none;
-  }
-  
-  .active-item {
+    scrollbar-width: none;
+}
+
+.active-item {
     background-color: white;
-    padding-left: 0.75rem; 
+    padding-left: 0.75rem;
     padding-right: 0.75rem;
-    font-weight: 600; 
+    font-weight: 600;
     color: black !important;
-    border-radius: 0.25rem; 
+    border-radius: 0.25rem;
     transition: background-color 0.15s ease;
-  }
-  
-  .no-shift-hover:hover {
+}
+
+.no-shift-hover:hover {
     background-color: white;
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
     transition: background-color 0.15s ease;
-  }
+}
 
 #clearBtn {
     cursor: pointer;
@@ -67,22 +68,24 @@ body {
 
 @keyframes scroll-left {
     0% {
-      transform: translateX(0%);
+        transform: translateX(0%);
     }
+
     100% {
-      transform: translateX(-50%);
+        transform: translateX(-50%);
     }
-  }
-  
-  .scrolling-wrapper {
+}
+
+.scrolling-wrapper {
     animation: scroll-left 20s linear infinite;
     white-space: nowrap;
     display: inline-flex;
-  }
+}
 
 
-  /* MODAL STYLES */
-#loginSection, #registerSection {
+/* MODAL STYLES */
+#loginSection,
+#registerSection {
     position: fixed;
     top: 0;
     left: 0;
@@ -96,7 +99,8 @@ body {
     display: none;
 }
 
-#loginSection.show, #registerSection.show {
+#loginSection.show,
+#registerSection.show {
     opacity: 1;
 }
 
@@ -139,6 +143,7 @@ body.modal-open {
         opacity: 0;
         transform: scale(0.9);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -150,6 +155,7 @@ body.modal-open {
         opacity: 1;
         transform: scale(1);
     }
+
     to {
         opacity: 0;
         transform: scale(0.9);
@@ -166,6 +172,7 @@ body.modal-open {
 
 /* RESPONSIVE MODAL */
 @media (max-width: 768px) {
+
     #loginSection .bg-white,
     #registerSection .bg-white {
         margin: 1rem;
@@ -205,4 +212,20 @@ body.modal-open {
 .btn-secondary:hover {
     transform: translateY(-1px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-container:hover .dropdown-menu {
+    display: block;
 }
