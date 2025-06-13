@@ -1,0 +1,62 @@
+ /* Animasi untuk section */
+        #mainFillSection, #uploadElementsSection {
+            transition: transform 0.5s ease-in-out;
+            position: absolute;
+            width: 100%;
+            max-width: 6xl;
+        }
+        
+        #mainFillSection {
+            transform: translateX(0);
+        }
+        
+        #uploadElementsSection {
+            transform: translateX(130%);
+            top: 0;
+        }
+        
+        /* Ketika aktif */
+        .main-fill-active #mainFillSection {
+            transform: translateX(0);
+        }
+        
+        .main-fill-active #uploadElementsSection {
+            transform: translateX(130%);
+        }
+        
+        .upload-elements-active #mainFillSection {
+            transform: translateX(-130%);
+        }
+        
+        .upload-elements-active #uploadElementsSection {
+            transform: translateX(0);
+        }
+        
+        /* Garis indikator */
+        .line-container {
+            position: relative;
+            height: 2px;
+            width: 100%;
+        }
+        
+        .dotted-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            border-top: 2px dotted #000;
+        }
+        
+        .bold-line {
+            position: absolute;
+            top: 0;
+            height: 2px;
+            background-color: #000;
+            transition: all 0.3s ease;
+        }
+        
+        /* Prevent scrolling when switching */
+        body {
+            overflow-x: hidden;
+        }

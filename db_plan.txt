@@ -1,0 +1,138 @@
+countries:
+    PRIMARY AUTO INT id
+    VARCHAR(255) name
+
+app_users:
+    PRIMARY AUTO INT id
+    UNIQUE VARCHAR(255) name
+    VARCHAR(255) display_name
+    UNIQUE VARCHAR(255) email
+    VARCHAR(255) password
+    TEXT NULL description
+    TEXT image_link
+    INT FOREIGN country_id REF countries(id)
+    INT FOREIGN subscription_id REF subscriptions(id)
+    TEXT NULL twitter
+    TEXT NULL facebook
+    TEXT NULL linkedin
+    TEXT NULL instagram
+    TEXT NULL tiktok
+    TINYINT type
+    TINYINT rank
+    INT status_points
+    VARCHAR(100) remember_token
+    TIMESTAMP created_at
+
+subscriptions:
+    PRIMARY AUTO INT id
+    TINYINT plan
+    INT price
+    BOOL is_annual
+    TIMESTAMP purchased_at
+
+websites:
+    PRIMARY AUTO INT id
+    INT FOREIGN user_id REF app_users(id)
+    UNIQUE VARCHAR(255) name
+    TEXT description
+    TEXT link
+    TEXT image_link
+    INT FOREIGN category_id REF categories(id)
+    TIMESTAMP created_at
+
+website_elements:
+    PRIMARY AUTO INT id
+    INT FOREIGN website_id REF websites(id)
+    VARCHAR(255) name
+    TEXT image_link
+    UNIQUE(website_id, name)
+
+website_collaborators:
+    INT FOREIGN website_id REF websites(id)
+    INT FOREIGN user_id REF user(id)
+
+website_votes:
+    INT FOREIGN website_id REF websites(id)
+    INT FOREIGN user_id REF user(id)
+    BOOL is_rejected
+    TINYINT design
+    TINYINT usability
+    TINYINT creativity
+    TINYINT content
+
+user_votes:
+    INT FOREIGN website_id REF websites(id)
+    INT FOREIGN user_id REF user(id)
+    BOOL is_rejected
+    TINYINT semantics
+    TINYINT animations
+    TINYINT accessibility
+    TINYINT wpo
+    TINYINT responsive_design
+    TINYINT markup
+
+categories:
+    PRIMARY AUTO INT id
+    UNIQUE VARCHAR(255) name
+
+tags:
+    PRIMARY AUTO INT id
+    UNIQUE VARCHAR(255) name
+
+website_tags:
+    INT FOREIGN website_id REF websites(id)
+    INT FOREIGN tag_id REF tags(id)
+
+awards:
+    PRIMARY AUTO INT id
+    INT FOREIGN website_id REF websites(id)
+    TINYINT type
+    TIMESTAMP awarded_date
+
+job_listings:
+    PRIMARY AUTO INT id
+    INT FOREIGN employer_id REF app_users(id)
+    INT FOREIGN employee_id REF app_users(id)
+    TIMESTAMP created_at
+    VARCHAR(255) title
+    TEXT description
+    TINYINT category
+    TINYINT type
+    BOOL is_remote
+    VARCHAR(255) company_name
+    VARCHAR(255) company_website
+    VARCHAR(255) company_logo
+    TINYINT apply_with
+    VARCHAR(255) apply_at
+    TEXT(255) location
+    
+courses:
+    PRIMARY AUTO INT id
+    INT FOREIGN teacher_id REF app_users(id)
+    VARCHAR(255) name
+    TEXT description
+    TINYINT rating
+    INT price
+
+lessons:
+    PRIMARY AUTO INT id
+    INT FOREIGN course_id REF courses(id)
+    VARCHAR(255) name
+    TEXT description
+    TEXT content
+
+user_courses:
+    INT FOREIGN user_id REF app_users(id)
+    INT FOREIGN course_id REF courses(id)
+
+collections:
+    PRIMARY AUTO INT id
+    INT FOREIGN user_id REF app_users(id)
+    VARCHAR(255) name
+    TEXT NULL description
+    TINYINT category
+    BOOL is_private
+
+website_collections:
+    INT FOREIGN collection_id REF collections(id)
+    INT FOREIGN website_id REF websites(id)

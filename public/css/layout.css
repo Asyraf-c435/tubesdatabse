@@ -1,0 +1,231 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.active-item {
+    background-color: white;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-weight: 600;
+    color: black !important;
+    border-radius: 0.25rem;
+    transition: background-color 0.15s ease;
+}
+
+.no-shift-hover:hover {
+    background-color: white;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    transition: background-color 0.15s ease;
+}
+
+#clearBtn {
+    cursor: pointer;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    display: none;
+}
+
+.explore-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ededed;
+    z-index: 50;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-out;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: none;
+}
+
+.explore-modal.active {
+    transform: translateY(0);
+    display: block;
+}
+
+.overlay-active {
+    overflow: hidden;
+}
+
+.navbar-blur {
+    filter: brightness(0.5);
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.scrolling-wrapper {
+    animation: scroll-left 20s linear infinite;
+    white-space: nowrap;
+    display: inline-flex;
+}
+
+
+/* MODAL STYLES */
+#loginSection,
+#registerSection {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: none;
+}
+
+#loginSection.show,
+#registerSection.show {
+    opacity: 1;
+}
+
+/* LOGIN SECTION STYLES */
+.login {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+/* MODAL CLOSE BUTTON */
+.modal-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* PREVENT BODY SCROLL WHEN MODAL IS OPEN */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* ANIMATION CLASSES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.modal-content {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content.closing {
+    animation: fadeOut 0.3s ease-in;
+}
+
+/* RESPONSIVE MODAL */
+@media (max-width: 768px) {
+
+    #loginSection .bg-white,
+    #registerSection .bg-white {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+    }
+}
+
+/* FORM STYLING IMPROVEMENTS */
+.form-input {
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+    border-color: #000;
+    outline: none;
+}
+
+.form-input:hover {
+    border-color: #666;
+}
+
+/* BUTTON HOVER EFFECTS */
+.btn-primary {
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-container:hover .dropdown-menu {
+    display: block;
+}

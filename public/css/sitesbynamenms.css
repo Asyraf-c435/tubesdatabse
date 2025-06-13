@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Sumana:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap');
+
+.badan {
+    font-family: "Inter", sans-serif;
+}
+    .font-instrumentsans {
+      font-family: 'Instrument Sans', sans-serif;
+    }
+
+.underline-slide {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 900;
+    transition: color 0.3s ease;
+}
+
+.underline-slide::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 1px;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: width 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.underline-slide:hover {
+    color: #1f2937;
+}
+
+.underline-slide:hover::after {
+    width: 100%;
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+}
+
+.desc {
+    font-size: x-large;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+.overlay {
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.15) 60%, transparent);
+   }
+   .group:hover .overlay {
+    opacity: 1;
+   }
+   .text-container {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+   }
+   .group:hover .text-container {
+    opacity: 1;
+   }
+
+   .butto {
+    transition: border-color 0.6s ease, background-color 0.6s ease;
+  }
+  /* For the black circle button: on hover, inner circle grows to fill outer circle */
+  .circle-button .inner-circle {
+    width: 1.5rem; /* 6 */
+    height: 1.5rem;
+    border-radius: 1000px;
+    background-color: white;
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+  .circle-button:hover {
+    border-color: black !important;
+  }
+  .circle-button:hover .inner-circle {
+    width: 2rem; /* fill outer circle (w-10 = 2.5rem) */
+    height: 2rem;
+  }
+  /* Other buttons border color on hover */
+  .tag-button:hover {
+    border-color: black !important;
+  }
+  /* Vote button smooth background color transition and hover to black */
+  .vote-button {
+    transition: background-color 0.3s ease;
+  }
+  .vote-button:hover {
+    background-color: rgb(27, 26, 26);
+  }
+
+  .active-tab {
+    color: #fff083 !important;
+    border-color:  #fff083 !important ;
+    font-weight: 600;
+}
+
+.active-own{
+color: #1f2937;
+}

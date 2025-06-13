@@ -1,0 +1,83 @@
+@config 'tailwind.config.js';
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font global */
+@layer base {
+    body {
+        @apply bg-white text-gray-900;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+/* Sidebar */
+@layer components {
+    .fi-sidebar {
+        @apply bg-gray-100 text-gray-900 border-r border-gray-200;
+    }
+
+    .fi-sidebar-item {
+        @apply hover:bg-gray-200;
+    }
+
+    .fi-sidebar-item-active {
+        @apply bg-gray-300 text-gray-900 font-semibold;
+    }
+
+    .fi-sidebar-item-icon {
+        @apply text-gray-700;
+    }
+
+    .fi-sidebar-item-active .fi-sidebar-item-icon {
+        @apply text-gray-900;
+    }
+
+    .fi-topbar {
+        @apply bg-white border-b border-gray-200;
+    }
+
+    .fi-btn-primary {
+        @apply bg-gray-800 hover:bg-gray-900 text-white shadow transition-color duration-300 ease-in-out;
+    }
+
+    .fi-section {
+        @apply bg-white text-gray-900;
+    }
+
+    .fi-card {
+        @apply bg-white border border-gray-200;
+    }
+
+    .fi-widget {
+        @apply bg-white text-gray-900 border border-gray-200;
+    }
+
+    .fi-modal {
+        @apply bg-white;
+    }
+
+    .fi-table {
+        @apply bg-white;
+    }
+
+    .fi-table-header {
+        @apply bg-gray-100 text-gray-900;
+    }
+
+    .fi-table-cell {
+        @apply border-gray-200;
+    }
+
+    .fi-input {
+        @apply bg-white border-gray-300 focus:border-gray-500 focus:ring-gray-500;
+    }
+
+    .fi-input-label {
+        @apply text-gray-700;
+    }
+}
