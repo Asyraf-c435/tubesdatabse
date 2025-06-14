@@ -1,3 +1,6 @@
+@php
+    use App\Models\Award;
+@endphp
 <!-- MODAL OVERLAY -->
 <div id="modal-overlay" class="modal-overlay"></div>
 
@@ -6,7 +9,7 @@
     <div class="bg-[#ededed]">
         <nav class="flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-16 py-3">
             <!-- (Logo) -->
-            <div class="text-2xl font-bold select-none cursor-default font-sans mr-6">Tubes .</div>
+            <div class="text-2xl font-bold select-none cursor-default font-sans mr-6"><a href="{{ route('home') }}">Tubes .</a></div>
 
             <!-- (Search Bar) -->
             <div class="flex-1 max-w-[1290px] mx-5 hidden sm:block mt-1.5">
@@ -29,14 +32,14 @@
             </div>
 
             <div class="flex items-center space-x-4 text-xs text-black mt-1.5 ">
-                <a href="login-page" class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500">Log in</a>
-                <a href="register-page" class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500">Sign Up</a>
-                <a
+                <a href="{{ route('login') }}" class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500">Log in</a>
+                <a href="{{ route('register') }}" class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500">Sign Up</a>
+                <!-- <a
                     class="bg-black text-white rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-white hover:text-black transition-colors duration-500">
                     Be Pro
-                </a>
+                </a> -->
                 <a
-                    class="border border-black rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-black hover:text-white transition-colors duration-500" href="submit-web">
+                    class="border border-black rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-black hover:text-white transition-colors duration-500" href="{{ route('submit') }}">
                     Submit Website
                 </a>
             </div>
@@ -73,32 +76,32 @@
                 <section class="flex-1 flex flex-col gap-2 text-gray-900" data-section="Awards">
                     <a href="#" class="grid grid-cols-[auto_auto] gap-x-34 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <span>Honor Mentions</span>
-                        <span class="text-right">25K</span>
+                        <span class="text-right">{{ Award::where('type', 1)->count() }}</span>
                     </a>
                     <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <span>Nominees</span>
-                        <span class="text-right">48K</span>
+                        <span class="text-right">???</span>
                     </a>
                     <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <span>Sites of the Day</span>
-                        <span class="text-right">5957</span>
+                        <span class="text-right">{{ Award::where('type', 2)->count() }}</span>
                     </a>
                     <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <span>Sites of the Month</span>
-                        <span class="text-right">203</span>
+                        <span class="text-right">{{ Award::where('type', 3)->count() }}</span>
                     </a>
                     <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <span>Sites of the Year</span>
-                        <span class="text-right">64</span>
+                        <span class="text-right">{{ Award::where('type', 4)->count() }}</span>
                     </a>
-                    <a href="#" class="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
+                    <!-- <a href="#" class="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <div class="flex items-center gap-2">
                             <span>Honors</span>
                             <span class="bg-black text-white text-[9px] font-semibold rounded px-1 py-[1px] select-none">New</span>
                         </div>
                     </a>
                     <a href="#" class="block py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">Most Awarded Profiles</a>
-                    <a href="#" class="block py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200 mb-20">Jury 2025</a>
+                    <a href="#" class="block py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200 mb-20">Jury 2025</a> -->
                 </section>
                 <!-- BY CATEGORY -->
                 <section class="flex-1 flex flex-col gap-2 text-gray-900 overflow-hidden" data-section="By Category">

@@ -59,7 +59,6 @@ CREATE TABLE website_elements (
     website_id INT NOT NULL,
     name VARCHAR(255) NOT NULL,
     image_link TEXT NOT NULL,
-    UNIQUE (website_id, name),
     FOREIGN KEY (website_id) REFERENCES websites(id)
 );
 

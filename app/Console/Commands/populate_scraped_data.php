@@ -36,27 +36,27 @@ class populate_scraped_data extends Command
         $path_to_user_json = storage_path('app/translated_user_datas.json');
         $sites = json_decode(file_get_contents($path_to_site_json), true);
         $users = json_decode(file_get_contents($path_to_user_json), true);
-        // $this->info('Populating users...');
-        // foreach ($users as $user) {
-        //     try {
-        //         User::create([
-        //             'name' => $user['user_name'],
-        //             'display_name' => $user['display_name'],
-        //             'email' => 'user'.$user['id'].'@gmail.com',
-        //             'password' => Hash::make('ABcd@1234'),
-        //             'description' => 'I am user'.$user['id'].'.',
-        //             'image_link' => $user['profile_picture'],
-        //             'user_link' => $user['user_link'],
-        //             'type' => 0,
-        //             'rank' => 0,
-        //             'status_points' => 0,
-        //             'created_at' => now()
-        //         ]);
-        //     } catch (QueryException $e) {
-        //         $this->info(string: "Failed to create user: $e");
-        //     }
-        // }
-        // $this->info('Populated users!\n');
+        $this->info('Populating users...');
+        foreach ($users as $user) {
+            try {
+                User::create([
+                    'name' => $user['user_name'],
+                    'display_name' => $user['display_name'],
+                    'email' => 'user'.$user['id'].'@gmail.com',
+                    'password' => Hash::make('ABcd@1234'),
+                    'description' => 'I am user'.$user['id'].'.',
+                    'image_link' => $user['profile_picture'],
+                    'user_link' => $user['user_link'],
+                    'type' => 0,
+                    'rank' => 0,
+                    'status_points' => 0,
+                    'created_at' => now()
+                ]);
+            } catch (QueryException $e) {
+                $this->info(string: "Failed to create user: $e");
+            }
+        }
+        $this->info('Populated users!\n');
 
         $this->info('May God spare my soul... Populating sites and its components...');
         foreach ($sites as $site) {

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>
-        Tubes Login
+       Login
     </title>
     <script src="https://cdn.tailwindcss.com">
     </script>
@@ -24,22 +24,22 @@
                     <label class="text-gray-400 text-xs uppercase mb-1" for="email">
                         EMAIL
                     </label>
-                    <input class="border-b border-gray-300 bg-gray-50 focus:outline-none focus:border-black placeholder-gray-300 text-sm pb-1" id="email" placeholder="Email" type="text" />
+                    <input class="border-b border-gray-300 bg-gray-50 focus:outline-none focus:border-black placeholder-gray-300 text-sm pb-1" id="email" placeholder="Email" type="text" name="email" />
                 </div>
                 <div class="flex flex-col mb-4">
                     <label class="text-gray-400 text-xs uppercase mb-1" for="password">
                         PASSWORD
                     </label>
-                    <input class="border-b border-gray-300 bg-gray-50 focus:outline-none focus:border-black placeholder-gray-300 text-sm pb-1" id="password" placeholder="Password" type="password" />
+                    <input class="border-b border-gray-300 bg-gray-50 focus:outline-none focus:border-black placeholder-gray-300 text-sm pb-1" id="password" placeholder="Password" type="password" name="password" />
                 </div>
                 <div class="flex items-center space-x-2 text-sm mb-4">
-                    <input class="w-4 h-4" id="keep-logged" type="checkbox" />
+                    <input class="w-4 h-4" id="keep-logged" type="checkbox" name="remember" />
                     <label class="text-black" for="keep-logged">
                         Keep me logged in
                     </label>
                 </div>
                 <button class="bg-black text-white font-semibold py-3 rounded-md mt-2" type="submit">
-                    Log in now
+                    Log In
                 </button>
             </form>
             <a class="text-xs underline mt-3 self-start" href="#">
@@ -76,7 +76,7 @@
         <div class="flex flex-col justify-center px-8 py-6 md:w-1/2">
             <div class="flex items-center space-x-4">
                 <h1 class="text-[100px] font-bold text-black">
-                    Tubes.
+                    Tubes .
                 </h1>
                 <div class="w-16 h-16 bg-lime-500 flex items-center justify-center rounded-sm mt-4">
                     <img alt="Smiling face emoji with purple outline on lime green background" class="w-21 h-21" height="80" src="https://storage.googleapis.com/a1aa/image/02bc5aa8-31f2-402e-fdb6-4cbedbf32340.jpg" width="80" />
@@ -84,7 +84,7 @@
             </div>
             <div class="text-gray-600 text-xs mb-5 ml-3">
                 Not a member yet?
-                <a class="font-semibold underline" href="register-page">
+                <a class="font-semibold underline" href="{{ route('register') }}">
                     Register now
                 </a>
             </div>
@@ -92,6 +92,9 @@
         <!-- Right side -->
         
     </div>
+    @if($errors->any())
+        <div>{{ $errors->first() }}</div>
+    @endif
 </body>
 
 </html>

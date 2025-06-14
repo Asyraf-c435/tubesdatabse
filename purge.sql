@@ -1,0 +1,12 @@
+DELETE FROM `awards`;
+ALTER TABLE `awards` AUTO_INCREMENT = 1;
+DELETE FROM `tags`;
+ALTER TABLE `tags` AUTO_INCREMENT = 1;
+DELETE FROM `websites`;
+ALTER TABLE `websites` AUTO_INCREMENT = 1;
+DELETE FROM `user_votes`;
+DELETE FROM `website_votes`;
+DELETE FROM `website_collaborators`;
+DELETE FROM `website_tags`;
+DELETE FROM `website_elements`;
+ALTER TABLE `website_elements` AUTO_INCREMENT = 1;

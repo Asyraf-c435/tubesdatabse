@@ -1,8 +1,9 @@
+
 <x-layout>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <a href="/websites">TEST</a>
-    <a href="/dashboard">TEST</a>
     <div class="relative">
+        <a href="/websites">TEST</a>
+        <a href="/pro">TEST</a>
         <button
             id="scrollUpButton"
             class="fixed bottom-3.5 left-8 translate-y-4 opacity-0 w-14 h-14
@@ -20,7 +21,7 @@
             style="font-family: 'Inter', sans-serif;">
 
             <div class="flex items-center justify-center w-15 h-10 rounded-md px-4 py-2 bg-[#222222] text-white font-semibold text-lg select-none m-1">
-                <a href={{ route('home') }}>Tubes .</a>
+                Tubes .
             </div>
             <a href="#nominees" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-white transition">Nominees</a>
             <a href="#courses" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-white transition">Courses</a>
@@ -30,7 +31,6 @@
             <a href="#" class="visit-sotd text-gray-900 text-xs px-3 py-2 rounded-md border-2 border-gray-300 bg-gray-50  font-semibold">Visit Sotd.</a>
         </div>
     </div>
-
     <div class="bg-gray-50  text-[#1a1a1a]">
         <div class="max-w-[1690px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-center text-[10px] leading-[12px] pt-3 pb-1 font-normal">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('home');
@@ -35,13 +36,11 @@ Route::get('/profile-user', function () {
     return view('profileuser');
 });
 
-Route::get('/submit-web', function () {
-    return view('submit');
-});
+Route::get('/submit-web', function () {return view('submit');})->name('submit');
 
-Route::get('/login-page', [UserController::class, 'login'])->name('login');
-
-Route::post('/login-page', [UserController::class, 'actionlogin'])->name('actionlogin');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('actionlogin');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/register-page', [UserController::class, 'register'])->name('register');
 
@@ -55,17 +54,53 @@ Route::get('/profile/{id}', [UserController::class, 'show'])->name('profile');
 
 Route::get('/collections', function () {
     return view('collections');
-});
+})->name('collections');
 
 Route::get('/notification', function () {
     return view('notification');
-});
+})->name('notification');
 
 Route::get('/per-notification', function () {
    return view('insidenotification');
 
-});
+})->name('notification.show');
 
 Route::get('/dashboard', function () {
    return view('dashboard');
+})->name('dashboard');
+
+// Route::get('/dashboard', function () {
+//     return 'Welcome to your dashboard';
+// })->middleware('auth');
+
+Route::get('/profile-settings', function () {
+   return view('dashboard.profilesettings');
+});
+
+Route::get('/change-data', function () {
+   return view('dashboard.profilesettemailps');
+});
+
+Route::get('/submission', function () {
+   return view('dashboard.submission');
+});
+
+Route::get('/submission-certificate', function () {
+   return view('dashboard.submissioncertifiicate');
+});
+
+Route::get('/submission-ribbons', function () {
+   return view('dashboard.submissionribbons');
+});
+
+Route::get('/market-tubes', function () {
+   return view('dashboard.market');
+});
+
+Route::get('/job-dashboard', function () {
+   return view('dashboard.job-dashboard');
+});
+
+Route::get('/pro', function () {
+   return view('dashboard.pro-dashboard');
 });

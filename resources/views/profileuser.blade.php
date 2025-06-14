@@ -56,7 +56,7 @@
                         <tr>
                             <th class="border border-gray-400 px-3 py-1 font-semibold">WORKS</th>
                             <th class="border border-gray-400 px-3 py-1 font-semibold">SOTM</th>
-                            <th class="border border-gray-400 px-3 py-1 font-semibold">SOTO</th>
+                            <th class="border border-gray-400 px-3 py-1 font-semibold">SOTD</th>
                             <th class="border border-gray-400 px-3 py-1 font-semibold">HM</th>
                         </tr>
                     </thead>

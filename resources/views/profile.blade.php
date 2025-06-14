@@ -5,9 +5,9 @@
          <header>
             <div class="flex items-center space-x-4">
                <img alt="Profile photo" class="w-12 h-12 rounded-full object-cover" 
-                  src="https://storage.googleapis.com/a1aa/image/b26feda3-9be2-41b8-9336-d2a1f1a00550.jpg" />
+                  src="{{ $user->image_link }}" />
                <span class="text-[18px] font-normal text-black leading-none">
-                  muhammad-asyraf-dzacky
+                  {{ $user->display_name }}
                </span>
             </div>
          </header>
@@ -19,30 +19,40 @@
                         <th class="border border-black py-1 px-2 font-normal w-1/4">
                             WORKS
                         </th>
+                        @if($user->awards()->where('type', 4)->count() > 0)
+                            <th class="border border-black py-1 px-2 font-normal w-1/4">
+                                SOTY
+                            </th>
+                        @endif
                         <th class="border border-black py-1 px-2 font-normal w-1/4">
-                            SOTH
+                            SOTM
                         </th>
                         <th class="border border-black py-1 px-2 font-normal w-1/4">
                             SOTD
                         </th>
                         <th class="border border-black py-1 px-2 font-normal w-1/4">
-                            HA
+                            HM
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="border border-black py-3 px-2 font-bold w-1/4">
-                            0
+                            {{ $user->websites()->count() }}
+                        </td>
+                        @if($user->awards()->where('type', 4)->count() > 0)
+                            <td class="border border-black py-3 px-2 font-bold w-1/4">
+                                {{ $user->awards()->where('type', 4)->count() }}
+                            </td>
+                        @endif
+                        <td class="border border-black py-3 px-2 font-bold w-1/4">
+                            {{ $user->awards()->where('type', 3)->count() }}
                         </td>
                         <td class="border border-black py-3 px-2 font-bold w-1/4">
-                            0
+                            {{ $user->awards()->where('type', 2)->count() }}
                         </td>
                         <td class="border border-black py-3 px-2 font-bold w-1/4">
-                            0
-                        </td>
-                        <td class="border border-black py-3 px-2 font-bold w-1/4">
-                            0
+                            {{ $user->awards()->where('type', 1)->count() }}
                         </td>
                     </tr>
                 </tbody>
