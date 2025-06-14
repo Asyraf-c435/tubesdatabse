@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{ asset('css/submit.css') }}">
     <div class="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
         <h1 class="font-sans font-extrabold text-black text-3xl mb-16">
-            Upload your best work
+            Edit your best work
         </h1>
         <!-- BUTTON SWITCH SECTION -->
         <div class="w-full max-w-6xl bg-gray-50">
@@ -13,8 +13,8 @@
                         <div id="boldLine" class="bold-line left-0 w-1/2"></div>
                     </div>
                     <div class="flex text-xs font-semibold text-black font-sans cursor-pointer">
-                        <div id="mainFillBtn" class="w-1/2 text-center">Main Fill</div>
-                        <div id="uploadElementsBtn" class="w-1/2 text-center">Upload Elements</div>
+                        <div id="mainFillBtn" class="w-1/2 text-center">Edit Main Fill</div>
+                        <div id="uploadElementsBtn" class="w-1/2 text-center">Edit Upload Elements</div>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,8 @@
                                 id="website-name"
                                 type="text"
                                 class="bg-white border border-gray-200 rounded-sm h-8 px-2 text-xs focus:outline-none focus:ring-0 focus:border-gray-300"
-                                placeholder="Input your name of website" />
+                                placeholder="Input your name of website"
+                                value="" />
                         </div>
 
                         <div class="flex flex-col gap-1">
@@ -43,7 +44,8 @@
                             <textarea
                                 id="description"
                                 rows="4"
-                                class="bg-white border border-gray-200 rounded-sm px-2 pt-1 text-xs resize-none focus:outline-none focus:ring-0 focus:border-gray-300" placeholder="Input description"></textarea>
+                                class="bg-white border border-gray-200 rounded-sm px-2 pt-1 text-xs resize-none focus:outline-none focus:ring-0 focus:border-gray-300" placeholder="Input description"   value=""></textarea>
+                               
                         </div>
 
                         <div class="flex flex-col gap-1 max-w-[160px]">
@@ -68,7 +70,8 @@
                                     id="avatar-upload"
                                     type="file"
                                     accept="image/*"
-                                    class="hidden" />
+                                    class="hidden" value=""/>
+                                    
                             </label>
                         </div>
                     </form>
@@ -87,6 +90,9 @@
                     <div id="cardsContainer" class="flex flex-col md:flex-row md:justify-center md:items-start mt-10 space-y-10 md:space-y-0 md:space-x-20 max-w-4xl mx-auto relative">
                         <!-- Card pertama -->
                         <form class="bg-gray-200 p-8 w-full max-w-md relative card">
+
+                            <p class="text-right text-gray-400 text-[10px]">X</p>
+
                             <label for="website" class="block text-[8px] font-bold mb-1 text-gray-500">NAME OF WEBSITE</label>
                             <input
                                 id="website"
@@ -103,7 +109,7 @@
                             </div>
                             <label for="tags" class="block text-[8px] font-bold mb-1 text-gray-500">TAGS</label>
                             <div class="bg-white rounded-md h-12 flex items-center px-3 space-x-2 max-w-xs relative group">
-                                <span class="text-[8px] border border-gray-300 rounded-full py-1 px-2 hover:bg-white relative">
+                                <span class="text-[8px] border border-gray-300 rounded-full py-1 px-2 hover:bg-white relative group">
                                     #CssAnimation
                                 </span>
                                 <button type="button" class="text-xs font-bold text-black rounded-full border border-black w-5 h-5 flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-200">+</button>
@@ -117,8 +123,9 @@
                     </button>
 
                     <!-- Tombol submit -->
-                    <div class="flex justify-end max-w-4xl mx-auto mt-20 mb-20">
-                        <button class="bg-black text-white font-bold text-xs py-3 px-10 rounded-full tracking-widest hover:bg-gray-800 transition-colors duration-200">SUBMIT</button>
+
+                    <div class="flex justify-end max-w-4xl mx-auto mt-14 mb-20">
+                        <button class="bg-black text-white font-bold text-xs py-3 px-10 rounded-full tracking-widest hover:bg-gray-800 transition-colors duration-200">SAVE</button>
                     </div>
                 </div>
             </div>

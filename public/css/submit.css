@@ -1,62 +1,87 @@
  /* Animasi untuk section */
-        #mainFillSection, #uploadElementsSection {
-            transition: transform 0.5s ease-in-out;
-            position: absolute;
-            width: 100%;
-            max-width: 6xl;
-        }
-        
-        #mainFillSection {
-            transform: translateX(0);
-        }
-        
-        #uploadElementsSection {
-            transform: translateX(130%);
-            top: 0;
-        }
-        
-        /* Ketika aktif */
-        .main-fill-active #mainFillSection {
-            transform: translateX(0);
-        }
-        
-        .main-fill-active #uploadElementsSection {
-            transform: translateX(130%);
-        }
-        
-        .upload-elements-active #mainFillSection {
-            transform: translateX(-130%);
-        }
-        
-        .upload-elements-active #uploadElementsSection {
-            transform: translateX(0);
-        }
-        
-        /* Garis indikator */
-        .line-container {
-            position: relative;
-            height: 2px;
-            width: 100%;
-        }
-        
-        .dotted-line {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            border-top: 2px dotted #000;
-        }
-        
-        .bold-line {
-            position: absolute;
-            top: 0;
-            height: 2px;
-            background-color: #000;
-            transition: all 0.3s ease;
-        }
-        
-        /* Prevent scrolling when switching */
-        body {
-            overflow-x: hidden;
-        }
+ #mainFillSection,
+ #uploadElementsSection {
+     transition: transform 0.5s ease-in-out;
+     position: absolute;
+     width: 100%;
+     max-width: 6xl;
+ }
+
+ #mainFillSection {
+     transform: translateX(0);
+ }
+
+ #uploadElementsSection {
+     transform: translateX(130%);
+     top: 0;
+ }
+
+ /* Ketika aktif */
+ .main-fill-active #mainFillSection {
+     transform: translateX(0);
+ }
+
+ .main-fill-active #uploadElementsSection {
+     transform: translateX(130%);
+ }
+
+ .upload-elements-active #mainFillSection {
+     transform: translateX(-130%);
+ }
+
+ .upload-elements-active #uploadElementsSection {
+     transform: translateX(0);
+ }
+
+ /* Garis indikator */
+ .line-container {
+     position: relative;
+     height: 2px;
+     width: 100%;
+ }
+
+ .dotted-line {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 100%;
+     border-top: 2px dotted #000;
+ }
+
+ .bold-line {
+     position: absolute;
+     top: 0;
+     height: 2px;
+     background-color: #000;
+     transition: all 0.3s ease;
+ }
+
+ /* Prevent scrolling when switching */
+ body {
+     overflow-x: hidden;
+ }
+span::after {
+    content: "×";
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    background: white;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    border: 1px solid gray;
+    cursor: pointer;
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: scale(0.5); /* Awalnya diperkecil */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* Animasi */
+}
+
+.group:hover span::after {
+    opacity: 1; /* Muncul saat hover */
+    transform: scale(1); /* Kembali ke ukuran normal */
+}

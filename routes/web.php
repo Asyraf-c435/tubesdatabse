@@ -104,3 +104,7 @@ Route::get('/pro', function () {
    return view('dashboard.pro-dashboard');
 });
 
+Route::get('/update-submission', function () {
+   return view('dashboard.update-submission');
+});
+
