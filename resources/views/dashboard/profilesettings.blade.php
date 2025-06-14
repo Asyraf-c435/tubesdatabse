@@ -1,20 +1,20 @@
 <x-layout>
-
+    <link rel="stylesheet" href="{{ asset('../css/dashboard/profile-settings.css') }}">
     <body class="bg-[#f7f7f7] font-sans text-[11px] text-[#1a1a1a]">
         <div class="max-w-[1100px] mx-auto px-4 py-6">
             <header class="mb-8">
                 <h1 class="font-bold text-[13px] mb-2 text-center">Profile &amp; Directory</h1>
                 <nav class="flex justify-center space-x-6 text-[10px] text-[#9ca3af] mb-4">
-                    <a href="#" class="text-[#1a1a1a] border-b border-black pb-[2px]">Public Profile</a>
-                    <a href="#" class="opacity-40 cursor-default select-none">Personal Info</a>
+                    <a href="/profile-settings" class="text-[#1a1a1a] border-b border-black pb-[2px]">Public Profile</a>
+                    <a href="/change-data" class="opacity-40 cursor-default select-none">Personal Info</a>
                 </nav>
                 <div class="flex items-center space-x-1 font-semibold text-[11px]">
                     <i class="fas fa-globe-americas text-[12px]"></i>
-                    <span>&gt; Profile</span>
+                    <span>Profile</span>
                 </div>
             </header>
 
-            <main class="flex flex-wrap gap-x-8">
+            <div class="flex flex-wrap gap-x-8">
                 <section class="w-full sm:w-[18%]">
                     <h2 class="font-bold text-[11px] mb-1">Your profile</h2>
                     <p class="text-[9px] text-[#6b7280]">Add more information about you here.</p>
@@ -29,13 +29,11 @@
                             id="username"
                             type="text"
                             placeholder="https://awwwards.com/"
-                            class="bg-white border border-[#f3f4f6] rounded px-2 py-1 text-[9px] text-[#1a1a1a] transition-colors duration-300 ease-in-out"
-                            value="muhammad-asyraf-dzacky" />
+                            class="bg-white border border-[#f3f4f6] rounded px-2 py-1 text-[9px] text-[#1a1a1a] transition-colors duration-300 ease-in-out" />
                         <input
                             id="displayname"
                             type="text"
-                            class="bg-white border border-[#f3f4f6] rounded px-2 py-1 text-[9px] text-[#1a1a1a] transition-colors duration-300 ease-in-out"
-                            value="muhammad-asyraf-dzacky" />
+                            class="bg-white border border-[#f3f4f6] rounded px-2 py-1 text-[9px] text-[#1a1a1a] transition-colors duration-300 ease-in-out" />
 
                         <label for="url" class="uppercase mt-2">URL</label>
                         <label for="whoareyou" class="uppercase mt-2">Who are you? (*)</label>
@@ -101,7 +99,7 @@
                         If you have made any edits, remember to save before you leave this page.
                     </p>
                 </section>
-            </main>
+            </div>
 
             <section class="flex flex-wrap gap-x-8 mt-16">
                 <aside class="w-full sm:w-[18%]">

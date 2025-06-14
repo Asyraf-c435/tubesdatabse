@@ -1,5 +1,5 @@
 <x-layout>
-     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <p class="text-xs text-gray-500 mb-1">Welcome</p>
@@ -15,7 +15,7 @@
                     </p>
                 </section>
 
-                <section class="bg-white rounded-md p-5 max-w-xs hover-animate">
+                <a href="/profile-settings" class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">
                         <i class="fas fa-user text-sm text-gray-700"></i>
                         <h3 class="font-semibold text-xs">Profile &amp; Directory</h3>
@@ -23,9 +23,9 @@
                     <p class="text-[9px] text-gray-600 leading-tight">
                         Edit your profile and directory information, and upload images to your Showcase Gallery.
                     </p>
-                </section>
+                </a>
 
-                <section class="bg-white rounded-md p-5 max-w-xs hover-animate">
+                <a href="/submission" class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">
                         <i class="fas fa-clipboard-check text-sm text-gray-700"></i>
                         <h3 class="font-semibold text-xs">Submissions</h3>
@@ -33,9 +33,9 @@
                     <p class="text-[9px] text-gray-600 leading-tight">
                         Check the status of your submissions, edit or add images before approval, or download certificates of your awarded sites.
                     </p>
-                </section>
+                </a>
 
-                <section class="bg-white rounded-md p-5 max-w-xs hover-animate">
+                <a href="job-dashboard" class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">
                         <i class="fas fa-briefcase text-sm text-gray-700"></i>
                         <h3 class="font-semibold text-xs">Jobs</h3>
@@ -43,7 +43,7 @@
                     <p class="text-[9px] text-gray-600 leading-tight">
                         Post new jobs, or view and edit your existing job adverts posted on the Jobs Board.
                     </p>
-                </section>
+                </a>
 
                 <section class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">
@@ -65,7 +65,7 @@
                     </p>
                 </section>
 
-                <section class="bg-white rounded-md p-5 max-w-xs hover-animate">
+                <a href="/market-tubes" class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">
                         <i class="fas fa-th-large text-sm text-gray-700"></i>
                         <h3 class="font-semibold text-xs">Awwward Market</h3>
@@ -73,7 +73,7 @@
                     <p class="text-[9px] text-gray-600 leading-tight">
                         Sell your physical and digital products in our ecommerce marketplace for digital creatives, visited by our 5 million-strong community.
                     </p>
-                </section>
+                </a>
 
                 <section class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">
@@ -95,7 +95,7 @@
                     </p>
                 </section>
 
-                <section class="bg-white rounded-md p-5 max-w-xs hover-animate">
+                <a class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">
                         <i class="fas fa-file-alt text-sm text-gray-700"></i>
                         <h3 class="font-semibold text-xs">FAQs</h3>
@@ -103,7 +103,7 @@
                     <p class="text-[9px] text-gray-600 leading-tight">
                         Find the answers to frequently asked questions about the submission process, directory, pro plans, courses, jobs or any other awwwards products and services.
                     </p>
-                </section>
+                </a>
 
                 <section class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">

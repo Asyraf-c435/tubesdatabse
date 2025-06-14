@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,7 +70,7 @@
                     <li>
                         <hr class="border-[#393939]" />
                     </li>
-                    <li class="px-4 py-3 font-semibold cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="">Dashboard</a></li>
+                    <li class="px-4 py-3 font-semibold cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="/dashboard">Dashboard</a></li>
                     <li>
                         <hr class="border-[#393939]" />
                     </li>

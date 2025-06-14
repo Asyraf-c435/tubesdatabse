@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -18,11 +19,9 @@ Route::get('/job', function () {
     return view('job');
 })->name('job');   
 
-
 Route::get('/sitesnms', function () {
     return view('sitesbynamenms');
 });
-
 
 Route::get('/sites', function () {
     return view('sites');
@@ -61,20 +60,47 @@ Route::get('/collections', function () {
     return view('collections');
 });
 
-
 Route::get('/notification', function () {
     return view('notification');
 });
 
-
 Route::get('/per-notification', function () {
    return view('insidenotification');
-
 });
-
 
 Route::get('/dashboard', function () {
    return view('dashboard');
+});
 
+Route::get('/profile-settings', function () {
+   return view('dashboard.profilesettings');
+});
+
+Route::get('/change-data', function () {
+   return view('dashboard.profilesettemailps');
+});
+
+Route::get('/submission', function () {
+   return view('dashboard.submission');
+});
+
+Route::get('/submission-certificate', function () {
+   return view('dashboard.submissioncertifiicate');
+});
+
+Route::get('/submission-ribbons', function () {
+   return view('dashboard.submissionribbons');
+});
+
+Route::get('/market-tubes', function () {
+   return view('dashboard.market');
+});
+
+Route::get('/job-dashboard', function () {
+   return view('dashboard.job-dashboard');
+});
+
+Route::get('/pro', function () {
+   return view('dashboard.pro-dashboard');
 });
 
