@@ -18,31 +18,25 @@
             <h2 class="text-xl font-bold text-black mb-6">
                 Register with your e-mail
             </h2>
-            <form class="space-y-4 text-gray-600 text-xs font-semibold">
+            <form action="{{route('store')}}" class="space-y-4 text-gray-600 text-xs font-semibold" method="POST">
                 <div>
-                    <label class="block mb-1" for="username">
-                        USERNAME (*)
+                    <label class="block mb-1" for="name">
+                        USERNAME 
                     </label>
-                    <input class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="username" placeholder="Username" type="text" />
+                    <input class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="name" placeholder="Username" type="text" />
                 </div>
                 <div>
                     <label class="block mb-1" for="email">
-                        EMAIL (*)
+                        EMAIL 
                     </label>
                     <input class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="email" placeholder="E-mail" type="email" />
                 </div>
                 <div class="flex space-x-6">
                     <div class="flex-1">
                         <label class="block mb-1" for="password">
-                            PASSWORD (*)
+                            PASSWORD 
                         </label>
-                        <input class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="password" placeholder="Password" type="password" />
-                    </div>
-                    <div class="flex-1">
-                        <label class="block mb-1" for="repeat-password">
-                            REPEAT PASSWORD (*)
-                        </label>
-                        <input class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="repeat-password" placeholder="Repeat Password" type="password" />
+                        <input class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="password" placeholder="Password" type="password" min="8" />
                     </div>
                 </div>
                 <p class="text-[10px] text-gray-700 leading-tight mb-1">

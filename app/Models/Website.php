@@ -46,12 +46,12 @@ class Website extends Model
 
     public function website_votes()
     {
-        return $this->hasMany(WebsiteVote::class,'website_id', 'id');
+        return $this->belongsToMany(User::class,'website_votes', 'website_id', 'user_id')->withPivot('is_rejected', 'design', 'usability', 'creativity', 'content');
     }
 
     public function user_votes()
     {
-        return $this->hasMany(UserVote::class,'website_id', 'id');
+        return $this->belongsToMany(User::class,'user_votes', 'website_id', 'user_id')->withPivot('is_rejected', 'semantics', 'animations', 'accessibility', 'wpo', 'responsive_design', 'markup');
     }
 
     public function awards()

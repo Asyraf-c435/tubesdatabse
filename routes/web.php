@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('home');
@@ -38,21 +39,19 @@ Route::get('/submit-web', function () {
     return view('submit');
 });
 
-Route::get('/login-page', function () {
-    return view('login');
-});
+Route::get('/login-page', [UserController::class, 'login'])->name('login');
 
-Route::get('/register-page', function () {
-    return view('register');
-});
+Route::post('/login-page', [UserController::class, 'actionlogin'])->name('actionlogin');
+
+Route::get('/register-page', [UserController::class, 'register'])->name('register');
+
+Route::post('/register-page', [UserController::class, 'store'])->name('store');
 
 Route::get('/elements', function () {
     return view('elements');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/profile/{id}', [UserController::class, 'show'])->name('profile');
 
 Route::get('/collections', function () {
     return view('collections');
@@ -69,5 +68,4 @@ Route::get('/per-notification', function () {
 
 Route::get('/dashboard', function () {
    return view('dashboard');
-
 });

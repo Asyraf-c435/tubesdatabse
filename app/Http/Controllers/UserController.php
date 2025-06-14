@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\User;
 
 class UserController extends Controller
@@ -12,6 +14,11 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function register() {
+        return view('register');
+    }
+
     public function index()
     {
         //
@@ -34,7 +41,7 @@ class UserController extends Controller
             'name' => 'required|unique:users,name|max:255',
             'display_name' => 'required|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:8|{Password::min(8)->letters()->mixedCase()->numbers()->symbols()}',
+            'password' => ['required', Password::min(8)->letters()->mixedCase()->numbers()->symbols()],
             'description' => 'nullable|string',
             'country_id' => 'required|integer|exists:countries,id',
             'subscription_id' => 'required|integer|exists:subscriptions,id',
@@ -54,8 +61,10 @@ class UserController extends Controller
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
             'description' => $validated['description'] ?? null,
-            'country_id' => $validated['country_id'],
-            'subscription_id' => $validated['subscription_id'],
+            'image_link' => null,
+            'user_link' => null,
+            'country_id' => $validated['country_id'] ?? null,
+            'subscription_id' => $validated['subscription_id'] ?? null,
             'twitter' => $validated['twitter'] ?? null,
             'facebook' => $validated['facebook'] ?? null,
             'linkedin' => $validated['linkedin'] ?? null,
@@ -64,9 +73,10 @@ class UserController extends Controller
             'type' => $validated['type'],
             'rank' => $validated['rank'],
             'status_points' => $validated['status_points'],
+            'created_at' => now()
         ]);
 
-        return;
+        return redirect()->route('login');
     }
 
     /**
@@ -74,7 +84,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('profile', compact('user'));
     }
 
     /**
@@ -93,10 +104,10 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         
         $validated = $request->validate([
-            'name' => 'sometimes|max:255|unique:users,name,{$user->id}',
+            'name' => "sometimes|max:255|unique:users,name,{$user->id}",
             'display_name' => 'sometimes|max:255',
-            'email' => 'sometimes|email|unique:users,email,{$user->id}',
-            'password' => 'sometimes|min:8|{Password::min(8)->letters()->mixedCase()->numbers()->symbols()}',
+            'email' => "sometimes|email|unique:users,email,{$user->id}",
+            'password' => ['sometimes', Password::min(8)->letters()->mixedCase()->numbers()->symbols()],
             'description' => 'sometimes|nullable|string',
             'country_id' => 'sometimes|integer|exists:countries,id',
             'subscription_id' => 'sometimes|integer|exists:subscriptions,id',
@@ -128,4 +139,32 @@ class UserController extends Controller
         User::findOrFail($id)->delete();
         return;
     }
+
+
+// everything under this is new experimental shit code
+
+    public function login()
+        {
+            if (Auth::check()) {
+                return redirect('home');
+            }else{
+                return view('login');
+            }
+        }
+
+    public function actionlogin(Request $request)
+    {
+        $data = [
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+        ];
+
+        if (Auth::Attempt($data)) {
+            return redirect('home');
+        } else {
+            return redirect('/');
+        }
+    }
+
+
 }

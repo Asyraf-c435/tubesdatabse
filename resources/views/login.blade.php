@@ -19,12 +19,12 @@
             <h2 class="font-bold text-lg mb-4">
                 Log in
             </h2>
-            <form class="flex flex-col">
+            <form class="flex flex-col" action="{{ route('actionlogin')}}">
                 <div class="flex flex-col mb-8">
                     <label class="text-gray-400 text-xs uppercase mb-1" for="email">
-                        EMAIL OR USERNAME
+                        EMAIL
                     </label>
-                    <input class="border-b border-gray-300 bg-gray-50 focus:outline-none focus:border-black placeholder-gray-300 text-sm pb-1" id="email" placeholder="Email or username" type="text" />
+                    <input class="border-b border-gray-300 bg-gray-50 focus:outline-none focus:border-black placeholder-gray-300 text-sm pb-1" id="email" placeholder="Email" type="text" />
                 </div>
                 <div class="flex flex-col mb-4">
                     <label class="text-gray-400 text-xs uppercase mb-1" for="password">

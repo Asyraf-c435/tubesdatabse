@@ -14,6 +14,8 @@ class User extends Model
         'email',
         'password',
         'description',
+        'image_link',
+        'user_link',
         'country_id',
         'subscription_id',
         'twitter',
@@ -38,6 +40,8 @@ class User extends Model
         'display_name' => 'string',
         'email'=> 'string',
         'description' => 'string',
+        'image_link' => 'string',
+        'user_link' => 'string',
         'country_id'=> 'integer',
         'subscription_id' => 'integer',
         'twitter' => 'string',
@@ -52,6 +56,8 @@ class User extends Model
         'remember_token' => 'string',
         'created_at' => 'datetime'
     ];
+
+    public $timestamps = false;
 
     public function country()
     {
@@ -75,12 +81,12 @@ class User extends Model
 
     public function website_votes()
     {
-        return $this->hasMany(WebsiteVote::class,'user_id', 'id');
+        return $this->belongsToMany(Website::class,'website_votes', 'user_id', 'website_id')->withPivot('is_rejected', 'design', 'usability', 'creativity', 'content');
     }
 
     public function user_votes()
     {
-        return $this->hasMany(UserVote::class,'user_id', 'id');
+        return $this->belongsToMany(Website::class,'user_votes', 'user_id', 'website_id')->withPivot('is_rejected', 'semantics', 'animations', 'accessibility', 'wpo', 'responsive_design', 'markup');
     }
 
     public function collections()
