@@ -19,18 +19,25 @@
             <h2 class="font-bold text-lg mb-4">
                 Log in
             </h2>
-            <form class="flex flex-col" action="{{ route('actionlogin')}}">
+            <form class="flex flex-col" action="{{ url('/login') }}" method="POST">
+                @csrf
                 <div class="flex flex-col mb-8">
-                    <label class="text-gray-400 text-xs uppercase mb-1" for="email">
+                    <label class="text-gray-400 text-xs uppercase mb-1" for="email" required>
                         EMAIL
                     </label>
-                    <input class="border-b border-gray-300 bg-gray-50 focus:outline-none focus:border-black placeholder-gray-300 text-sm pb-1" id="email" placeholder="Email" type="text" name="email" />
+                    <input class="border-b border-gray-300 bg-gray-50 focus:outline-none focus:border-black placeholder-gray-300 text-sm pb-1" id="email" placeholder="Email" type="text" name="email" value="{{ old('email') }}" required />
+                    @error('email')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="flex flex-col mb-4">
-                    <label class="text-gray-400 text-xs uppercase mb-1" for="password">
+                    <label class="text-gray-400 text-xs uppercase mb-1" for="password" required>
                         PASSWORD
                     </label>
-                    <input class="border-b border-gray-300 bg-gray-50 focus:outline-none focus:border-black placeholder-gray-300 text-sm pb-1" id="password" placeholder="Password" type="password" name="password" />
+                    <input class="border-b border-gray-300 bg-gray-50 focus:outline-none focus:border-black placeholder-gray-300 text-sm pb-1" id="password" placeholder="Password" type="password" name="password" required />
+                    @error('password')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="flex items-center space-x-2 text-sm mb-4">
                     <input class="w-4 h-4" id="keep-logged" type="checkbox" name="remember" />
@@ -42,7 +49,7 @@
                     Log In
                 </button>
             </form>
-            <a class="text-xs underline mt-3 self-start" href="#">
+            <!-- <a class="text-xs underline mt-3 self-start" href="#">
                 Forgot your password?
             </a>
             <p class="mt-8 mb-3 text-sm">
@@ -70,7 +77,7 @@
                         Twitter
                     </span>
                 </button>
-            </div>
+            </div> -->
         </div>
         <!-- Left side -->
         <div class="flex flex-col justify-center px-8 py-6 md:w-1/2">
@@ -92,9 +99,6 @@
         <!-- Right side -->
         
     </div>
-    @if($errors->any())
-        <div>{{ $errors->first() }}</div>
-    @endif
 </body>
 
 </html>

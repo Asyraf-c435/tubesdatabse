@@ -2,8 +2,6 @@
 <x-layout>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <div class="relative">
-        <a href="/websites">TEST</a>
-        <a href="/pro">TEST</a>
         <button
             id="scrollUpButton"
             class="fixed bottom-3.5 left-8 translate-y-4 opacity-0 w-14 h-14
@@ -1108,6 +1106,4 @@
             </section>
         </div>
     </div>
-    <x-footer>
-    </x-footer>
 </x-layout>

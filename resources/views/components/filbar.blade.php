@@ -1,4 +1,8 @@
-<div class="flex flex-wrap items-center gap-2 text-xs font-normal text-gray-600 mb-3">
+@php
+    use App\Models\Tag;
+    use App\Models\Award;
+@endphp
+<div class="flex flex-wrap items-center gap-2 text-xs font-normal text-gray-600 mb-3 w-full">
     <div class="flex flex-wrap gap-2 flex-grow min-w-[220px]">
         <!-- Dropdown Awards -->
         <div class="relative inline-block text-left">
@@ -60,31 +64,21 @@
                     <input aria-label="Search Tag" class="w-full rounded border border-gray-300 px-2 py-1 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500" id="search-tag" placeholder="Search..." type="text" />
                 </div>
                 <div class="max-h-48 overflow-y-auto py-1" role="none" id="tag-list">
-                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" href="#" role="menuitem" tabindex="-1">
-                        Tag 1
-                    </a>
-                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" href="#" role="menuitem" tabindex="-1">
-                        Tag 2
-                    </a>
-                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" href="#" role="menuitem" tabindex="-1">
-                        Tag 3
-                    </a>
-                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" href="#" role="menuitem" tabindex="-1">c
-                        Tag 4
-                    </a>
-                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" href="#" role="menuitem" tabindex="-1">
-                        Tag 5
-                    </a>
+                    @foreach (Tag::all() as $tag)
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer" href="#" role="menuitem" tabindex="-1">
+                            {{ $tag->name }}
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>
-        <!-- Dropdown Technology with search -->
+        <!-- Dropdown Technology with search
         <div class="relative inline-block text-left">
             <button aria-expanded="false" aria-haspopup="true" class="inline-flex justify-center w-full rounded border border-gray-300 px-3 py-1 text-sm font-normal text-gray-600 hover:bg-gray-100" id="menu-button-tech" type="button">
                 Technology
                 <i class="fas fa-chevron-down text-[10px] ml-1 mt-[2px]">
                 </i>
-            </button>c
+            </button>
             <div aria-labelledby="menu-button-tech" class="origin-top-left absolute left-0 mt-1 w-44 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10 hidden" id="dropdown-tech" role="menu" tabindex="-1">
                 <div class="p-2 border-b border-gray-200">
                     <input aria-label="Search Technology" class="w-full rounded border border-gray-300 px-2 py-1 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500" id="search-tech" placeholder="Search..." type="text" />
@@ -107,7 +101,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Dropdown Country with search -->
         <div class="relative inline-block text-left">
             <button aria-expanded="false" aria-haspopup="true" class="inline-flex justify-center w-full rounded border border-gray-300 px-3 py-1 text-sm font-normal text-gray-600 hover:bg-gray-100" id="menu-button-country" type="button">
@@ -138,7 +132,7 @@
                 </div>
             </div>
         </div>
-        <!-- Dropdown Font with search -->
+        <!-- Dropdown Font with search
         <div class="relative inline-block text-left">
             <button aria-expanded="false" aria-haspopup="true" class="inline-flex justify-center w-full rounded border border-gray-300 px-3 py-1 text-sm font-normal text-gray-600 hover:bg-gray-100" id="menu-button-font" type="button">
                 Font
@@ -167,8 +161,8 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <!-- Dropdown Color with color choices -->
+        </div> -->
+        <!-- Dropdown Color with color choices
         <div class="relative inline-block text-left">
             <button aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1 border border-gray-300 rounded px-3 py-1 hover:bg-gray-100 text-gray-600 text-sm" id="menu-button-color" type="button">
                 Color
@@ -187,16 +181,16 @@
                     <button aria-label="Gray" class="mr-5 w-6 h-6 rounded-sm bg-[#6C757D] hover:ring-2 hover:ring-offset-1 hover:ring-[#6C757D]" type="button"></button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
-    <div class="flex items-center gap-2 border border-gray-300 rounded px-3 py-1 text-[10px] text-gray-500 cursor-pointer select-none mr-36">
-        <div class="flex items-center justify-center w-5 h-5 rounded-full text-[10px] text-orange-500 border border-orange-300">
+    <div class="flex items-center gap-2 border border-gray-300 rounded px-3 py-1 text-[10px] text-gray-500 cursor-pointer select-none mr-16">
+        <!-- <div class="flex items-center justify-center w-5 h-5 rounded-full text-[10px] text-orange-500 border border-orange-300">
             0
-        </div>
+        </div> -->
         <span>
             Reset filters
         </span>
-        <i class="far fa-comment-alt text-xs">
-        </i>
+        <!-- <i class="far fa-comment-alt text-xs">
+        </i> -->
     </div>
 </div>

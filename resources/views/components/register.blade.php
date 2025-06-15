@@ -14,37 +14,50 @@
             </div>
             <div class="text-xs text-gray-600 pt-3">
                 Are you a member?
-                <a class="font-bold underline cursor-pointer" href="#" id="loginButton">
+                <a class="font-bold underline cursor-pointer" href="{{ route('login') }}" id="loginButton">
                     Log in now
                 </a>
             </div>
         </div>
         <!-- Right side -->
         <div class="md:w-1/2 p-5 md:p-8 overflow-auto">
-            <form class="max-w-md mx-auto">
+            <form class="max-w-md mx-auto" method="POST" action="{{ url('register') }}">
+                @csrf
                 <h2 class="font-semibold text-black mb-4 text-base md:text-lg">
                     Register with your e-mail
                 </h2>
                 <label class="block text-xs text-gray-400 uppercase mb-1" for="reg-username">
                     USERNAME (*)
                 </label>
-                <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 mb-2 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="reg-username" placeholder="Username" type="text" />
+                <input value={{ old('name') }} class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 mb-2 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="reg-username" placeholder="Username" type="text" name="name"/>
+                @error('name')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
                 <label class="block text-xs text-gray-400 uppercase mb-1" for="reg-email">
                     EMAIL (*)
                 </label>
-                <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 mb-2 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="reg-email" placeholder="E-mail" type="email" />
+                <input value={{ old('email') }} class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 mb-2 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="reg-email" placeholder="E-mail" type="email" name="email"/>
+                @error('email')
+                    <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
                 <div class="grid grid-cols-2 gap-2 mb-2">
                     <div>
                         <label class="block text-xs text-gray-400 uppercase mb-1" for="reg-password">
                             PASSWORD (*)
                         </label>
-                        <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="reg-password" placeholder="Password" type="password" />
+                        <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="reg-password" placeholder="Password" type="password" name="password"/>
+                        @error('password')
+                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
                         <label class="block text-xs text-gray-400 uppercase mb-1" for="repeat-password">
                             REPEAT PASSWORD (*)
                         </label>
-                        <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="repeat-password" placeholder="Repeat Password" type="password" />
+                        <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 focus:outline-none focus:border-gray-400 transition-colors duration-200 hover:border-gray-500" id="repeat-password" placeholder="Repeat Password" type="password" name="password_confirmation"/>
+                        @error('password_confirmation')
+                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
                 <p class="text-[9px] text-gray-600 mb-1 leading-tight">
@@ -69,26 +82,6 @@
                 <button class="w-full bg-black text-white text-sm font-semibold py-2.5 rounded-md mb-4 hover:bg-gray-800 transition-colors duration-200" type="submit">
                     Create Account
                 </button>
-                <p class="text-xs text-gray-600 mb-2">
-                    Or register with
-                </p>
-                <div class="flex space-x-2 max-w-md">
-                    <button class="flex items-center justify-center border border-gray-300 rounded-md py-1.5 px-3 text-xs text-gray-700 w-full hover:bg-gray-100 transition-colors duration-200" type="button">
-                        <i class="fab fa-google mr-1.5">
-                        </i>
-                        Google
-                    </button>
-                    <button class="flex items-center justify-center border border-gray-300 rounded-md py-1.5 px-3 text-xs text-gray-700 w-full hover:bg-gray-100 transition-colors duration-200" type="button">
-                        <i class="fab fa-twitter mr-1.5">
-                        </i>
-                        Twitter
-                    </button>
-                    <button class="flex items-center justify-center border border-gray-300 rounded-md py-1.5 px-3 text-xs text-gray-700 w-full hover:bg-gray-100 transition-colors duration-200" type="button">
-                        <i class="fab fa-facebook-f mr-1.5">
-                        </i>
-                        Facebook
-                    </button>
-                </div>
             </form>
         </div>
     </div>

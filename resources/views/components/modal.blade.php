@@ -1,5 +1,6 @@
 @php
     use App\Models\Award;
+    use App\Models\Website;
 @endphp
 <!-- MODAL OVERLAY -->
 <div id="modal-overlay" class="modal-overlay"></div>
@@ -32,14 +33,18 @@
             </div>
 
             <div class="flex items-center space-x-4 text-xs text-black mt-1.5 ">
-                <a href="{{ route('login') }}" class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500">Log in</a>
-                <a href="{{ route('register') }}" class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500">Sign Up</a>
+                @guest
+                    <a href="{{ route('login') }}" class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500">Log in</a>
+                    <a href="{{ route('register') }}" class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500">Sign Up</a>
+                @endguest
+                @auth
+                    <a href="{{ route('logout') }}" class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500">Log out</a>
+                @endauth
                 <!-- <a
                     class="bg-black text-white rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-white hover:text-black transition-colors duration-500">
                     Be Pro
                 </a> -->
-                <a
-                    class="border border-black rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-black hover:text-white transition-colors duration-500" href="{{ route('submit') }}">
+                <a class="border border-black rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-black hover:text-white transition-colors duration-500" href="{{ route('submit') }}">
                     Submit Website
                 </a>
             </div>
@@ -74,33 +79,37 @@
                 </aside>
                 <!-- SECTION AWARDS -->
                 <section class="flex-1 flex flex-col gap-2 text-gray-900" data-section="Awards">
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-34 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
+                    <a href="{{ route('websites', 1) }}" class="grid grid-cols-[auto_auto] gap-x-34 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <span>Honor Mentions</span>
-                        <span class="text-right">{{ Award::where('type', 1)->count() }}</span>
+                        <span class="text-right">{{ Award::where('type', '>=', 1)->count() }}</span>
                     </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
+                    <a href="{{ route('websites', 0) }}" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <span>Nominees</span>
-                        <span class="text-right">???</span>
+                        <span class="text-right">{{ Website::doesntHave('awards')->count() }}</span>
                     </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
+                    <a href="{{ route('websites', 2) }}" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <span>Sites of the Day</span>
                         <span class="text-right">{{ Award::where('type', 2)->count() }}</span>
                     </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
+                    <a href="{{ route('websites', 3) }}" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <span>Sites of the Month</span>
                         <span class="text-right">{{ Award::where('type', 3)->count() }}</span>
                     </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
+                    <a href="{{ route('websites', 4) }}" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <span>Sites of the Year</span>
                         <span class="text-right">{{ Award::where('type', 4)->count() }}</span>
                     </a>
-                    <!-- <a href="#" class="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
+                    <a href="{{ route('websites', 5) }}" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
+                        <span>Developer Award</span>
+                        <span class="text-right">{{ Award::where('type', 5)->count() }}</span>
+                    </a>
+                    <a href="{{ route('websites', 6) }}" class="flex items-center justify-between py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
                         <div class="flex items-center gap-2">
                             <span>Honors</span>
                             <span class="bg-black text-white text-[9px] font-semibold rounded px-1 py-[1px] select-none">New</span>
                         </div>
                     </a>
-                    <a href="#" class="block py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">Most Awarded Profiles</a>
+                    <!-- <a href="#" class="block py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">Most Awarded Profiles</a>
                     <a href="#" class="block py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200 mb-20">Jury 2025</a> -->
                 </section>
                 <!-- BY CATEGORY -->

@@ -254,13 +254,5 @@
         </div>
       </article>
     </main>
-
-
-
-
-
-
   </div>
-
-  <x-footer></x-footer>
 </x-layout>

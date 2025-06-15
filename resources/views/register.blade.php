@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>
-        Register Tubes
+        Register
     </title>
     <script src="https://cdn.tailwindcss.com">
     </script>
@@ -19,27 +19,48 @@
                 Register with your e-mail
             </h2>
             <form action="{{route('store')}}" class="space-y-4 text-gray-600 text-xs font-semibold" method="POST">
+                @csrf
                 <div>
                     <label class="block mb-1" for="name">
                         USERNAME 
                     </label>
-                    <input class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="name" placeholder="Username" type="text" />
+                    <input name="name" value="{{ old('name') }}" class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="name" placeholder="Username" type="text" required />
+                    @error('name')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div>
                     <label class="block mb-1" for="email">
                         EMAIL 
                     </label>
-                    <input class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="email" placeholder="E-mail" type="email" />
+                    <input name="email" value="{{ old('email') }}" class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="email" placeholder="E-mail" type="email" required />
+                    @error('email')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="flex space-x-6">
                     <div class="flex-1">
                         <label class="block mb-1" for="password">
-                            PASSWORD 
+                            PASSWORD
                         </label>
-                        <input class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="password" placeholder="Password" type="password" min="8" />
+                        <input name="password" class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="password" placeholder="Password" type="password" min="8" required />
+                        @error('password')
+                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
                 </div>
-                <p class="text-[10px] text-gray-700 leading-tight mb-1">
+                <div class="flex space-x-6">
+                    <div class="flex-1">
+                        <label class="block mb-1" for="password">
+                            CONFIRM PASSWORD 
+                        </label>
+                        <input name="password_confirmation" class="bg-gray-50 w-full border-b border-gray-300 focus:outline-none focus:border-black placeholder-gray-400 text-sm pb-1" id="password_confirmation" placeholder="Confirm Password" type="password" min="8" required />
+                        @error('password_confirmation')
+                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+                <!-- <p class="text-[10px] text-gray-700 leading-tight mb-1">
                     Awwwards may keep me informed with personalized emails about products and services. See our
                     <a class="underline" href="#">
                         Privacy Policy
@@ -57,12 +78,12 @@
                     <label class="text-xs text-gray-700" for="terms">
                         I have read and accept the Terms and Conditions
                     </label>
-                </div>
+                </div> -->
                 <button class="w-full bg-black text-white font-bold py-3 rounded-sm hover:opacity-90 transition-opacity" type="submit">
                     Create Account
                 </button>
             </form>
-            <p class="mt-6 mb-3 text-gray-700 text-sm">
+            <!-- <p class="mt-6 mb-3 text-gray-700 text-sm">
                 Or register with
             </p>
             <div class="flex space-x-4 text-gray-700 text-sm">
@@ -81,7 +102,7 @@
                     </i>
                     Facebook
                 </button>
-            </div>
+            </div> -->
         </div>
         <!-- Right side (Logo Tubes) -->
         <div class="flex flex-col justify-center items-center px-8 py-10 md:w-1/2 order-1 md:order-2 bg-gray-50 ml-10">
@@ -93,7 +114,7 @@
             </div>
             <p class="text-sm text-gray-600 mt-6 mr-20">
                 Are you a member?
-                <a class="font-semibold underline" href="login-page">
+                <a class="font-semibold underline" href="{{ route('login') }}">
                     Log in now
                 </a>
             </p>

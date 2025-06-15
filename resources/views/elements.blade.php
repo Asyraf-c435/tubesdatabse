@@ -350,6 +350,5 @@
             </div>
         </div>
     </div>
-<x-footer></x-footer>
-    <script src="js/sites.js"></script>
+    <script src="{{ asset('js/sites.js') }}"></script>
 </x-layout>

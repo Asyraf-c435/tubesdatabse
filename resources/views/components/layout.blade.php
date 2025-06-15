@@ -11,18 +11,19 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
             rel="stylesheet" />
-        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     </head>
     <body class="bg-gray-50 ">
         <x-navbar />
         <x-register />
         <x-login />
+        <x-modal />
         
         {{ $slot }}
         
-        <x-modal />
-        <script src="js/layout.js"></script>
-        <script src="js/sitesbyname.js"></script>
+        <x-footer />
+        <script src="{{ asset('js/layout.js') }}"></script>
+        <script src="{{ asset('js/sitesbyname.js') }}"></script>
     </body>
 </html>

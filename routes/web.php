@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\WebsiteController;
 
 Route::get('/', function () {
     return view('home');
@@ -20,31 +21,24 @@ Route::get('/job', function () {
     return view('job');
 })->name('job');   
 
-Route::get('/sites/{slug}', function ($slug) {
-    return view('sitesbynamenms');
-})->name('site');
+Route::get('/sites/{id}', [WebsiteController::class, 'show'])->name('sites');
 
-Route::get('/sites', function () {
-    return view('sites');
-})->name('sites');
-
-Route::get('/websites', function () {
-    return view('isianexplore');
-})->name('website');
+Route::get('/websites/{id}', [WebsiteController::class, 'index'])->name('websites');
 
 Route::get('/profile-user', function () {
     return view('profileuser');
 });
 
 Route::get('/submit-web', function () {return view('submit');})->name('submit');
+Route::post('/submit-web', [WebsiteController::class,'store'])->name('submit.store');
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('actionlogin');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/register-page', [UserController::class, 'register'])->name('register');
+Route::get('/register', [UserController::class, 'register'])->name('register');
 
-Route::post('/register-page', [UserController::class, 'store'])->name('store');
+Route::post('/register', [UserController::class, 'store'])->name('store');
 
 Route::get('/elements', function () {
     return view('elements');
@@ -69,17 +63,17 @@ Route::get('/dashboard', function () {
    return view('dashboard');
 })->name('dashboard');
 
-// Route::get('/dashboard', function () {
-//     return 'Welcome to your dashboard';
-// })->middleware('auth');
-
 Route::get('/profile-settings', function () {
-   return view('dashboard.profilesettings');
-});
+   return view('profilesettings');
+})->name('user.edit1');
+
+Route::put('/profile-settings', [UserController::class, 'update'])->name('user.update1');
 
 Route::get('/change-data', function () {
-   return view('dashboard.profilesettemailps');
-});
+   return view('profilesettemailps');
+})->name('user.edit2');
+
+Route::put('/change-data', [UserController::class, 'update'])->name('user.update2');
 
 Route::get('/submission', function () {
    return view('dashboard.submission');

@@ -55,14 +55,15 @@
    <!-- Card  -->
    
     <div class='p-4'>
-    <main class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+    <main class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">\
+      @foreach ($jobinfo as $job)
         <!-- Card 1 -->
         <article class="bg-white rounded-xl p-6 flex flex-col justify-between shadow-sm">
         <header class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
             <div class="flex items-center space-x-1 text-xs text-gray-600 font-semibold select-none">
             <span>∧⁹</span>
             <span>
-                <a href="#" class="underline font-bold text-gray-900">AQuest</a>
+                <a href="/job/{{$job -> company_name}}" class="underline font-bold text-gray-900">AQuest</a>
             </span>
             </div>
         </header>
@@ -83,76 +84,12 @@
             </dl>
             <div class="flex items-center text-gray-600 text-xs select-none">
             <i class="far fa-clock mr-2"></i>
-            <span>2 days ago</span>
+            <span></span>
             <i class="fas fa-arrow-right ml-auto"></i>
             </div>
         </section>
         </article>
-
-        <!-- Card 2 -->
-        <article class="bg-white rounded-xl p-6 flex flex-col justify-between shadow-sm">
-        <header class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
-            <div class="flex items-center space-x-2">
-            <div class="w-7 h-7 rounded-full bg-black flex items-center justify-center text-white text-xs font-semibold select-none">LS</div>
-            <a href="#" class="underline font-bold text-gray-900 text-xs select-text">Limesharp</a>
-            </div>
-        </header>
-        <section class="mb-6">
-            <h3 class="font-semibold text-gray-900 text-sm mb-2">Mid-weight UX&amp;UI Designer</h3>
-            <p class="text-xs text-gray-600 leading-tight">
-            —Overview limesharp is an award-winning, creatively led digital commerce agency who creates bespoke solutions for fashion, beauty &amp; lifestyle brands for the likes of Paul Smith, Creed, Anya Hindmarch, Nobody’s Child, Ellis Brigham, Strathberry, an
-            </p>
-        </section>
-        <section class="text-xs text-gray-700 border-t border-gray-200 pt-3">
-            <dl class="grid grid-cols-2 mb-3">
-            <dt class="font-semibold">Location</dt>
-            <dd class="text-right">United Kingdom</dd>
-            </dl>
-            <dl class="grid grid-cols-2 mb-3">
-            <dt class="font-semibold">Website</dt>
-            <dd class="text-right text-gray-600">limesharp.net</dd>
-            </dl>
-            <div class="flex items-center text-gray-600 text-xs select-none">
-            <i class="far fa-clock mr-2"></i>
-            <span>9 days ago</span>
-            <i class="fas fa-arrow-right ml-auto"></i>
-            </div>
-        </section>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="bg-white rounded-xl p-6 flex flex-col justify-between shadow-sm">
-        <header class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
-            <div class="flex items-center space-x-2 text-xs text-gray-600 font-semibold select-none">
-            <div class="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center">
-                <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
-            </div>
-            <a href="#" class="underline font-bold text-gray-900">Rotate°</a>
-            </div>
-        </header>
-        <section class="mb-6">
-            <h3 class="font-semibold text-gray-900 text-sm mb-2">Design Lead</h3>
-            <p class="text-xs text-gray-600 leading-tight">
-            Rotate° is on the hunt for a <span class="font-semibold">Design Lead</span> to help us create beautiful and effective digital experiences. <span class="text-blue-500">📘</span> About Rotate°We are a digital studio based in East London creating cutting-edge (Not cookie cutter) eCommerce. We work with brands we belie
-            </p>
-        </section>
-        <section class="text-xs text-gray-700 border-t border-gray-200 pt-3">
-            <dl class="grid grid-cols-2 mb-3">
-            <dt class="font-semibold">Location</dt>
-            <dd class="text-right">United Kingdom</dd>
-            </dl>
-            <dl class="grid grid-cols-2 mb-3">
-            <dt class="font-semibold">Website</dt>
-            <dd class="text-right text-gray-600">studiorotate.com</dd>
-            </dl>
-            <div class="flex items-center text-gray-600 text-xs select-none">
-            <i class="far fa-clock mr-2"></i>
-            <span>14 days ago</span>
-            <i class="fas fa-arrow-right ml-auto"></i>
-            </div>
-        </section>
-        </article>
-    
+      @endforeach
     </div>
     </div>
     <x-footer></x-footer>

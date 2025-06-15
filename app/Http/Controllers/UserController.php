@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+
 
 use App\Models\User;
 
@@ -38,45 +40,33 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|unique:users,name|max:255',
-            'display_name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email',
-            'password' => ['required', Password::min(8)->letters()->mixedCase()->numbers()->symbols()],
-            'description' => 'nullable|string',
-            'country_id' => 'required|integer|exists:countries,id',
-            'subscription_id' => 'required|integer|exists:subscriptions,id',
-            'twitter' => 'nullable|url|max:255',
-            'facebook' => 'nullable|url|max:255',
-            'linkedin' => 'nullable|url|max:255',
-            'instagram' => 'nullable|url|max:255',
-            'tiktok' => 'nullable|url|max:255',
-            'type' => 'required|integer|min:0',
-            'rank' => 'required|integer|min:0',
-            'status_points' => 'required|integer|min:0',
+            'name' => 'required|unique:app_users,name|max:255',
+            'email' => 'required|email|unique:app_users,email',
+            'password' => ['required', 'confirmed',  Password::min(8)->letters()->mixedCase()->numbers()->symbols()],
         ]);
 
         $user = User::create([
             'name' => $validated['name'],
-            'display_name' => $validated['display_name'],
+            'display_name' => $validated['name'],
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
-            'description' => $validated['description'] ?? null,
-            'image_link' => null,
+            'description' => null,
+            'image_link' => 'images/profile/default.png',
             'user_link' => null,
-            'country_id' => $validated['country_id'] ?? null,
-            'subscription_id' => $validated['subscription_id'] ?? null,
-            'twitter' => $validated['twitter'] ?? null,
-            'facebook' => $validated['facebook'] ?? null,
-            'linkedin' => $validated['linkedin'] ?? null,
-            'instagram' => $validated['instagram'] ?? null,
-            'tiktok' => $validated['tiktok'] ?? null,
-            'type' => $validated['type'],
-            'rank' => $validated['rank'],
-            'status_points' => $validated['status_points'],
+            'country_id' => null,
+            'subscription_id' => null,
+            'twitter' => null,
+            'facebook' => null,
+            'linkedin' => null,
+            'instagram' => null,
+            'tiktok' => null,
+            'type' => 0,
+            'rank' => 0,
+            'status_points' => 0,
             'created_at' => now()
         ]);
 
-        return redirect()->route('login');
+        return redirect()->route('login')->with('success', 'Account created. Please log in.');
     }
 
     /**
@@ -99,35 +89,59 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        $user = User::findOrFail($id);
+        $user = Auth::user();
         
         $validated = $request->validate([
-            'name' => "sometimes|max:255|unique:users,name,{$user->id}",
+            'name' => "sometimes|max:255|unique:app_users,name,{$user->id}",
             'display_name' => 'sometimes|max:255',
-            'email' => "sometimes|email|unique:users,email,{$user->id}",
-            'password' => ['sometimes', Password::min(8)->letters()->mixedCase()->numbers()->symbols()],
+            'current_email' => "sometimes|email",
+            'email' => "sometimes|confirmed|email|unique:app_users,email,{$user->id}",
+            'current_password' => ['sometimes', 'current_password', Password::min(8)->letters()->mixedCase()->numbers()->symbols()],
+            'password' => ['sometimes', 'confirmed', Password::min(8)->letters()->mixedCase()->numbers()->symbols()],
             'description' => 'sometimes|nullable|string',
-            'country_id' => 'sometimes|integer|exists:countries,id',
+            'image_link' => 'sometimes|nullable|string',
+            'country_id' => 'sometimes|nullable|integer|exists:countries,id',
             'subscription_id' => 'sometimes|integer|exists:subscriptions,id',
-            'twitter' => 'sometimes|nullable|string|max:255',
-            'facebook' => 'sometimes|nullable|string|max:255',
-            'linkedin' => 'sometimes|nullable|string|max:255',
-            'instagram' => 'sometimes|nullable|string|max:255',
-            'tiktok' => 'sometimes|nullable|string|max:255',
+            'twitter' => 'sometimes|nullable|url',
+            'facebook' => 'sometimes|nullable|url',
+            'linkedin' => 'sometimes|nullable|url',
+            'instagram' => 'sometimes|nullable|url',
+            'tiktok' => 'sometimes|nullable|url',
             'type' => 'sometimes|integer|min:0',
             'rank' => 'sometimes|integer|min:0',
             'status_points' => 'sometimes|integer|min:0',
         ]);
 
+        if (isset($validated['current_email']) && $validated['current_email'] !== $user->email) {
+            unset($validated['email']);
+            throw ValidationException::withMessages([
+                'current_email' => ['The current email you entered does not match your account email.'],
+            ]);
+        }
+        
+        if (isset($validated['email']) && $validated['email'] === $user->email) {
+            unset($validated['email']);
+            throw ValidationException::withMessages([
+                'email' => ['The new email must be different from your current email.'],
+            ]);
+        }
+
+        if (isset($validated['current_email'])) {
+            unset($validated['current_email']);
+        }
+
         if (isset($validated['password'])) {
             $validated['password'] = Hash::make($validated['password']);
         }
 
+        $validated['image_link'] = UserController::imageUpload($request);
+        $validated = array_filter($validated, fn($value) => !is_null($value));
+
         $user->update($validated);
 
-        return;
+        return back()->with('success', 'Profile updated.');
     }
 
 
@@ -139,6 +153,32 @@ class UserController extends Controller
         User::findOrFail($id)->delete();
         return;
     }
+
+    public function imageUpload(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            $image = $request->file('image');
+            $extension = $image->getClientOriginalExtension();
+            $imageName = Auth::id() . '.' . $extension;
+
+            $destination = public_path('images/profile');
+
+            if (!file_exists($destination)) {
+                mkdir($destination, 0755, true);
+            }
+
+            $image->move($destination, $imageName);
+
+            return "/images/profile/$imageName";
+        }
+
+        return null;
+    }
+
 
 // everything under this is new experimental shit code
 

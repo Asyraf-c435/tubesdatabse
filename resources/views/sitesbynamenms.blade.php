@@ -33,9 +33,9 @@
                 <img alt="Profile photo of Artemii Lebedev" class="w-6 h-6 rounded-full object-cover" height="24" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5085adb5-5851-441c-c297-fb846b861a0a.jpg" width="24" />
                 <a class="text-[10px] font-normal no-underline leading-none text-black hover:text-gray-500 duration-500 transition-all ease-in-out flex items-center space-x-1" href="#">
                     <span>Artemii Lebedev</span>
-                    <span class="text-[6px] font-extrabold no-underline leading-none select-none">
+                    <!-- <span class="text-[6px] font-extrabold no-underline leading-none select-none">
                         PRO
-                    </span>
+                    </span> -->
                 </a>
             </div>
             <div class="flex items-center space-x-6 text-black text-[14px] relative">
@@ -64,28 +64,7 @@
     <div class="max-w-[1450px] mx-auto px-4 py-12 text-left" id="nominees">
         <div class="relative">
             <div class="flex space-x-8 absolute bottom-6 right-4 items-center">
-                <!-- Tombol-tombol tetap -->
-                <a><i class="far fa-bookmark text-[#2a2a2a] text-[14px] cursor-pointer" aria-hidden="true" title="Bookmark"></i></a>
-                <a id="shareButton"><i class="fas fa-share-alt text-[#2a2a2a] text-[14px] cursor-pointer" aria-hidden="true" title="Share"></i></a>
-                <a><i class="fas fa-external-link-alt text-[#2a2a2a] text-[14px] cursor-pointer" title="External Link" aria-hidden="true"></i></a>
-
-                <!-- Kotak share (absolute position) -->
-                <div id="socialBox"
-                    class="opacity-0 scale-95 pointer-events-none transition-all duration-300 ease-in-out absolute right-[-35px] -translate-x-1/2 top-[-6px] flex items-center bg-gray-900 rounded-full px-4 py-2 z-20 space-x-6">
-
-                    <button aria-label="Twitter" class="text-gray-400 hover:text-gray-200 text-[13px]">
-                        <i class="fab fa-twitter"></i>
-                    </button>
-                    <button aria-label="LinkedIn" class="text-gray-400 hover:text-gray-200 text-[13px]">
-                        <i class="fab fa-linkedin-in"></i>
-                    </button>
-                    <button aria-label="Facebook" class="text-gray-400 hover:text-gray-200 text-[13px]">
-                        <i class="fab fa-facebook-f"></i>
-                    </button>
-                    <button id="closeButton" aria-label="Close" class="text-gray-400 hover:text-gray-200 text-[13px]">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
+                <a href="{{ $website->user->link }} }}"><i class="fas fa-external-link-alt text-[#2a2a2a] text-[14px] cursor-pointer" title="External Link" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>
@@ -322,6 +301,7 @@
                 </thead>
                 <tbody>
                     <!-- Row 1 -->
+                    @foreach ($website->website_votes as $votes)
                     <tr class="border-b border-black/20">
                         <td class="pl-4 pr-10 py-4 align-middle w-14">
                             <img
@@ -336,102 +316,21 @@
                                 <span class="font-semibold text-[13px]">Reksa Andhika</span>
                                 <span class="italic font-normal text-[13px] ml-1">from</span>
                                 <span class="font-semibold text-[13px] ml-1">Indonesia</span>
-                                <span class="font-normal italic text-[13px] ml-1">*</span>
+                                <!-- <span class="font-normal italic text-[13px] ml-1">*</span> -->
                             </div>
                             <div class="text-[11px] text-[#666666] select-text mt-1">reksaandhika.com</div>
                         </td>
-                        <td class="text-center py-4 align-middle">8</td>
-                        <td class="text-center py-4 align-middle">7</td>
-                        <td class="text-center py-4 align-middle">8</td>
-                        <td class="text-center py-4 align-middle">8</td>
+                            <td class="text-center py-4 align-middle">{{ $vote->pivot->design }}</td>
+                            <td class="text-center py-4 align-middle">{{ $vote->pivot->usability }}</td>
+                            <td class="text-center py-4 align-middle">{{ $vote->pivot->creativity}}</td>
+                            <td class="text-center py-4 align-middle">{{ $vote->pivot->content }}</td>
                         <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
 
                             7.70
 
                         </td>
                     </tr>
-                    <!-- Row 2 -->
-                    <tr class="border-b border-black/20">
-                        <td class="pl-4 pr-8 py-4 align-middle w-14">
-                            <img
-                                src="https://storage.googleapis.com/a1aa/image/9451aa13-3905-47b8-9e3f-219fd04e6499.jpg"
-                                alt="Logo of PopArt Studio, black abstract line art on white background"
-                                class="w-10 h-10 object-contain inline-block rounded-full bg-white"
-                                width="40"
-                                height="40" />
-                        </td>
-                        <td class="py-4 align-middle w-[40%]">
-                            <div class="leading-tight">
-                                <span class="font-semibold text-[13px]">PopArt Studio</span>
-                                <span class="italic font-normal text-[13px] ml-1">from</span>
-                                <span class="font-semibold text-[13px] ml-1">United States</span>
-                            </div>
-                            <div class="text-[11px] text-[#666666] select-text mt-1">popwebdesign.net</div>
-                        </td>
-                        <td class="text-center py-4 align-middle">8</td>
-                        <td class="text-center py-4 align-middle">8</td>
-                        <td class="text-center py-4 align-middle">8</td>
-                        <td class="text-center py-4 align-middle">8</td>
-                        <td class="relative absolute w-full m-auto bg-gray-50 font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                            8.00
-
-                        </td>
-                    </tr>
-                    <!-- Row 3 -->
-                    <tr class="border-b border-black/20">
-                        <td class="pl-4 pr-8 py-4 align-middle w-14">
-                            <img
-                                src="https://storage.googleapis.com/a1aa/image/0b880b9b-f0d3-4537-73b8-6c7dce1d22fa.jpg"
-                                alt="Logo of AthenaStudio, white stylized Y shape on red circular background"
-                                class="w-10 h-10 object-contain inline-block rounded-full"
-                                width="40"
-                                height="40" />
-                        </td>
-                        <td class="py-4 align-middle w-[40%]">
-                            <div class="leading-tight">
-                                <span class="font-semibold text-[13px]">AthenaStudio</span>
-                                <span class="italic font-normal text-[13px] ml-1">from</span>
-                                <span class="font-semibold text-[13px] ml-1">Turkey</span>
-                            </div>
-                            <div class="text-[11px] text-[#666666] select-text mt-1">1.envato.market</div>
-                        </td>
-                        <td class="text-center py-4 align-middle">9</td>
-                        <td class="text-center py-4 align-middle">9</td>
-                        <td class="text-center py-4 align-middle">9</td>
-                        <td class="text-center py-4 align-middle">8</td>
-                        <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                            8.90
-
-                        </td>
-                    </tr>
-                    <!-- Row 4 -->
-                    <tr class="border-b border-black/20">
-                        <td class="pl-4 pr-8 py-4 align-middle w-14">
-                            <img
-                                src="https://storage.googleapis.com/a1aa/image/3124f85c-54a7-4740-663f-afb777274c22.jpg"
-                                alt="Profile photo of Sukumar Swain, man with short hair and beard wearing orange shirt"
-                                class="w-10 h-10 rounded-full object-cover inline-block"
-                                width="40"
-                                height="40" />
-                        </td>
-                        <td class="py-4 align-middle w-[40%]">
-                            <div class="leading-tight">
-                                <span class="font-semibold text-[13px]">Sukumar Swain</span>
-                                <span class="font-normal italic text-[13px] ml-1">*</span>
-                                <span class="italic font-normal text-[13px] ml-1">from</span>
-                                <span class="font-semibold text-[13px] ml-1">India</span>
-                            </div>
-                            <div class="text-[11px] text-[#666666] select-text mt-1">sukumarswa.in</div>
-                        </td>
-                        <td class="text-center py-4 align-middle">8</td>
-                        <td class="text-center py-4 align-middle">8</td>
-                        <td class="text-center py-4 align-middle">8</td>
-                        <td class="text-center py-4 align-middle">7</td>
-                        <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                            7.90
-
-                        </td>
-                    </tr>
+                    @endforeach
 
 
                     <!-- Overlay gradasi -->
@@ -463,175 +362,9 @@
 
                         <!-- Row 5 (awalnya disembunyikan) -->
 
-                        <tr id="row-5" class="border-b border-black/20" style="display: none;">
-                            <td class="pl-4 pr-8 py-4 align-middle w-14">
-                                <img
-                                    src="https://storage.googleapis.com/a1aa/image/0de55825-f3ba-4c5d-b9fe-68ec8a2cc7bd.jpg"
-                                    alt="Logo of Grondin Bergerat Thibault, circular black and white emblem"
-                                    class="w-10 h-10 object-contain inline-block rounded-full"
-                                    width="40"
-                                    height="40" />
-                            </td>
-                            <td class="py-4 align-middle w-[40%]">
-                                <div class="leading-tight">
-                                    <span class="font-semibold text-[13px]">Grondin Bergerat Thibault</span>
-                                    <span class="italic font-normal text-[13px] ml-1">from</span>
-                                    <span class="font-semibold text-[13px] ml-1">France</span>
-                                </div>
-                                <div class="text-[11px] text-[#666666] select-text mt-1">behance.net</div>
-                            </td>
-                            <td class="text-center py-4 align-middle">8</td>
-                            <td class="text-center py-4 align-middle">9</td>
-                            <td class="text-center py-4 align-middle">8</td>
-                            <td class="text-center py-4 align-middle">9</td>
-                            <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                                8.40
-                            </td>
-                        </tr>
-                        <!-- Tombol More Options (tambahkan ID dan event handler) -->
-
-                        <!-- Row 6 -->
-                        <tr id="row-6" class="border-b border-black/20" style="display: none;">
-                            <td class="pl-4 pr-8 py-4 align-middle w-14">
-                                <img
-                                    src="https://storage.googleapis.com/a1aa/image/bf2c9502-a906-4dd0-0755-43c4a1ca729f.jpg"
-                                    alt="Logo of Aterlab, black asterisk shape on white background"
-                                    class="w-10 h-10 object-contain inline-block rounded-full"
-                                    width="40"
-                                    height="40" />
-                            </td>
-                            <td class="py-4 align-middle w-[40%]">
-                                <div class="leading-tight">
-                                    <span class="font-semibold text-[13px]">Aterlab</span>
-                                    <span class="italic font-normal text-[13px] ml-1">from</span>
-                                    <span class="font-semibold text-[13px] ml-1">Poland</span>
-                                </div>
-                                <div class="text-[11px] text-[#666666] select-text mt-1">aterlab.netlify.app</div>
-                            </td>
-                            <td class="text-center py-4 align-middle">7</td>
-                            <td class="text-center py-4 align-middle">8</td>
-                            <td class="text-center py-4 align-middle">8</td>
-                            <td class="text-center py-4 align-middle">9</td>
-                            <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                                7.70
-
-                            </td>
-                        </tr>
-                        <!-- Row 7 -->
-                        <tr id="row-7" class="border-b border-black/20" style="display: none;">
-                            <td class="pl-4 pr-8 py-4 align-middle w-14">
-                                <img
-                                    src="https://storage.googleapis.com/a1aa/image/59eeb221-6dfa-4f0b-1a1a-5051f0bb90e2.jpg"
-                                    alt="Logo of Jordan Delcros, black and white abstract text logo"
-                                    class="w-10 h-10 object-contain inline-block rounded-full"
-                                    width="40"
-                                    height="40" />
-                            </td>
-                            <td class="py-4 align-middle w-[40%]">
-                                <div class="leading-tight">
-                                    <span class="font-semibold text-[13px]">Jordan Delcros</span>
-                                    <span class="italic font-normal text-[13px] ml-1">from</span>
-                                    <span class="font-semibold text-[13px] ml-1">France</span>
-                                </div>
-                                <div class="text-[11px] text-[#666666] select-text mt-1">jordan-delcros.com</div>
-                            </td>
-                            <td class="text-center py-4 align-middle">8</td>
-                            <td class="text-center py-4 align-middle">7</td>
-                            <td class="text-center py-4 align-middle">8</td>
-                            <td class="text-center py-4 align-middle">8</td>
-                            <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                                7.70
-
-                            </td>
-                        </tr>
-                        <!-- Row 8 -->
-                        <tr id="row-8" class="border-b border-black/20" style="display: none;">
-                            <td class="pl-4 pr-8 py-4 align-middle w-14">
-                                <img
-                                    src="https://storage.googleapis.com/a1aa/image/48b4fb24-40b5-4833-c1ac-955e4209ffc3.jpg"
-                                    alt="Profile photo of adj2424, person with short hair and glasses"
-                                    class="w-10 h-10 rounded-full object-cover inline-block"
-                                    width="40"
-                                    height="40" />
-                            </td>
-                            <td class="py-4 align-middle w-[40%]">
-                                <div class="leading-tight">
-                                    <span class="font-semibold text-[13px]">adj2424</span>
-                                    <span class="italic font-normal text-[13px] ml-1">from</span>
-                                    <span class="font-semibold text-[13px] ml-1">United States</span>
-                                </div>
-                                <div class="text-[11px] text-[#666666] select-text mt-1">alanjiang.xyz</div>
-                            </td>
-                            <td class="text-center py-4 align-middle">9</td>
-                            <td class="text-center py-4 align-middle">9</td>
-                            <td class="text-center py-4 align-middle">9</td>
-                            <td class="text-center py-4 align-middle">9</td>
-                            <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                                9.00
-
-                            </td>
-                        </tr>
-                        <!-- Row 9 -->
-                        <tr id="row-9" class="border-b border-black/20" style="display: none;">
-                            <td class="pl-4 pr-8 py-4 align-middle w-14">
-                                <img
-                                    src="https://storage.googleapis.com/a1aa/image/f6f075b0-565f-4e7d-22dd-d38ecf8056c3.jpg"
-                                    alt="Profile photo of mrfox, stylized fox face icon in brown and beige"
-                                    class="w-10 h-10 rounded-full object-cover inline-block"
-                                    width="40"
-                                    height="40" />
-                            </td>
-                            <td class="py-4 align-middle w-[40%]">
-                                <div class="leading-tight">
-                                    <span class="font-semibold text-[13px]">mrfox</span>
-                                    <span class="italic font-normal text-[13px] ml-1">from</span>
-                                    <span class="font-semibold text-[13px] ml-1">Russia</span>
-                                </div>
-                                <div class="text-[11px] text-[#666666] select-text mt-1">daccel.tech</div>
-                            </td>
-                            <td class="text-center py-4 align-middle">8</td>
-                            <td class="text-center py-4 align-middle">7</td>
-                            <td class="text-center py-4 align-middle">7</td>
-                            <td class="text-center py-4 align-middle">7</td>
-                            <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                                7.40
-
-                            </td>
-                        </tr>
-                        <!-- BUAT AJA MENAPILKAN 10 DATA ORANG, KALO DI DATABASE MUNGKIN ADA 100 LEBIH TAPI DI TABEL DISINI SAMPE 10 AJA JADI FOREACH < 11 -->
-                        <tr id="row-10" class="border-b border-black/20" style="display: none;">
-                            <td class="pl-4 pr-8 py-4 align-middle w-14">
-                                <img
-                                    src="https://storage.googleapis.com/a1aa/image/f6f075b0-565f-4e7d-22dd-d38ecf8056c3.jpg"
-                                    alt="Profile photo of mrfox, stylized fox face icon in brown and beige"
-                                    class="w-10 h-10 rounded-full object-cover inline-block"
-                                    width="40"
-                                    height="40" />
-                            </td>
-                            <td class="py-4 align-middle w-[40%]">
-                                <div class="leading-tight">
-                                    <span class="font-semibold text-[13px]">mrfox</span>
-                                    <span class="italic font-normal text-[13px] ml-1">from</span>
-                                    <span class="font-semibold text-[13px] ml-1">Russia</span>
-                                </div>
-                                <div class="text-[11px] text-[#666666] select-text mt-1">daccel.tech</div>
-                            </td>
-                            <td class="text-center py-4 align-middle">8</td>
-                            <td class="text-center py-4 align-middle">7</td>
-                            <td class="text-center py-4 align-middle">7</td>
-                            <td class="text-center py-4 align-middle">7</td>
-                            <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                                7.40
-
-                            </td>
-                        </tr>
-
         </div>
         </tbody>
         </table>
     </div>
     </div>
-
-    <x-footer class="text-start">
-    </x-footer>
 </x-layout>

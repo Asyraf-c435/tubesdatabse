@@ -10,9 +10,26 @@ class WebsiteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($a)
     {
-        //
+        if ($a == 0) {
+            $websites = Website::doesntHave('awards')->get();
+        } else {
+            $websites = Website::whereHas('awards', function ($query) use ($a) {
+                if ($a == 1) {
+                    $query->where('type', '>=', $a);
+                } else {
+                    $query->where('type', $a);
+                }
+            })->with('awards')->get();
+        }
+        
+        return view('isianexplore', compact('websites'));
+    }
+
+    public function submit()
+    {
+        return view('submit-web');
     }
 
     /**
@@ -55,7 +72,13 @@ class WebsiteController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $website = Website::findOrFail($id);
+
+        if ($website->awards->isEmpty()) {
+            return view('sitesbynamenms', compact('website'));
+        } else {
+            return view('sites', compact('website'));
+        }
     }
 
     /**
@@ -93,5 +116,27 @@ class WebsiteController extends Controller
     {
         Website::findOrFail($id)->delete();
         return;
+    }
+
+    public function vote(Request $request, $user_id, $website_id)
+    {
+        $website = Website::findOrFail($website_id);
+
+        $validated = $request->validate([
+            'design'=>'required|int|min:0|max:10',
+            'usability'=>'required|int|min:0|max:10',
+            'creativity'=>'required|int|min:0|max:10',
+            'content'=>'required|int|min:0|max:10',
+        ]);
+
+        $website->website_votes()->syncWithoutDetaching([$user_id => [
+            'is_rejected'=> 0,
+            'design' => $validated['design'],
+            'usability' => $validated['usability'],
+            'creativity' => $validated['creativity'],
+            'content' => $validated['content']
+        ]]);
+
+        return redirect()->route('site', $website_id);
     }
 }

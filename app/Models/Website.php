@@ -14,6 +14,12 @@ class Website extends Model
         'link',
         'image_link',
         'created_at',
+        'website_id',
+        'is_rejected',
+        'design',
+        'usability',
+        'creativity',
+        'content'
     ];
 
     protected $casts = [

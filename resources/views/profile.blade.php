@@ -1,18 +1,16 @@
 
 <x-layout>
-   <div class="p-20 mb-[-12rem]">
+   <div class="p-20 -mb-48">
       <div class="flex items-baseline justify-between">
-         <header>
-            <div class="flex items-center space-x-4">
-               <img alt="Profile photo" class="w-12 h-12 rounded-full object-cover" 
-                  src="{{ $user->image_link }}" />
-               <span class="text-[18px] font-normal text-black leading-none">
-                  {{ $user->display_name }}
-               </span>
-            </div>
-         </header>
-         
-         <main>
+        <div class="flex items-center space-x-4">
+            <img alt="Profile photo" class="w-12 h-12 rounded-full object-cover" 
+                src="{{ asset($user->image_link) }}" />
+            <span class="text-[18px] font-normal text-black leading-none">
+                {{ $user->display_name }}
+            </span>
+        </div>
+
+         <div>
             <table class="border border-black border-collapse text-center text-[10px] w-[240px] table-fixed">
                <thead>
                     <tr>
@@ -57,8 +55,7 @@
                     </tr>
                 </tbody>
             </table>
-         </main>
+        </div>
       </div>
    </div>
-   <x-footer></x-footer>
 </x-layout>

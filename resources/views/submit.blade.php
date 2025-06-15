@@ -23,13 +23,13 @@
             <div class="relative min-h-[500px] w-full">
                 <!-- MAIN FILL -->
                 <div id="mainFillSection" class="flex flex-col md:flex-row gap-12 mb-20">
-                    <form class="flex flex-col gap-8 w-full md:w-1/3">
+                    <form class="flex flex-col gap-8 w-full md:w-1/3" action="{{route ('submit.store') }} " method ="POST">
                         <div class="flex flex-col gap-1">
                             <label
-                                for="website-name"
+                                for="name"
                                 class="text-[9px] font-sans font-semibold text-gray-400 tracking-widest uppercase">Name of website</label>
                             <input
-                                id="website-name"
+                                id="name"
                                 type="text"
                                 class="bg-white border border-gray-200 rounded-sm h-8 px-2 text-xs focus:outline-none focus:ring-0 focus:border-gray-300"
                                 placeholder="Input your name of website" />

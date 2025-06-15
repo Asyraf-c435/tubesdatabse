@@ -41,29 +41,43 @@
     <!-- SEARCH BAR END -->
 
     <!-- RIGHT SIDE NAVBAR -->
-    <div class="group relative flex h-7 w-7 mr-5 mt-2">
-        <img src="images/tes.jpg" alt="profiletes" class="rounded-full overflow-hidden">
-        <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 w-48 font-sans text-sm leading-relaxed absolute mt-8 left-0 rounded-md bg-[#222222] z-50">
-            <ul>
-                <li class="px-4 py-3 cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="">Profile</a></li>
-                <li class="px-4 py-3 cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="{{ route('collections') }}">Collections</a></li>
-                <li class="px-4 py-3 cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="{{ route('notification') }}">Notifications</a></li>
-                <li>
-                    <hr class="border-[#393939]" />
-                </li>
-                <li class="px-4 py-3 font-semibold cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li>
-                    <hr class="border-[#393939]" />
-                </li>
-                <li class="px-4 py-3 cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="{{ route('logout') }}">Logout</a></li>
-            </ul>
+     @auth
+        <div class="group relative flex h-7 w-7 mr-5 mt-2">
+            <img src="{{ asset(auth()->user()->image_link) }}" alt="profiletes" class="rounded-full overflow-hidden">
+            <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 w-48 font-sans text-sm leading-relaxed absolute mt-8 left-0 rounded-md bg-[#222222] z-50">
+                <ul>
+                    <li class="px-4 py-3 cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="{{ route('profile', auth()->user()->id) }}">Profile</a></li>
+                    @auth
+                        <li class="px-4 py-3 cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="{{ route('user.edit1') }}">Settings</a></li>
+                    @endauth
+                    <li class="px-4 py-3 cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="{{ route('collections') }}">Collections</a></li>
+                    <li class="px-4 py-3 cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="{{ route('notification') }}">Notifications</a></li>
+                    <li>
+                        <hr class="border-[#393939]" />
+                    </li>
+                    <li class="px-4 py-3 font-semibold cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li>
+                        <hr class="border-[#393939]" />
+                    </li>
+                    <li class="px-4 py-3 cursor-pointer hover:text-gray-400 transition-colors duration-200 text-white">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit">Log Out</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-
+    @endauth
 
     <div class="flex items-center space-x-4 text-xs text-black mt-1.5 ">
-        <a class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500 cursor-pointer" id="nav-login-btn" href="{{ route('login') }}">Log in</a>
-        <a class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500 cursor-pointer" id="nav-register-btn" href="{{ route('register') }}">Sign Up</a>
+        @guest
+            <a class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500 cursor-pointer" id="nav-login-btn" href="{{ route('login') }}">Log in</a>
+            <a class="hidden sm:block font-semibold hover:opacity-50 transition-opacity duration-500 cursor-pointer" id="nav-register-btn" href="{{ route('register') }}">Sign Up</a>
+        @endguest
+        @auth
+            <div class="text-sm font-normal text-black">{{ auth()->user()->display_name }}</div>
+        @endauth
         <!-- <a class="bg-black text-white rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-white hover:text-black transition-colors duration-500" href="#">Be Pro</a> -->
         <a class="border border-black rounded-md px-4 py-1.5 text-sm font-semibold select-none hover:bg-black hover:text-white transition-colors duration-500" href="{{route('submit')}}">Submit Website</a>
     </div>
