@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Website;
+use App\Models\WebsiteElement;
 
 class WebsiteController extends Controller
 {
@@ -45,26 +46,55 @@ class WebsiteController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'user_id' => 'required|integer|exists:users,id',
-            'name' => 'required|max:255',
-            'description'=>'required|string',
-            'link'=>'required|url|max:255',
-            'image_link'=>'required|url|max:255',
-            'category_id'=>'required|integer|exists:categories,id'
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'link' => 'required|url',
+            'description' => 'required|string',
+            'image' => 'required|image',
+            'tags' => 'required|array',
+            'elements.*.name' => 'required|string|max:255',
+            'elements.*.image' => 'required|image'
         ]);
 
         $website = Website::create([
-            'user_id'=> $validated['user_id'],
-            'name' => $validated['name'],
-            'description'=> $validated['description'],
-            'link'=> $validated['link'],
-            'image_link' => $validated['image_link'],
-            'category_id'=> $validated['category_id'],
-            'created_at' => now()
+            'user_id' => auth()->user()->id,
+            'name' => $request->name,
+            'link' => $request->link,
+            'description' => $request->description,
+            'image_link' => ''
         ]);
 
-        return;
+        $siteImagePath = public_path('images/sites');
+        $elementImagePath = public_path('images/sites/elements');
+
+        // Handle website image
+        if ($request->hasFile('image')) {
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $imageName = $website->id . '.' . $extension;
+            $request->file('image')->move($siteImagePath, $imageName);
+            $website->image_link = 'images/sites/' . $imageName;
+            $website->save();
+        }
+
+        $website->tags()->syncWithoutDetaching($request->tags);
+
+        foreach ($request->elements as $elementData) {
+            $element = WebsiteElement::create([
+                'website_id' => $website->id,
+                'name' => $elementData['name'],
+                'image_link' => ''
+            ]);
+
+            if (isset($elementData['image'])) {
+                $extension = $elementData['image']->getClientOriginalExtension();
+                $imageName = $element->id . '.' . $extension;
+                $elementData['image']->move($elementImagePath, $imageName);
+                $element->image_link = 'images/sites/elements/' . $imageName;
+                $element->save();
+            }
+        }
+
+        return redirect()->route('sites', $website->id);
     }
 
     /**
@@ -101,7 +131,6 @@ class WebsiteController extends Controller
             'description'=>'sometimes|string',
             'link'=>'sometimes|url|max:255',
             'image_link'=>'sometimes|url|max:255',
-            'category_id'=>'sometimes|integer|exists:categories,id'
         ]);
 
         $website->update($validated);

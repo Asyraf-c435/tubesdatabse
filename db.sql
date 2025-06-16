@@ -5,10 +5,12 @@ CREATE TABLE countries (
 
 CREATE TABLE subscriptions (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL
     plan TINYINT NOT NULL,
     price INT NOT NULL,
     is_annual BOOLEAN NOT NULL,
-    purchased_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    purchased_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES app_users(id),
 );
 
 CREATE TABLE app_users (
@@ -175,5 +177,12 @@ CREATE TABLE website_collections (
     collection_id INT NOT NULL,
     website_id INT NOT NULL,
     FOREIGN KEY (collection_id) REFERENCES collections(id),
+    FOREIGN KEY (website_id) REFERENCES websites(id)
+);
+
+CREATE TABLE website_categories (
+    category_id INT NOT NULL,
+    website_id INT NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES categories(id),
     FOREIGN KEY (website_id) REFERENCES websites(id)
 );

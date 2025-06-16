@@ -178,30 +178,4 @@ class UserController extends Controller
 
         return null;
     }
-
-
-// everything under this is new experimental shit code
-
-    // public function login()
-    //     {
-    //         if (Auth::check()) {
-    //             return redirect('home');
-    //         }else{
-    //             return view('login');
-    //         }
-    //     }
-
-    // public function actionlogin(Request $request)
-    // {
-    //     $data = [
-    //         'email' => $request->input('email'),
-    //         'password' => $request->input('password'),
-    //     ];
-
-    //     if (Auth::Attempt($data)) {
-    //         return redirect('home');
-    //     } else {
-    //         return redirect('/');
-    //     }
-    // }
 }

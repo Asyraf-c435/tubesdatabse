@@ -8,7 +8,6 @@ class Website extends Model
 {
     protected $fillable = [
         'user_id',
-        'category_id',
         'name',
         'description',
         'link',
@@ -25,7 +24,6 @@ class Website extends Model
     protected $casts = [
         'id' => 'integer',
         'user_id'=> 'integer',
-        'category_id'=> 'integer',
         'name'=> 'string',
         'description'=> 'string',
         'link'=> 'string',
@@ -72,7 +70,7 @@ class Website extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class,'category_id', 'id');
+        return $this->belongsToMany(Category::class,'website_categories', 'website_id', 'category_id');
     }
 
     public function tags()

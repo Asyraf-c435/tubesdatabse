@@ -19,6 +19,6 @@ class Category extends Model
     
     public function websites()
     {
-        return $this->hasMany(Website::class,"category_id","id");
+        return $this->belongsToMany(Website::class,"website_categories","category_id", 'website_id');
     }
 }
