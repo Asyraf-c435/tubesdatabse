@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\WebsiteController;
+use App\Models\WebsiteElement;
 
 Route::get('/', function () {
     return view('home');
@@ -40,9 +41,10 @@ Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::post('/register', [UserController::class, 'store'])->name('store');
 
-Route::get('/elements', function () {
-    return view('elements');
-});
+Route::get('/elements/{id}', function ($id) {
+   $element = WebsiteElement::findOrFail($id);
+   return view('elements', compact('element'));
+})->name('element');
 
 Route::get('/profile/{id}', [UserController::class, 'show'])->name('profile');
 
@@ -56,22 +58,21 @@ Route::get('/notification', function () {
 
 Route::get('/per-notification', function () {
    return view('insidenotification');
-
 })->name('notification.show');
 
 Route::get('/dashboard', function () {
    return view('dashboard');
-})->name('dashboard');
+})->name('dashboard')->middleware('auth');
 
 Route::get('/profile-settings', function () {
    return view('profilesettings');
-})->name('user.edit1');
+})->name('user.edit1')->middleware('auth');
 
 Route::put('/profile-settings', [UserController::class, 'update'])->name('user.update1');
 
 Route::get('/change-data', function () {
    return view('profilesettemailps');
-})->name('user.edit2');
+})->name('user.edit2')->middleware('auth');
 
 Route::put('/change-data', [UserController::class, 'update'])->name('user.update2');
 
@@ -111,10 +112,6 @@ Route::get('/post-job', function () {
    return view('dashboard.post-job');
 });
 
-Route::get('/vote', function () {
-   return view('vote');
-});
+Route::get('/vote/{id}', [WebsiteController::class, 'to_vote'])->name('vote')->middleware('auth');
 
-Route::get('/vote-in', function () {
-   return view('votein');
-});
+Route::post('/vote/{id}', [WebsiteController::class, 'vote'])->name('vote');

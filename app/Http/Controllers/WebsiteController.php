@@ -147,9 +147,20 @@ class WebsiteController extends Controller
         return;
     }
 
-    public function vote(Request $request, $user_id, $website_id)
+    public function to_vote(string $id)
+    {
+        $website = Website::findOrFail($id);
+    
+        if ($website->website_votes->contains(auth()->id())) {
+            return back();
+        }
+        return view('vote', compact('website'));
+    }
+
+    public function vote(Request $request, $website_id)
     {
         $website = Website::findOrFail($website_id);
+        $user_id = auth()->user()->id;
 
         $validated = $request->validate([
             'design'=>'required|int|min:0|max:10',
@@ -166,6 +177,6 @@ class WebsiteController extends Controller
             'content' => $validated['content']
         ]]);
 
-        return redirect()->route('site', $website_id);
+        return redirect()->route('sites', $website_id);
     }
 }

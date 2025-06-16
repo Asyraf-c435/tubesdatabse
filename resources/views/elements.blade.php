@@ -63,11 +63,11 @@
                 style="font-family: 'Inter', sans-serif;">
 
                 <div class="flex items-center justify-center w-15 h-10 rounded-md px-4 py-2 bg-[#222222] text-white font-semibold text-lg sm:text-base lg:text-lg select-none m-1">
-                    Tubes .
+                    <a href="{{ route('home') }}">Tubes .</a>
                 </div>
             </div>
         </div>
-        <div class="fixed top-0 left-0 right-0 transform -translate-y-full transition-transform duration-500 ease-out bg-white shadow-sm z-50 w-full mx-auto px-16 py-4" id="main-header">
+        <!-- <div class="fixed top-0 left-0 right-0 transform -translate-y-full transition-transform duration-500 ease-out bg-white shadow-sm z-50 w-full mx-auto px-16 py-4" id="main-header">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
                     <span class="text-[10px] font-extrabold uppercase leading-none select-none">
@@ -84,8 +84,7 @@
                         </span>
                     </a>
                 </div>
-                <!--                 
-                YANG GESER DARI ATAS -->
+                
                 <div class="flex items-center space-x-6 text-black text-[14px] relative">
                     <button><i class="show-card-btn far fa-bookmark text-[#2a2a2a] text-[14px] cursor-pointer" aria-hidden="true" title="Bookmark"></i></button>
                     <a id="header-share-btn"><i class="fas fa-share-alt text-[#2a2a2a] text-[14px] cursor-pointer" aria-hidden="true" title="Share"></i></a>
@@ -108,18 +107,18 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="max-w-[1450px] mx-auto px-4 py-12 text-left" id="nominees">
             <div class="relative ">
                 <div class="flex space-x-8 absolute bottom-6 right-4 items-center ">
                     <!-- Tombol-tombol tetap -->
-                    <a><i class="show-card-btn far fa-bookmark text-[#2a2a2a] text-[14px] cursor-pointer" aria-hidden="true" title="Bookmark"></i></a>
-                    <a id="shareButton"><i class="fas fa-share-alt text-[#2a2a2a] text-[14px] cursor-pointer" aria-hidden="true" title="Share"></i></a>
-                    <a><i class="fas fa-external-link-alt text-[#2a2a2a] text-[14px] cursor-pointer" title="External Link" aria-hidden="true"></i></a>
+                    <!-- <a><i class="show-card-btn far fa-bookmark text-[#2a2a2a] text-[14px] cursor-pointer" aria-hidden="true" title="Bookmark"></i></a>
+                    <a id="shareButton"><i class="fas fa-share-alt text-[#2a2a2a] text-[14px] cursor-pointer" aria-hidden="true" title="Share"></i></a> -->
+                    <a href="{{ url($element->website->link) }}"><i class="fas fa-external-link-alt text-[#2a2a2a] text-[14px] cursor-pointer" title="External Link" aria-hidden="true"></i></a>
 
                     <!-- Kotak share (absolute position) -->
-                    <div id="socialBox"
+                    <!-- <div id="socialBox"
                         class="opacity-0 scale-95 pointer-events-none transition-all duration-300 ease-in-out absolute right-[-35px] -translate-x-1/2 top-[-6px] flex items-center bg-gray-900 rounded-full px-4 py-2 z-20 space-x-6">
 
                         <button aria-label="Twitter" class="text-gray-400 hover:text-gray-200 text-[13px]">
@@ -134,7 +133,7 @@
                         <button id="closeButton" aria-label="Close" class="text-gray-400 hover:text-gray-200 text-[13px]">
                             <i class="fas fa-times"></i>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- SECTION NILAI -->
@@ -142,23 +141,23 @@
             <div class="mt-[8rem]">
                 <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 mb-12">
                     <p class="text-[19px] font-semibold text-[#111111] flex items-center justify-center mb-10">
-                        Charles Leclerc
+                        {{ $element->name }}
                         <span class="text-[11px] font-light text-[#6B6B6B] ml-2 mr-2">
                             from
                         </span>
                         <a class="inline-flex items-center space-x-2 text-[19px] font-semibold text-[#111111] no-underline ml-1" href="#">
                             <span class="underline-slide no-underline">
-                                Apart
+                                {{ $element->website->user->display_name }}
                             </span>
                         </a>
                     </p>
 
                     <div class=" flex justify-center items-center">
                         <div class="bg-[#1a1a1a] rounded-lg p-8 max-w-[720px] w-full" style="box-shadow: inset 0 0 0 1px #2a2a2a">
-                            <img alt="Wide rectangular black frame with subtle grid and border, containing a circular gradient loading animation with purple and peach colors in the center" class="w-full rounded-md object-cover aspect-[16/9]" src="https://storage.googleapis.com/a1aa/image/d8b77ba7-bdee-4986-b20d-31365547f1b4.jpg" />
+                            <img alt="element image" class="w-full rounded-md object-cover" src="{{ asset($element->image_link) }}" />
                         </div>
                     </div>
-                    <div class="max-w-6xl mx-auto px-4 py-16 flex flex-col items-center">
+                    <!-- <div class="max-w-6xl mx-auto px-4 py-16 flex flex-col items-center">
                         <p class="text-center text-gray-600 text-sm mb-8">
                             This element was built with...
                         </p>
@@ -345,7 +344,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

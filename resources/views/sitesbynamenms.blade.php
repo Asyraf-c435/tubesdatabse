@@ -124,26 +124,28 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-4 w-full">
                 @foreach($website->elements as $element)
                     <div class="group relative rounded-md overflow-hidden max-w-[300px] max-h-[210px] cursor-pointer">
-                        @php
-                            $extension = pathinfo($element->image_link, PATHINFO_EXTENSION);
-                        @endphp
-                        @if(in_array(strtolower($extension), $imageExtensions))
-                            <img src="{{ asset($element->image_link) }}" height="160" width="250" class="w-full h-full object-cover transition duration-500 ease-in-out group-hover:brightness-75" alt="Media">
-                        @else
-                            <video autoplay muted loop height="160" width="250" class="w-full h-full object-cover transition duration-500 ease-in-out group-hover:brightness-75">
-                                <source src="{{ asset($element->image_link) }}" type="video/{{ strtolower($extension) }}">
-                                Your browser does not support the video tag.
-                            </video>
-                        @endif
-                        <div class="overlay absolute inset-0 opacity-0 group-hover:opacity-100"></div>
-                        <div class="absolute bottom-4 left-4 text-white text-container pointer-events-none">
-                            <div class="font-thin text-xs uppercase leading-none select-none mb-1">
-                                ELEMENT
+                        <a href="{{ route('element', $element->id) }}">
+                            @php
+                                $extension = pathinfo($element->image_link, PATHINFO_EXTENSION);
+                            @endphp
+                            @if(in_array(strtolower($extension), $imageExtensions))
+                                <img src="{{ asset($element->image_link) }}" height="160" width="250" class="w-full h-full object-cover transition duration-500 ease-in-out group-hover:brightness-75" alt="Media">
+                            @else
+                                <video autoplay muted loop height="160" width="250" class="w-full h-full object-cover transition duration-500 ease-in-out group-hover:brightness-75">
+                                    <source src="{{ asset($element->image_link) }}" type="video/{{ strtolower($extension) }}">
+                                    Your browser does not support the video tag.
+                                </video>
+                            @endif
+                            <div class="overlay absolute inset-0 opacity-0 group-hover:opacity-100"></div>
+                            <div class="absolute bottom-4 left-4 text-white text-container pointer-events-none">
+                                <div class="font-thin text-xs uppercase leading-none select-none mb-1">
+                                    ELEMENT
+                                </div>
+                                <div class="text-sm font-bold select-none">
+                                    {{ $element->name }}
+                                </div>
                             </div>
-                            <div class="text-sm font-bold select-none">
-                                {{ $element->name }}
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
                 <!-- <div class="group relative rounded-md overflow-hidden  max-w-[300px] max-h-[210px]  cursor-pointer">
@@ -253,6 +255,7 @@
         </div>
 
         <a
+            href="{{ route('vote', $website) }}"
             class="vote-button mt-8 bg-black text-white text-[18px] font-semibold rounded px-8 py-5 flex items-center gap-3"
             aria-label="Vote button with arrow">
             <i class="fas fa-arrow-right"></i>
@@ -289,7 +292,7 @@
                         <td class="py-4 align-middle w-[40%]">
                             <div class="leading-tight">
                                 <span class="font-semibold text-[13px]">{{ $vote->display_name }}</span>
-                                <span class="italic font-normal text-[13px] ml-1">from</span>
+                                <!-- <span class="italic font-normal text-[13px] ml-1">from</span> -->
                                 <!-- <span class="font-semibold text-[13px] ml-1">Indonesia</span> -->
                                 <!-- <span class="font-normal italic text-[13px] ml-1">*</span> -->
                             </div>
