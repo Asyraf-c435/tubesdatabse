@@ -4,6 +4,8 @@
     <div class="relative">
         <a href="/websites">TEST</a>
         <a href="/pro">TEST</a>
+        <a href="/vote">vote</a>
+        <a href="/vote-in">vote in</a>
         <button
             id="scrollUpButton"
             class="fixed bottom-3.5 left-8 translate-y-4 opacity-0 w-14 h-14

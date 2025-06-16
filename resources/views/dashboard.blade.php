@@ -45,7 +45,7 @@
                     </p>
                 </a>
 
-                <section class="bg-white rounded-md p-5 max-w-xs hover-animate">
+                <a href="/course" class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">
                         <i class="fas fa-graduation-cap text-sm text-gray-700"></i>
                         <h3 class="font-semibold text-xs">Academy</h3>
@@ -53,9 +53,9 @@
                     <p class="text-[9px] text-gray-600 leading-tight">
                         Access and watch all the courses, masterclasses and workshops you have bought from awwwards academy.
                     </p>
-                </section>
+                </a>
 
-                <section class="bg-white rounded-md p-5 max-w-xs hover-animate">
+                <a href="/pro" class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">
                         <i class="fas fa-chart-line text-sm text-gray-700"></i>
                         <h3 class="font-semibold text-xs">Pro Subscription</h3>
@@ -63,7 +63,7 @@
                     <p class="text-[9px] text-gray-600 leading-tight">
                         Become a Pro member and gain visibility by appearing in the Directory, get discounts on submissions and jobs, access exclusive Pro content and many more benefits.
                     </p>
-                </section>
+                </a>
 
                 <a href="/market-tubes" class="bg-white rounded-md p-5 max-w-xs hover-animate">
                     <div class="flex items-center space-x-2 mb-2">

@@ -90,9 +90,7 @@
                     <div id="cardsContainer" class="flex flex-col md:flex-row md:justify-center md:items-start mt-10 space-y-10 md:space-y-0 md:space-x-20 max-w-4xl mx-auto relative">
                         <!-- Card pertama -->
                         <form class="bg-gray-200 p-8 w-full max-w-md relative card">
-
                             <p class="text-right text-gray-400 text-[10px]">X</p>
-
                             <label for="website" class="block text-[8px] font-bold mb-1 text-gray-500">NAME OF WEBSITE</label>
                             <input
                                 id="website"

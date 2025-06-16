@@ -108,3 +108,24 @@ Route::get('/update-submission', function () {
    return view('dashboard.update-submission');
 });
 
+
+Route::get('/course', function () {
+   return view('dashboard.course');
+});
+
+
+Route::get('/post-job', function () {
+   return view('dashboard.post-job');
+});
+
+
+Route::get('/vote', function () {
+   return view('vote');
+});
+
+
+
+Route::get('/vote-in', function () {
+   return view('votein');
+});
+
