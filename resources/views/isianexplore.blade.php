@@ -40,13 +40,13 @@
                  @foreach ($websites as $website)
                     <div class="flex flex-col bg-white rounded overflow-hidden shadow-sm border border-gray-100">
                         <a href="{{ route('sites', $website->id) }}">
-                            <img alt="Web preview" class="w-full object-cover max-h-[180px]" height="180" loading="lazy" src="{{ $website->image_link }}" width="400" />
+                            <img alt="Web preview" class="w-full object-cover max-h-[180px]" height="180" loading="lazy" src="{{ asset($website->image_link) }}" width="400" />
                         </a>
                         <div class="flex items-center justify-between px-2 py-1 text-[11px] text-gray-600 border-t border-gray-200">
                             <a class="flex items-center gap-1 font-semibold text-[12px]" href="{{ route('profile', $website->user->id) }}">
-                                <img alt="user image" class="max-w-[25px] object-cover max-h-[25px rounded-full" loading="lazy" src="{{ $website->user->image_link }}" height="25" width="25" />
+                                <img alt="user image" class="max-w-[25px] object-cover max-h-[25px rounded-full" loading="lazy" src="{{ asset($website->user->image_link) }}" height="25" width="25" />
                                 <span>
-                                    {{ $website->user->name }}
+                                    {{ $website->user->display_name }}
                                 </span>
                                 <!-- <span class="text-gray-400 font-normal">
                                     ∞

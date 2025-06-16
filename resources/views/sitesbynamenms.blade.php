@@ -1,4 +1,7 @@
 <x-runningtext></x-runningtext>
+@php
+    $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp'];
+@endphp
 <x-layout class="badan">
     <link rel="stylesheet" href="{{ asset('css/sitesbynamenms.css') }}">
     <div class="relative">
@@ -10,18 +13,18 @@
             style="font-family: 'Inter', sans-serif;">
 
             <div class="flex items-center justify-center w-15 h-10 rounded-md px-4 py-2 bg-[#222222] text-white font-semibold text-lg sm:text-base lg:text-lg select-none m-1">
-                Tubes .
+                <a href="{{ route('home') }}">Tubes .</a>
             </div>
 
             <a href="#" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-[#fff083] transition duration-500">Info</a>
             <a href="#elements" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-[#fff083] transition duration-500">Elements</a>
             <a href="#vote" class="text-gray-300 text-xs px-3 py-2 rounded-md border border-gray-600 hover:border-[#fff083] transition duration-500">Votes</a>
-            <a href="www.agoda.com" class="active-own text-xs px-3 py-2 rounded-md border-2 border-[#fff083] bg-[#fff083] font-semibold duration-500 transition-all ease-in-out hover:!bg-[#e8da75]">
-                Visit Sotd.
+            <a href="{{ $website->link }}" class="active-own text-xs px-3 py-2 rounded-md border-2 border-[#fff083] bg-[#fff083] font-semibold duration-500 transition-all ease-in-out hover:!bg-[#e8da75]">
+                Visit Site
             </a>
         </div>
     </div>
-    <div class="fixed top-0 left-0 right-0 transform -translate-y-full transition-transform duration-500 ease-out bg-white shadow-sm z-50 w-full mx-auto px-16 py-4" id="main-header">
+    <!-- <div class="fixed top-0 left-0 right-0 transform -translate-y-full transition-transform duration-500 ease-out bg-white shadow-sm z-50 w-full mx-auto px-16 py-4" id="main-header">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <span class="text-[10px] font-extrabold uppercase leading-none select-none">
@@ -30,18 +33,18 @@
                 <span class="text-[10px] font-normal leading-none select-none">
                     by
                 </span>
-                <img alt="Profile photo of Artemii Lebedev" class="w-6 h-6 rounded-full object-cover" height="24" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5085adb5-5851-441c-c297-fb846b861a0a.jpg" width="24" />
+                <img alt="Profile photo of user" class="w-6 h-6 rounded-full object-cover" height="24" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5085adb5-5851-441c-c297-fb846b861a0a.jpg" width="24" />
                 <a class="text-[10px] font-normal no-underline leading-none text-black hover:text-gray-500 duration-500 transition-all ease-in-out flex items-center space-x-1" href="#">
                     <span>Artemii Lebedev</span>
-                    <!-- <span class="text-[6px] font-extrabold no-underline leading-none select-none">
+                    <span class="text-[6px] font-extrabold no-underline leading-none select-none">
                         PRO
-                    </span> -->
+                    </span>
                 </a>
             </div>
             <div class="flex items-center space-x-6 text-black text-[14px] relative">
                 <a><i class="far fa-bookmark text-[#2a2a2a] text-[14px] cursor-pointer" aria-hidden="true" title="Bookmark"></i></a>
                 <a id="header-share-btn"><i class="fas fa-share-alt text-[#2a2a2a] text-[14px] cursor-pointer" aria-hidden="true" title="Share"></i></a>
-                <a><i class="fas fa-external-link-alt text-[#2a2a2a] text-[14px] cursor-pointer" title="External Link" aria-hidden="true"></i></a>
+                <a href="{{ $website->link }}"><i class="fas fa-external-link-alt text-[#2a2a2a] text-[14px] cursor-pointer" title="External Link" aria-hidden="true"></i></a>
 
                 <div id="header-social-box" class="opacity-0 scale-95 pointer-events-none transition-all duration-300 ease-in-out absolute right-[-40px] -translate-x-1/2 top-[-7px] flex items-center bg-gray-900 rounded-full px-4 py-2 z-20 space-x-6">
                     <button aria-label="Twitter" class="text-gray-400 hover:text-gray-200 text-[13px]">
@@ -59,36 +62,50 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="max-w-[1450px] mx-auto px-4 py-12 text-left" id="nominees">
         <div class="relative">
             <div class="flex space-x-8 absolute bottom-6 right-4 items-center">
-                <a href="{{ $website->user->link }} }}"><i class="fas fa-external-link-alt text-[#2a2a2a] text-[14px] cursor-pointer" title="External Link" aria-hidden="true"></i></a>
+                <a href="{{ asset($website->link) }}"><i class="fas fa-external-link-alt text-[#2a2a2a] text-[14px] cursor-pointer" title="External Link" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>
-    <p class="text-[9px] font-normal text-[#1a1a1a] text-center mb-1.5">
+    <!-- <p class="text-[9px] font-normal text-[#1a1a1a] text-center mb-1.5">
         Latest
-    </p>
+    </p> -->
     <h1 class="font-semibold text-[40px] leading-[40px] [text-align:center!important] sm:text-[72px] sm:leading-[72px] lg:text-[55px] lg:leading-[112px] tracking-[-0.02em] relative">
-        CHARLES THE RACER
+        {{ $website->name }}
     </h1>
 
-    <div class="flex justify-center items-center space-x-2 mt-[-10px] mb-14">
-        <img alt="Yazo logo" class="w-5 h-5" src="https://storage.googleapis.com/a1aa/image/98cfe885-d60f-4100-8f2d-2652fc8c2530.jpg" />
-        <a class="underline-slide" href="#">
-            The First The Last
-            <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
-        </a>
+    <!-- something something for loop here for authorids prob gonna need an author count  -->
+    <div class="flex justify-center items-center mt-[-10px] mb-14">
+        <ul class="flex flex-row items-center space-x-4">
+            <li class="flex items-center space-x-2">
+                <img alt="user image" class="w-5 h-5 rounded-full" src="{{ asset($website->user->image_link) }}" />
+                <a class="underline-slide relative" href="{{ route('profile', $website->user->id) }}">
+                    {{ $website->user->display_name }}
+                    <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
+                </a>
+            </li>
+            @foreach ($website->collaborators as $collaborator) 
+                <li class="flex items-center space-x-2">
+                    <img alt="user image" class="w-5 h-5 rounded-full" src="{{ asset($collaborator->image_link) }}" />
+                    <a class="underline-slide relative" href="{{ route('profile', $collaborator->id) }}">
+                        {{ $collaborator->display_name }}
+                        <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
+                    </a>
+                </li>
+            @endforeach
+        </ul>
     </div>
 
-    <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <img alt="Large blurred background image with red and orange highlight behind a smaller image of Charles Leclerc in racing suit behind a fence" class="w-full rounded-md" height="400" src="https://storage.googleapis.com/a1aa/image/26f5abd5-0bda-455d-d8e4-87e6571b2741.jpg" width="1300" />
+    <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+        <img alt="Web preview img" class="w-full rounded-md" height="400" src="{{ asset($website->image_link) }}" width="1300" />
 
         <div class="flex justify-center items-center mt-14">
             <p class="text-center text-[30px] sm:text-[30px] lg:text-[30px] font-normal text-[#1A1A1A] leading-[1.2]">
-                Educraftor is a leading innovation and development group, weaving learning ecosystems globally.
+                {{ $website->description }}
             </p>
         </div>
 
@@ -105,19 +122,31 @@
 
         <div class=" flex justify-center text-left bg-gray-50">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-4 w-full">
-                <div class="group relative rounded-md overflow-hidden max-w-[300px] max-h-[210px] cursor-pointer">
-                    <img alt="Two smartphones on a dark textured surface displaying the ALLIES app with text and images on their screens" class="w-full h-full object-cover transition duration-500 ease-in-out group-hover:brightness-75" height="160" src="https://storage.googleapis.com/a1aa/image/66ff1935-f460-4570-1c1d-7c290e50dcab.jpg" width="250" />
-                    <div class="overlay absolute inset-0 opacity-0 group-hover:opacity-100"></div>
-                    <div class="absolute bottom-4 left-4 text-white text-container pointer-events-none">
-                        <div class="font-thin text-xs uppercase leading-none select-none mb-1">
-                            Allies
-                        </div>
-                        <div class="text-sm font-bold select-none">
-                            Two smartphones
+                @foreach($website->elements as $element)
+                    <div class="group relative rounded-md overflow-hidden max-w-[300px] max-h-[210px] cursor-pointer">
+                        @php
+                            $extension = pathinfo($element->image_link, PATHINFO_EXTENSION);
+                        @endphp
+                        @if(in_array(strtolower($extension), $imageExtensions))
+                            <img src="{{ asset($element->image_link) }}" height="160" width="250" class="w-full h-full object-cover transition duration-500 ease-in-out group-hover:brightness-75" alt="Media">
+                        @else
+                            <video autoplay muted loop height="160" width="250" class="w-full h-full object-cover transition duration-500 ease-in-out group-hover:brightness-75">
+                                <source src="{{ asset($element->image_link) }}" type="video/{{ strtolower($extension) }}">
+                                Your browser does not support the video tag.
+                            </video>
+                        @endif
+                        <div class="overlay absolute inset-0 opacity-0 group-hover:opacity-100"></div>
+                        <div class="absolute bottom-4 left-4 text-white text-container pointer-events-none">
+                            <div class="font-thin text-xs uppercase leading-none select-none mb-1">
+                                ELEMENT
+                            </div>
+                            <div class="text-sm font-bold select-none">
+                                {{ $element->name }}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="group relative rounded-md overflow-hidden  max-w-[300px] max-h-[210px]  cursor-pointer">
+                @endforeach
+                <!-- <div class="group relative rounded-md overflow-hidden  max-w-[300px] max-h-[210px]  cursor-pointer">
                     <img alt="A light beige background with large black text ALLIES and a small image in the top right corner" class="w-full h-full object-cover transition duration-500 ease-in-out group-hover:brightness-75" height="160" src="https://storage.googleapis.com/a1aa/image/76e0f0cf-ea32-40d8-2ed8-04c9c35774ed.jpg" width="250" />
                     <div class="overlay absolute inset-0 opacity-0 group-hover:opacity-100"></div>
                     <div class="absolute bottom-4 left-4 text-white text-container pointer-events-none">
@@ -200,7 +229,7 @@
                             Abstract star
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="flex justify-center items-center mt-24">
@@ -210,78 +239,24 @@
         </div>
     </div>
 
-    <div class="bg-red min-h-screen flex flex-col items-center justify-center p-6 ">
+    <div class="bg-red flex flex-col items-center justify-top p-6 ">
         <div class="flex flex-wrap justify-center gap-3 max-w-5xl">
-            <a
-                class="circle-button flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 bg-black"
-                aria-label="Selected black circle">
-                <div class="inner-circle"></div>
-            </a>
-            <a
-                class="circle-button flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 bg-black"
-                aria-label="Selected black circle">
-                <div class="inner-circle"></div>
-            </a>
-            <a
-                class="butto font-instrumentsans text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap tag-button">
-                Instrumentsans Variablefont Wdth Wght
-            </a>
-            <a
-                class="butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap tag-button">
-                scotch deck compressed
-            </a>
-            <a
-                class="butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap font-semibold tag-button">
-                Art &amp; Illustration
-            </a>
-            <a
-                class="butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap tag-button">
-                Design Agencies
-            </a>
-            <a
-                class="butto  butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap font-semibold tag-button">
-                Startups
-            </a>
-            <a
-                class="butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap font-semibold tag-button">
-                Parallax
-            </a>
-            <a
-                class="butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap font-semibold tag-button">
-                Responsive Design
-            </a>
-            <a
-                class="butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap font-semibold tag-button">
-                Scrolling
-            </a>
-            <a
-                class="butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap font-semibold tag-button">
-                Transitions
-            </a>
-            <a
-                class="butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap font-semibold tag-button">
-                Interaction Design
-            </a>
-            <a
-                class="butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap font-semibold tag-button">
-                Microinteractions
-            </a>
-            <a
-                class="butto text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap font-semibold tag-button">
-                Transitions
-            </a>
-
+            @foreach ($website->tags as $tag)
+                <a class="butto font-instrumentsans text-[16px] leading-[1.2] text-gray-900 border border-gray-300 rounded-full px-6 py-3 whitespace-nowrap tag-button">
+                    {{ $tag->name }}
+                </a>
+            @endforeach
         </div>
 
         <div class="mt-28 text-center text-[15px] text-gray-700 max-w-lg">
-            Have your say, if you liked <strong>Allies Studio</strong> make your vote here!
+            Have your say, if you liked <strong>{{ $website->name }}</strong> make your vote here!
         </div>
 
         <a
             class="vote-button mt-8 bg-black text-white text-[18px] font-semibold rounded px-8 py-5 flex items-center gap-3"
             aria-label="Vote button with arrow">
             <i class="fas fa-arrow-right"></i>
-            Vote: <span class="font-bold">4 Days 16 Hours 2 Min</span>
+            Vote<!-- <span class="font-bold">4 Days 16 Hours 2 Min</span> -->
         </a>
     </div>
 
@@ -301,50 +276,47 @@
                 </thead>
                 <tbody>
                     <!-- Row 1 -->
-                    @foreach ($website->website_votes as $votes)
+                    @foreach ($website->website_votes as $vote)
                     <tr class="border-b border-black/20">
                         <td class="pl-4 pr-10 py-4 align-middle w-14">
                             <img
-                                src="https://storage.googleapis.com/a1aa/image/11c2bf76-10cb-4ab9-0e4f-68d77f810480.jpg"
-                                alt="Profile photo of Reksa Andhika, a man with short black hair, black and white photo"
+                                src="{{ asset($vote->image_link) }}"
+                                alt="Profile photo of user"
                                 class="w-10 h-10 rounded-full object-cover inline-block"
                                 width="40"
                                 height="40" />
                         </td>
                         <td class="py-4 align-middle w-[40%]">
                             <div class="leading-tight">
-                                <span class="font-semibold text-[13px]">Reksa Andhika</span>
+                                <span class="font-semibold text-[13px]">{{ $vote->display_name }}</span>
                                 <span class="italic font-normal text-[13px] ml-1">from</span>
-                                <span class="font-semibold text-[13px] ml-1">Indonesia</span>
+                                <!-- <span class="font-semibold text-[13px] ml-1">Indonesia</span> -->
                                 <!-- <span class="font-normal italic text-[13px] ml-1">*</span> -->
                             </div>
-                            <div class="text-[11px] text-[#666666] select-text mt-1">reksaandhika.com</div>
+                            <!-- <div class="text-[11px] text-[#666666] select-text mt-1">reksaandhika.com</div> -->
                         </td>
                             <td class="text-center py-4 align-middle">{{ $vote->pivot->design }}</td>
                             <td class="text-center py-4 align-middle">{{ $vote->pivot->usability }}</td>
                             <td class="text-center py-4 align-middle">{{ $vote->pivot->creativity}}</td>
                             <td class="text-center py-4 align-middle">{{ $vote->pivot->content }}</td>
                         <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-
-                            7.70
-
+                            {{ $vote->pivot->design * 0.4 + $vote->pivot->usability * 0.3 + $vote->pivot->creativity * 0.2 + $vote->pivot->content * 0.1}}
                         </td>
                     </tr>
                     @endforeach
 
-
-                    <!-- Overlay gradasi -->
-                    <section> <!-- Overlay gradasi -->
+                    <!-- Overlay gradasi
+                    <section>
                         <div class="relative w-[1100px] max-w-[1100px] sm:top-[16rem] top-[22rem] h-auto">
                             <div id="gradient-bg" class="absolute inset-0 z-20"></div>
 
-                            <!-- Gradient Overlay -->
+                            
                             <div id="gradient-overlay"
                                 class="absolute inset-0 z-30 bg-gradient-to-t from-gray-50 to-transparent h-[6rem] sm:h-[8rem]">
                             </div>
                         </div>
                         <div class="relative">
-                            <!-- More Options Button -->
+                            
                             <div id="more-options-container"
                                 class="absolute bottom-[-33rem] sm:bottom-[-30rem] lg:bottom-[-28rem] left-1/2 transform -translate-x-1/2 z-40">
                                 <a id="more-options-btn"
@@ -356,15 +328,9 @@
                                 </a>
                             </div>
                         </div>
-
-
-
-
-                        <!-- Row 5 (awalnya disembunyikan) -->
-
+                    </section> -->
+                </tbody>
+            </table>
         </div>
-        </tbody>
-        </table>
-    </div>
     </div>
 </x-layout>

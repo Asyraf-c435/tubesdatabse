@@ -157,12 +157,25 @@
                 </h1>
             </div>
 
-            <div class="flex justify-center items-center space-x-2 mt-[-10px] mb-14">
-                <img alt="user image" class="w-5 h-5 rounded-full" src="{{ asset($website->user->image_link) }}" />
-                <a class="underline-slide" href="{{ route('profile', $website->user->id) }}">
-                    {{ $website->user->display_name }}
-                    <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
-                </a>
+            <div class="flex justify-center items-center mt-[-10px] mb-14">
+                <ul class="flex flex-row items-center space-x-4">
+                    <li class="flex items-center space-x-2">
+                        <img alt="user image" class="w-5 h-5 rounded-full" src="{{ asset($website->user->image_link) }}" />
+                        <a class="underline-slide relative" href="{{ route('profile', $website->user->id) }}">
+                            {{ $website->user->display_name }}
+                            <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
+                        </a>
+                    </li>
+                    @foreach ($website->collaborators as $collaborator) 
+                        <li class="flex items-center space-x-2">
+                            <img alt="user image" class="w-5 h-5 rounded-full" src="{{ asset($collaborator->image_link) }}" />
+                            <a class="underline-slide relative" href="{{ route('profile', $collaborator->id) }}">
+                                {{ $collaborator->display_name }}
+                                <div class="absolute left-0 bottom-[-1.5px] w-full h-[1.5px] bg-gray-400"></div>
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
 
             <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 mb-12">
@@ -674,177 +687,179 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-gray-50 text-[#1a1a1a] ">
-                        <div class="max-w-[1300px] mx-auto py-12 mt-20">
-                            <h1 class="text-[48px] font-extrabold leading-none tracking-tight">
-                                DEV AWARD
-                            </h1>
-                            <div class="text-[48px] font-extrabold leading-none tracking-tight mt-1">
-                                → {{ number_format($dev_score, 2) }} <span class="text-[12px] font-normal align-top">/ 10</span>
-                            </div>
+                    @if ($website->user_votes->isNotEmpty() > 0)
+                        <div class="bg-gray-50 text-[#1a1a1a] ">
+                            <div class="max-w-[1300px] mx-auto py-12 mt-20">
+                                <h1 class="text-[48px] font-extrabold leading-none tracking-tight">
+                                    DEV AWARD
+                                </h1>
+                                <div class="text-[48px] font-extrabold leading-none tracking-tight mt-1">
+                                    → {{ number_format($dev_score, 2) }} <span class="text-[12px] font-normal align-top">/ 10</span>
+                                </div>
 
-                            <div class="w-full text-right mb-20">
-                                <p class="underline-slide no-underline block">Evaluation System</p>
-                            </div>
-                            <div class="mt-8 flex text-[10px] font-normal text-[#1a1a1a] relative select-none">
-                                <div class="flex flex-col items-start relative" style="width: 20%;">
-                                    <div class="mb-1">Semantics / SEO</div>
-                                    <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
-                                        <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
-                                        <div class="bar-divider"></div>
-                                    </div>
-                                    <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->semantics), 2) }} / 10</div>
+                                <div class="w-full text-right mb-20">
+                                    <p class="underline-slide no-underline block">Evaluation System</p>
                                 </div>
-                                <div class="flex flex-col items-start relative" style="width: 15%;">
-                                    <div class="mb-1">Animations / Transitions</div>
-                                    <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
-                                        <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
-                                        <div class="bar-divider"></div>
+                                <div class="mt-8 flex text-[10px] font-normal text-[#1a1a1a] relative select-none">
+                                    <div class="flex flex-col items-start relative" style="width: 20%;">
+                                        <div class="mb-1">Semantics / SEO</div>
+                                        <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
+                                            <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
+                                            <div class="bar-divider"></div>
+                                        </div>
+                                        <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->semantics), 2) }} / 10</div>
                                     </div>
-                                    <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->animations), 2) }} / 10</div>
-                                </div>
-                                <div class="flex flex-col items-start relative" style="width: 10%;">
-                                    <div class="mb-1">Accessibility</div>
-                                    <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
-                                        <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
-                                        <div class="bar-divider"></div>
+                                    <div class="flex flex-col items-start relative" style="width: 15%;">
+                                        <div class="mb-1">Animations / Transitions</div>
+                                        <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
+                                            <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
+                                            <div class="bar-divider"></div>
+                                        </div>
+                                        <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->animations), 2) }} / 10</div>
                                     </div>
-                                    <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->accessibility), 2) }} / 10</div>
-                                </div>
-                                <div class="flex flex-col items-start relative" style="width: 20%;">
-                                    <div class="mb-1">WPO</div>
-                                    <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
-                                        <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
-                                        <div class="bar-divider"></div>
+                                    <div class="flex flex-col items-start relative" style="width: 10%;">
+                                        <div class="mb-1">Accessibility</div>
+                                        <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
+                                            <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
+                                            <div class="bar-divider"></div>
+                                        </div>
+                                        <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->accessibility), 2) }} / 10</div>
                                     </div>
-                                    <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->wpo), 2) }} / 10</div>
-                                </div>
-                                <div class="flex flex-col items-start relative" style="width: 20%;">
-                                    <div class="mb-1">Responsive Design</div>
-                                    <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
-                                        <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
-                                        <div class="bar-divider"></div>
+                                    <div class="flex flex-col items-start relative" style="width: 20%;">
+                                        <div class="mb-1">WPO</div>
+                                        <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
+                                            <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
+                                            <div class="bar-divider"></div>
+                                        </div>
+                                        <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->wpo), 2) }} / 10</div>
                                     </div>
-                                    <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->responsive_design), 2) }} / 10</div>
-                                </div>
-                                <div class="flex flex-col items-start relative" style="width: 15%;">
-                                    <div class="mb-1">Markup / Meta-data</div>
-                                    <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
-                                        <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
+                                    <div class="flex flex-col items-start relative" style="width: 20%;">
+                                        <div class="mb-1">Responsive Design</div>
+                                        <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
+                                            <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
+                                            <div class="bar-divider"></div>
+                                        </div>
+                                        <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->responsive_design), 2) }} / 10</div>
                                     </div>
-                                    <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->markup), 2) }} / 10</div>
+                                    <div class="flex flex-col items-start relative" style="width: 15%;">
+                                        <div class="mb-1">Markup / Meta-data</div>
+                                        <div class="w-full h-6 bg-[#e5e5e5] bar-container overflow-hidden relative">
+                                            <div class="h-6 bg-[#d9d9d9]" style="width: 100%"></div>
+                                        </div>
+                                        <div class="mt-1">{{ number_format($valid_dev_votes->avg(fn($user) => $user->pivot->markup), 2) }} / 10</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- ARCH -->
-                            <div class="bg-gray-50 font-sans text-[13px] text-[#222222]">
-                                <div class="max-w-6xl mx-auto p-8">
+                                <!-- ARCH -->
+                                <div class="bg-gray-50 font-sans text-[13px] text-[#222222]">
+                                    <div class="max-w-6xl mx-auto p-8">
 
-                                    <!-- Community Members Table(Initially Visible) -->
-                                    <div id="communityTable">
-                                        <table class="w-full border-collapse bg-gray-50 text-[#222222] text-[13px] font-normal">
-                                            <thead>
-                                                <tr class="text-[11px] font-normal select-none border-b border-black/20">
-                                                    <th class="text-left pl-4 pr-16 py-2">Votes</th>
-                                                    <th class="text-left py-2">Jury</th>
-                                                    <th class="text-center py-4">Semantics</th>
-                                                    <th class="text-center py-4">Animations</th>
-                                                    <th class="text-center py-4">Accessibility</th>
-                                                    <th class="text-center py-4">WPO</th>
-                                                    <th class="text-center py-4">Responsive Design</th>
-                                                    <th class="text-center py-4">Markup</th>
-                                                    <th class="text-center pr-4 py-4">Overall</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($website->user_votes as $vote)
-                                                    <tr class="border-b border-black/20 {{ $vote->pivot->is_rejected == 1 ? 'bg-gray-500 bg-opacity-40' : '' }}">
+                                        <!-- Community Members Table(Initially Visible) -->
+                                        <div id="communityTable">
+                                            <table class="w-full border-collapse bg-gray-50 text-[#222222] text-[13px] font-normal">
+                                                <thead>
+                                                    <tr class="text-[11px] font-normal select-none border-b border-black/20">
+                                                        <th class="text-left pl-4 pr-16 py-2">Votes</th>
+                                                        <th class="text-left py-2">Jury</th>
+                                                        <th class="text-center py-4">Semantics</th>
+                                                        <th class="text-center py-4">Animations</th>
+                                                        <th class="text-center py-4">Accessibility</th>
+                                                        <th class="text-center py-4">WPO</th>
+                                                        <th class="text-center py-4">Responsive Design</th>
+                                                        <th class="text-center py-4">Markup</th>
+                                                        <th class="text-center pr-4 py-4">Overall</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($website->user_votes as $vote)
+                                                        <tr class="border-b border-black/20 {{ $vote->pivot->is_rejected == 1 ? 'bg-gray-500 bg-opacity-40' : '' }}">
+                                                            <td class="pl-4 pr-10 py-4 align-middle w-14">
+                                                                <img
+                                                                    src="{{ asset($vote->image_link) }}"
+                                                                    alt="Profile photo of user"
+                                                                    class="w-10 h-10 rounded-full object-cover inline-block"
+                                                                    width="40"
+                                                                    height="40" />
+                                                            </td>
+                                                            <td class="py-4 align-middle w-[40%]">
+                                                                <div class="leading-tight">
+                                                                    <span class="font-semibold text-[13px]">{{ $vote->display_name }}</span>
+                                                                    <span class="italic font-normal text-[13px] ml-1">from</span>
+                                                                    <!-- <span class="font-semibold text-[13px] ml-1">Indonesia</span>
+                                                                    <span class="font-normal italic text-[13px] ml-1">*</span> -->
+                                                                </div>
+                                                                <!-- <div class="text-[11px] text-[#666666] select-text mt-1">reksaandhika.com</div> -->
+                                                            </td>
+                                                            <td class="text-center py-4 align-middle">{{ $vote->pivot->semantics }}</td>
+                                                            <td class="text-center py-4 align-middle">{{ $vote->pivot->animations }}</td>
+                                                            <td class="text-center py-4 align-middle">{{ $vote->pivot->accessibility }}</td>
+                                                            <td class="text-center py-4 align-middle">{{ $vote->pivot->wpo }}</td>
+                                                            <td class="text-center py-4 align-middle">{{ $vote->pivot->responsive_design }}</td>
+                                                            <td class="text-center py-4 align-middle">{{ $vote->pivot->markup }}</td>
+                                                            <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
+                                                                {{ $vote->pivot->semantics * 0.2 + $vote->pivot->animations * 0.15 + $vote->pivot->accessibility * 0.1 + $vote->pivot->wpo * 0.2 + $vote->pivot->responsive_design * 0.2 + $vote->pivot->markup * 0.15}}
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                    <!-- Row 2 -->
+                                                    <!-- <tr class="border-b border-black/20">
+                                                        <td class="pl-4 pr-8 py-4 align-middle w-14">
+                                                            <img
+                                                                src="https://storage.googleapis.com/a1aa/image/9451aa13-3905-47b8-9e3f-219fd04e6499.jpg"
+                                                                alt="Logo of PopArt Studio, black abstract line art on white background"
+                                                                class="w-10 h-10 object-contain inline-block rounded-full bg-white"
+                                                                width="40"
+                                                                height="40" />
+                                                        </td>
+                                                        <td class="py-4 align-middle w-[40%]">
+                                                            <div class="leading-tight">
+                                                                <span class="font-semibold text-[13px]">PopArt Studio</span>
+                                                                <span class="italic font-normal text-[13px] ml-1">from</span>
+                                                                <span class="font-semibold text-[13px] ml-1">United States</span>
+                                                            </div>
+                                                            <div class="text-[11px] text-[#666666] select-text mt-1">popwebdesign.net</div>
+                                                        </td>
+                                                        <td class="text-center py-4 align-middle">8</td>
+                                                        <td class="text-center py-4 align-middle">8</td>
+                                                        <td class="text-center py-4 align-middle">8</td>
+                                                        <td class="text-center py-4 align-middle">8</td>
+                                                        <td class="relative absolute w-full m-auto bg-gray-50 font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
+                                                            8.00
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <tr class="border-b border-black/20">
                                                         <td class="pl-4 pr-10 py-4 align-middle w-14">
                                                             <img
-                                                                src="{{ asset($vote->image_link) }}"
-                                                                alt="Profile photo of user"
+                                                                src="https://randomuser.me/api/portraits/women/65.jpg"
+                                                                alt="Profile photo of Jury Member 1"
                                                                 class="w-10 h-10 rounded-full object-cover inline-block"
                                                                 width="40"
                                                                 height="40" />
                                                         </td>
                                                         <td class="py-4 align-middle w-[40%]">
                                                             <div class="leading-tight">
-                                                                <span class="font-semibold text-[13px]">{{ $vote->display_name }}</span>
+                                                                <span class="font-semibold text-[13px]">Sarah Johnson</span>
                                                                 <span class="italic font-normal text-[13px] ml-1">from</span>
-                                                                <!-- <span class="font-semibold text-[13px] ml-1">Indonesia</span>
-                                                                <span class="font-normal italic text-[13px] ml-1">*</span> -->
+                                                                <span class="font-semibold text-[13px] ml-1">USA</span>
                                                             </div>
-                                                            <!-- <div class="text-[11px] text-[#666666] select-text mt-1">reksaandhika.com</div> -->
+                                                            <div class="text-[11px] text-[#666666] select-text mt-1">sarahjohnson.com</div>
                                                         </td>
-                                                        <td class="text-center py-4 align-middle">{{ $vote->pivot->semantics }}</td>
-                                                        <td class="text-center py-4 align-middle">{{ $vote->pivot->animations }}</td>
-                                                        <td class="text-center py-4 align-middle">{{ $vote->pivot->accessibility }}</td>
-                                                        <td class="text-center py-4 align-middle">{{ $vote->pivot->wpo }}</td>
-                                                        <td class="text-center py-4 align-middle">{{ $vote->pivot->responsive_design }}</td>
-                                                        <td class="text-center py-4 align-middle">{{ $vote->pivot->markup }}</td>
+                                                        <td class="text-center py-4 align-middle">9</td>
+                                                        <td class="text-center py-4 align-middle">8</td>
+                                                        <td class="text-center py-4 align-middle">9</td>
+                                                        <td class="text-center py-4 align-middle">8</td>
                                                         <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                                                            {{ $vote->pivot->semantics * 0.2 + $vote->pivot->animations * 0.15 + $vote->pivot->accessibility * 0.1 + $vote->pivot->wpo * 0.2 + $vote->pivot->responsive_design * 0.2 + $vote->pivot->markup * 0.15}}
+                                                            8.50
                                                         </td>
-                                                    </tr>
-                                                @endforeach
-                                                <!-- Row 2 -->
-                                                <!-- <tr class="border-b border-black/20">
-                                                    <td class="pl-4 pr-8 py-4 align-middle w-14">
-                                                        <img
-                                                            src="https://storage.googleapis.com/a1aa/image/9451aa13-3905-47b8-9e3f-219fd04e6499.jpg"
-                                                            alt="Logo of PopArt Studio, black abstract line art on white background"
-                                                            class="w-10 h-10 object-contain inline-block rounded-full bg-white"
-                                                            width="40"
-                                                            height="40" />
-                                                    </td>
-                                                    <td class="py-4 align-middle w-[40%]">
-                                                        <div class="leading-tight">
-                                                            <span class="font-semibold text-[13px]">PopArt Studio</span>
-                                                            <span class="italic font-normal text-[13px] ml-1">from</span>
-                                                            <span class="font-semibold text-[13px] ml-1">United States</span>
-                                                        </div>
-                                                        <div class="text-[11px] text-[#666666] select-text mt-1">popwebdesign.net</div>
-                                                    </td>
-                                                    <td class="text-center py-4 align-middle">8</td>
-                                                    <td class="text-center py-4 align-middle">8</td>
-                                                    <td class="text-center py-4 align-middle">8</td>
-                                                    <td class="text-center py-4 align-middle">8</td>
-                                                    <td class="relative absolute w-full m-auto bg-gray-50 font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                                                        8.00
-                                                    </td>
-                                                </tr>
-                                                
-                                                <tr class="border-b border-black/20">
-                                                    <td class="pl-4 pr-10 py-4 align-middle w-14">
-                                                        <img
-                                                            src="https://randomuser.me/api/portraits/women/65.jpg"
-                                                            alt="Profile photo of Jury Member 1"
-                                                            class="w-10 h-10 rounded-full object-cover inline-block"
-                                                            width="40"
-                                                            height="40" />
-                                                    </td>
-                                                    <td class="py-4 align-middle w-[40%]">
-                                                        <div class="leading-tight">
-                                                            <span class="font-semibold text-[13px]">Sarah Johnson</span>
-                                                            <span class="italic font-normal text-[13px] ml-1">from</span>
-                                                            <span class="font-semibold text-[13px] ml-1">USA</span>
-                                                        </div>
-                                                        <div class="text-[11px] text-[#666666] select-text mt-1">sarahjohnson.com</div>
-                                                    </td>
-                                                    <td class="text-center py-4 align-middle">9</td>
-                                                    <td class="text-center py-4 align-middle">8</td>
-                                                    <td class="text-center py-4 align-middle">9</td>
-                                                    <td class="text-center py-4 align-middle">8</td>
-                                                    <td class="relative absolute w-full m-auto font-bold w-20 h-20 text-center py-4 align-middle flex items-center justify-center text-[13px]">
-                                                        8.50
-                                                    </td>
-                                                </tr> -->
-                                            </tbody>
-                                        </table>
+                                                    </tr> -->
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                     <!-- <div class="relative max-w-[1300px] mx-auto">
                         <div class="grid gap-6 grid-cols-3 overflow-hidden" id="card-carousel">
                             
