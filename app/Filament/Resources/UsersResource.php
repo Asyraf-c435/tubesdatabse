@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -23,7 +24,38 @@ class UsersResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255)
+                    ->unique(table: User::class, ignoreRecord: true)
+                    ->label('Username'),
+                    
+                Forms\Components\TextInput::make('display_name')
+                    ->required()
+                    ->maxLength(255)
+                    ->label('Display Name'),
+                    
+                Forms\Components\TextInput::make('email')
+                    ->required()
+                    ->email()
+                    ->maxLength(255)
+                    ->unique(table: User::class, ignoreRecord: true)
+                    ->label('Email Address'),
+                    
+                Forms\Components\TextInput::make('password')
+                    ->password()
+                    ->required(fn (string $operation): bool => $operation === 'create')
+                    ->minLength(8)
+                    ->dehydrateStateUsing(fn (?string $state): ?string => $state ? Hash::make($state) : null)
+                    ->dehydrated(fn (?string $state): bool => filled($state))
+                    ->label(fn (string $operation): string => ($operation === 'edit') ? 'New Password' : 'Password')
+                    ->helperText(fn (string $operation): string => $operation === 'edit' 
+                        ? 'Leave empty to keep current password' 
+                        : ''),
+                    
+                Forms\Components\Textarea::make('description')
+                    ->columnSpanFull()
+                    ->label('Bio/Description')
             ]);
     }
 
@@ -31,9 +63,9 @@ class UsersResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->label('Name'),
-                Tables\Columns\TextColumn::make('display_name')->label('Display Name'),
-                Tables\Columns\TextColumn::make('email')->label('Email'),
+                Tables\Columns\TextColumn::make('name')->label('Name')->searchable(),
+                Tables\Columns\TextColumn::make('display_name')->label('Display Name')->searchable(),
+                Tables\Columns\TextColumn::make('email')->label('E-Mail'),
                 Tables\Columns\TextColumn::make('description')->label('Description'),
                 Tables\Columns\TextColumn::make('image_link')->label('Image Link'),
                 Tables\Columns\TextColumn::make('twitter')->label('Twitter Link'),

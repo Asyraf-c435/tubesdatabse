@@ -19,6 +19,8 @@ class WebsitesResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    
+
     public static function form(Form $form): Form
     {
         return $form
@@ -31,13 +33,18 @@ class WebsitesResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')->label('Name')->searchable(),
+                Tables\Columns\TextColumn::make('description')->label('Description'),
+                Tables\Columns\TextColumn::make('link')->label('Link to Website')->searchable(),
+                Tables\Columns\TextColumn::make('image_link')->label('Preview Asset Link'),
+                Tables\Columns\TextColumn::make('created_at')->label('Created At'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -57,7 +64,7 @@ class WebsitesResource extends Resource
     {
         return [
             'index' => Pages\ListWebsites::route('/'),
-            'create' => Pages\CreateWebsites::route('/create'),
+            // 'create' => Pages\CreateWebsites::route('/create'),
             'edit' => Pages\EditWebsites::route('/{record}/edit'),
         ];
     }
