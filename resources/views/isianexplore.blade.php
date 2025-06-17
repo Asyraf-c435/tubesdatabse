@@ -1,7 +1,6 @@
 <x-layout>
     <div class="items-center justify-center">
         <div class="ml-16">
-        <x-filbar/>
     </div>
 
     </div>

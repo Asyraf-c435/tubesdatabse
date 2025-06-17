@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UsersResource\Pages;
 use App\Filament\Resources\UsersResource\RelationManagers;
-use App\Models\Users;
+use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class UsersResource extends Resource
 {
-    protected static ?string $model = Users::class;
+    protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -31,13 +31,26 @@ class UsersResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')->label('Name'),
+                Tables\Columns\TextColumn::make('display_name')->label('Display Name'),
+                Tables\Columns\TextColumn::make('email')->label('Email'),
+                Tables\Columns\TextColumn::make('description')->label('Description'),
+                Tables\Columns\TextColumn::make('image_link')->label('Image Link'),
+                Tables\Columns\TextColumn::make('twitter')->label('Twitter Link'),
+                Tables\Columns\TextColumn::make('facebook')->label('Facebook Link'),
+                Tables\Columns\TextColumn::make('linkedin')->label('LinkedIn Link'),
+                Tables\Columns\TextColumn::make('instagram')->label('Instagram Link'),
+                Tables\Columns\TextColumn::make('tiktok')->label('Tiktok Link'),
+                Tables\Columns\TextColumn::make('rank')->label('Rank'),
+                Tables\Columns\TextColumn::make('status_points')->label('Status Points'),
+                Tables\Columns\TextColumn::make('created_at')->label('Created At'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

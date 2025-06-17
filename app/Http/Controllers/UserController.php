@@ -17,10 +17,6 @@ class UserController extends Controller
      * Display a listing of the resource.
      */
 
-    public function register() {
-        return view('register');
-    }
-
     public function index()
     {
         //
@@ -31,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('register');
     }
 
     /**

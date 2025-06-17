@@ -3,12 +3,8 @@
 namespace App\Filament\Pages;
 
 use Filament\Pages\Page;
-use App\Filament\Widgets\ChartTotalUsers;
-use App\Filament\Widgets\ChartTotalCourses;
-use App\Filament\Widgets\ChartTotalWebsites;
-use App\Filament\Widgets\ChartTotalJobs;
-use App\Filament\Widgets\ChartTotalCollections;
-
+use App\Filament\Widgets\ChartAwardCount;
+use App\Filament\Widgets\ChartTagCount;
 
 class Dashboard extends Page
 {
@@ -17,11 +13,8 @@ class Dashboard extends Page
     protected function getHeaderWidgets(): array
     {
         return [
-            ChartTotalUsers::class,
-            ChartTotalCollections::class,
-            ChartTotalCourses::class,
-            ChartTotalJobs::class,
-            ChartTotalWebsites::class,
+            ChartAwardCount::class,
+            ChartTagCount::class,
         ];
     }
 }

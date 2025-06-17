@@ -178,5 +178,6 @@ class populate_scraped_data extends Command
         }
         $this->info('Populated sites!');
         $this->info('Finished.');
+        return 0;
     }
 }

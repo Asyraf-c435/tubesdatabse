@@ -1,6 +1,7 @@
 @php
     use App\Models\Award;
     use App\Models\Website;
+    use App\Models\Tag;
 @endphp
 <!-- MODAL OVERLAY -->
 <div id="modal-overlay" class="modal-overlay"></div>
@@ -60,21 +61,9 @@
                         <i class="fas fa-award text-[14px]"></i>
                         Awards
                     </a>
-                    <a href="#" class="flex items-center gap-2 text-gray-700 text-left py-1 rounded hover:bg-white hover:px-3 transition-all duration-150" data-item="By Category">
+                    <a href="#" class="flex items-center gap-2 text-gray-700 text-left py-1 rounded hover:bg-white hover:px-3 transition-all duration-150" data-item="By Tag">
                         <i class="fas fa-th-large text-[14px]"></i>
-                        By Category
-                    </a>
-                    <a href="#" class="flex items-center gap-2 text-gray-700 text-left py-1 rounded hover:bg-white hover:px-3 transition-all duration-150" data-item="By Technology">
-                        <i class="fas fa-microchip text-[14px]"></i>
-                        By Technology
-                    </a>
-                    <a href="#" class="flex items-center gap-2 text-gray-700 text-left py-1 rounded hover:bg-white hover:px-3 transition-all duration-150" data-item="Collections">
-                        <i class="far fa-circle text-[14px]"></i>
-                        Collections
-                    </a>
-                    <a href="#" class="flex items-center gap-2 text-gray-700 text-left py-1 rounded hover:bg-white hover:px-3 transition-all duration-150" data-item="Blog">
-                        <i class="far fa-square text-[14px]"></i>
-                        Blog
+                        By Tag
                     </a>
                 </aside>
                 <!-- SECTION AWARDS -->
@@ -113,90 +102,13 @@
                     <a href="#" class="block py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200 mb-20">Jury 2025</a> -->
                 </section>
                 <!-- BY CATEGORY -->
-                <section class="flex-1 flex flex-col gap-2 text-gray-900 overflow-hidden" data-section="By Category">
+                <section class="flex-1 flex flex-col gap-2 text-gray-900 overflow-hidden" data-section="By Tag">
+                    @foreach (Tag::withCount('websites')->orderByDesc('websites_count')->get() as $tag)
                     <a href="#" class="grid grid-cols-[auto_auto] gap-x-34 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>E-commerce</span>
-                        <span class="text-right">-</span>
+                        <span>{{ $tag->name }}</span>
+                        <span class="text-right">{{ $tag->websites->count() }}</span>
                     </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Architecture</span>
-                        <span class="text-right">-</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Restaurant & Hotel</span>
-                        <span class="text-right">-</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Design Agencies</span>
-                        <span class="text-right">-</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Business & Corporate</span>
-                        <span class="text-right">-</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Fashion</span>
-                        <span class="text-right">-</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Mobile & Apps</span>
-                        <span class="text-right">-</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Interaction Design</span>
-                        <span class="text-right">-</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Illustration</span>
-                        <span class="text-right">-</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-5 px-4 rounded-lg hover:bg-white transition-colors duration-200 mb-10">
-                        <span>Header Design</span>
-                        <span class="text-right">-</span>
-                    </a>
-                </section>
-                <!-- BY TECHNOLOGY -->
-                <section class="flex-1 flex flex-col gap-2 text-gray-900" data-section="By Technology">
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-34 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>CSS Animation</span>
-                        <span class="text-right">25K</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Wordpresss</span>
-                        <span class="text-right">48K</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Shopify</span>
-                        <span class="text-right">5957</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>WebGl sites</span>
-                        <span class="text-right">203</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>React Websites</span>
-                        <span class="text-right">64</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>3D websites</span>
-                        <span class="text-right">64</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Figma</span>
-                        <span class="text-right">64</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Gsap</span>
-                        <span class="text-right">64</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200">
-                        <span>Framer</span>
-                        <span class="text-right">64</span>
-                    </a>
-                    <a href="#" class="grid grid-cols-[auto_auto] gap-x-20 items-center py-3 px-4 rounded-lg hover:bg-white transition-colors duration-200 mb-10">
-                        <span>Webflow</span>
-                        <span class="text-right">64</span>
-                    </a>
+                    @endforeach
                 </section>
             </main>
         </div>
