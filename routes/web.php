@@ -129,3 +129,8 @@ Route::get('/vote-in', function () {
    return view('votein');
 });
 
+
+Route::get('/tes', function () {
+   return view('tes');
+});
+
