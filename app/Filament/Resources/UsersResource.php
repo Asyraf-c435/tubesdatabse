@@ -46,6 +46,7 @@ class UsersResource extends Resource
                     ->password()
                     ->required(fn (string $operation): bool => $operation === 'create')
                     ->minLength(8)
+                    ->hiddenOn('edit')
                     ->dehydrateStateUsing(fn (?string $state): ?string => $state ? Hash::make($state) : null)
                     ->dehydrated(fn (?string $state): bool => filled($state))
                     ->label(fn (string $operation): string => ($operation === 'edit') ? 'New Password' : 'Password')

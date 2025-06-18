@@ -422,7 +422,7 @@
                                                             <td class="py-4 align-middle w-[40%]">
                                                                 <div class="leading-tight">
                                                                     <span class="font-semibold text-[13px]">{{ $vote->display_name }}</span>
-                                                                    <span class="italic font-normal text-[13px] ml-1">from</span>
+                                                                    <!-- <span class="italic font-normal text-[13px] ml-1">from</span> -->
                                                                     <!-- <span class="font-semibold text-[13px] ml-1">Indonesia</span> -->
                                                                     <!-- <span class="font-normal italic text-[13px] ml-1">*</span> -->
                                                                 </div>
@@ -783,7 +783,7 @@
                                                             <td class="py-4 align-middle w-[40%]">
                                                                 <div class="leading-tight">
                                                                     <span class="font-semibold text-[13px]">{{ $vote->display_name }}</span>
-                                                                    <span class="italic font-normal text-[13px] ml-1">from</span>
+                                                                    <!-- <span class="italic font-normal text-[13px] ml-1">from</span> -->
                                                                     <!-- <span class="font-semibold text-[13px] ml-1">Indonesia</span>
                                                                     <span class="font-normal italic text-[13px] ml-1">*</span> -->
                                                                 </div>

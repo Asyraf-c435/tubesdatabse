@@ -30,7 +30,7 @@ Route::get('/profile-user', function () {
     return view('profileuser');
 });
 
-Route::get('/submit-web', function () {return view('submit');})->name('submit');
+Route::get('/submit-web', function () {return view('submit');})->name('submit')->middleware('auth');
 Route::post('/submit-web', [WebsiteController::class,'store'])->name('submit.store');
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

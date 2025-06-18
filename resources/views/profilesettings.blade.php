@@ -68,12 +68,12 @@
                                 <option>Individual / Freelance</option>
                             </select> -->
 
-                            <label for="country" class="uppercase mt-2 col-span-2">Country</label>
+                            <!-- <label for="country" class="uppercase mt-2 col-span-2">Country</label>
                             <select
                                 id="country"
                                 class="bg-white border border-[#f3f4f6] rounded px-2 py-1 text-[9px] text-[#1a1a1a] col-span-2 transition-colors duration-300 ease-in-out">
                                 <option>Choose a country</option>
-                            </select>
+                            </select> -->
 
                             <label for="description" class="uppercase mt-2 col-span-2">Description</label>
                             <textarea

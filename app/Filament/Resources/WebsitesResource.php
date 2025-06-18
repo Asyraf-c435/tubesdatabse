@@ -25,7 +25,27 @@ class WebsitesResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255)
+                    ->visibleOn('edit')
+                    ->unique(ignoreRecord: true)
+                    ->label('Website Name')
+                    ->placeholder('Enter website name'),
+                Forms\Components\Textarea::make('description')
+                    ->columnSpanFull()
+                    ->visibleOn('edit')
+                    ->label('Website Description'),
+                Forms\Components\TextInput::make('link')
+                    ->required()
+                    ->maxLength(255)
+                    ->visibleOn('edit')
+                    ->label('Link to Website'),
+                Forms\Components\TextInput::make('image_link')
+                    ->required()
+                    ->maxLength(255)
+                    ->visibleOn('edit')
+                    ->label('Link to Web Preview Asset'),
             ]);
     }
 
@@ -68,4 +88,9 @@ class WebsitesResource extends Resource
             'edit' => Pages\EditWebsites::route('/{record}/edit'),
         ];
     }
+
+    public static function canCreate(): bool
+    {
+        return false;
+    } 
 }

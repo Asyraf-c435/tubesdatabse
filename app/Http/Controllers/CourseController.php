@@ -44,7 +44,7 @@ class CourseController extends Controller
             'price' => $validated['price']
         ]);
 
-        return;
+        return back();
     }
 
     /**
@@ -79,7 +79,7 @@ class CourseController extends Controller
 
         $course->update($validated);
 
-        return;
+        return back();
     }
 
     /**
@@ -88,6 +88,6 @@ class CourseController extends Controller
     public function destroy(string $id)
     {
         Course::findOrFail($id)->delete();
-        return;
+        return back();
     }
 }

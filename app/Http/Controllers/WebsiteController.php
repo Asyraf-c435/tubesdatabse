@@ -67,7 +67,6 @@ class WebsiteController extends Controller
         $siteImagePath = public_path('images/sites');
         $elementImagePath = public_path('images/sites/elements');
 
-        // Handle website image
         if ($request->hasFile('image')) {
             $extension = $request->file('image')->getClientOriginalExtension();
             $imageName = $website->id . '.' . $extension;
@@ -135,7 +134,7 @@ class WebsiteController extends Controller
 
         $website->update($validated);
 
-        return;
+        return back();
     }
 
     /**

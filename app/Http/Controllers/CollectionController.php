@@ -20,7 +20,8 @@ class CollectionController extends Controller
      */
     public function create()
     {
-        //
+        $collection= Collection::create(request()->all());
+        return $collection;
     }
 
     /**

@@ -92,7 +92,7 @@
                         <div class="mb-8">
                             <div class="flex justify-between items-center mb-6 pb-2 border-b border-gray-200">
                                 <h2 class="text-2xl font-bold text-dark">Elements</h2>
-                                <button type="button" id="addElementBtn" class="btn-add bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-medium flex items-center">
+                                <button type="button" id="addElementBtn" class="btn-add bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-lg font-medium flex items-center">
                                     <i class="fas fa-plus mr-2"></i> Add Element
                                 </button>
                             </div>
@@ -134,7 +134,7 @@
                         
                         <!-- Form Actions -->
                         <div class="flex flex-col sm:flex-row gap-3 pt-4">
-                            <button type="submit" class="bg-gray-500 hover:bg-gray-800 btn-primary text-white px-6 py-3 rounded-lg font-medium flex-1 flex items-center justify-center">
+                            <button type="submit" class="bg-gray-800 hover:bg-gray-900 btn-primary text-white px-6 py-3 rounded-lg font-medium flex-1 flex items-center justify-center">
                                 <i class="fas fa-paper-plane mr-2"></i> Submit Website
                             </button>
                             <button type="button" id="resetBtn" class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-medium flex-1 hover:bg-gray-300 transition">
